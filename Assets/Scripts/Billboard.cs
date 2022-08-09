@@ -8,6 +8,9 @@ public class Billboard : MonoBehaviour
 
     private Camera camera;
 
+    [SerializeField]
+    private bool isPlane;
+    
     void Start()
     {
         camera = Camera.main;
@@ -17,6 +20,13 @@ public class Billboard : MonoBehaviour
     {
         transform.rotation = camera.transform.rotation;
 
-        transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
+        if(isPlane)
+        {
+            transform.rotation = Quaternion.Euler(90f, 0f, -transform.rotation.eulerAngles.y);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
+        }
     }
 }
