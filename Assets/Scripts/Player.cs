@@ -18,7 +18,5 @@ public class Player : MonoBehaviour
         reading = false;
         firstTimeInLocker = true;
         firstButtonDoor = true;
-
-        playerGraphic.SetActive(false);
     }
 }

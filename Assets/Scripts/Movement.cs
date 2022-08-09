@@ -37,6 +37,19 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private RND random;
 
+    [HideInInspector]
+    public float gravity = -9.81f;
+
+    Vector3 velocity;
+
+    [SerializeField]
+    private Transform groundCheck;
+    [SerializeField]
+    private float groundDistance = 0.4f;
+    [SerializeField]
+    private LayerMask groundMask;
+    bool isGrounded;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +67,14 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+        if(isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
+
         if(canMove)
         {
             float x = Input.GetAxis("Horizontal");
@@ -64,13 +85,15 @@ public class Movement : MonoBehaviour
             else isMoving = false; 
 
             characterBody.Move(move * playerSpeed * Time.deltaTime);
+
+            velocity.y += gravity * Time.deltaTime;
+
+            characterBody.Move(velocity * Time.deltaTime);
         }
     }
 
     void FixedUpdate()
     {
-        if(characterPos.position.x > 2.641058f) characterPos.position = new Vector3(characterPos.position.x, -2.7f, characterPos.position.z);
-
         if(startsRunning && !running)
         {
             playerSpeed = originalPlayerSpeed * 2.5f;
@@ -78,8 +101,6 @@ public class Movement : MonoBehaviour
             startsRunning = false;
             StartCoroutine(CharacterRun());
         }
-
-        if(characterPos.position.y > 0 && canMove) characterPos.position = new Vector3(0, -2.7f, characterPos.position.z);
     }
 
     void OnGUI()
