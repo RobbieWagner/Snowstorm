@@ -4,73 +4,32 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    //This camera controller is for the use of a first person 3d game
     [SerializeField]
-    private float mouseSensitivity = 100f;
-    public Transform playerBody;
-
+    float horizontalOffset;
     [SerializeField]
-    private Camera camera;
-
-    float xRotation = 0f;
+    float verticalOffset;
+    [SerializeField]
+    float tilt;
 
     [SerializeField]
-    private bool lockCamera = true;
+    private Transform playerT;
 
-    [SerializeField]
-    private Player player;
+    int rotationState;
 
-    [SerializeField]
-    private LayerMask interactables;
-    [SerializeField]
-    private GameObject cameraDot;
-
-    public bool canLookAround;
-
-    // Start is called before the first frame update
     void Start()
     {
-        if(lockCamera) Cursor.lockState = CursorLockMode.Locked;
-        else Cursor.lockState = CursorLockMode.None;
-        gameObject.transform.rotation = Quaternion.Euler(0,0,0);
-        playerBody.rotation = Quaternion.Euler(0,0,0);
-
-        canLookAround = true;
+        rotationState = 0;
+        transform.position = new Vector3(playerT.position.x,
+                                         playerT.position.y + verticalOffset, 
+                                         playerT.position.z - horizontalOffset);
+        transform.rotation = Quaternion.Euler(tilt, 0, 0);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(canLookAround)
-        {
-            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-            float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-
-            xRotation -= mouseY;
-            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
-            transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-            playerBody.Rotate(Vector3.up * mouseX);
-        }
-
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit[] hits;
-        // Casts the ray and get the first game object hit
-        Debug.DrawRay(ray.origin, ray.direction * 10f, Color.red);
-        bool didHit = Physics.Raycast(ray, out RaycastHit hit, 5, interactables);
-        //Issue: bool didHit is always false, even if the object is an interactable.
-
-        if (Input.GetMouseButton(0) && didHit)
-        {
-            
-        }
-        if(didHit && !player.reading)
-        {
-            cameraDot.SetActive(true);
-        }
-        else if(cameraDot != null)
-        {
-            cameraDot.SetActive(false);
-        }
+        transform.position = new Vector3(playerT.position.x,
+                                         playerT.position.y + verticalOffset, 
+                                         playerT.position.z - horizontalOffset);
+        transform.rotation = Quaternion.Euler(tilt, 0, 0);
     }
 }

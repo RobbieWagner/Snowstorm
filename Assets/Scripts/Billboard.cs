@@ -13,7 +13,7 @@ public class Billboard : MonoBehaviour
     
     void Start()
     {
-        camera = Camera.main;
+        camera = GameObject.Find("Camera").GetComponent<Camera>();
     }
 
     void LateUpdate()
