@@ -50,6 +50,9 @@ public class Movement : MonoBehaviour
     private LayerMask groundMask;
     bool isGrounded;
 
+    [SerializeField]
+    private Animator playerAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -119,6 +122,15 @@ public class Movement : MonoBehaviour
         {
             StartCoroutine(PlayMovementSounds());
         }
+
+        if(Input.GetKeyDown(KeyCode.W)) playerAnimator.SetBool("WalkingBack", true);
+        if(Input.GetKeyDown(KeyCode.A)) playerAnimator.SetBool("WalkingLeft", true);
+        if(Input.GetKeyDown(KeyCode.S)) playerAnimator.SetBool("WalkingForward", true);
+        if(Input.GetKeyDown(KeyCode.D)) playerAnimator.SetBool("WalkingRight", true);
+        if(Input.GetKeyUp(KeyCode.W)) playerAnimator.SetBool("WalkingBack", false);
+        if(Input.GetKeyUp(KeyCode.A)) playerAnimator.SetBool("WalkingLeft", false);
+        if(Input.GetKeyUp(KeyCode.S)) playerAnimator.SetBool("WalkingForward", false);
+        if(Input.GetKeyUp(KeyCode.D)) playerAnimator.SetBool("WalkingRight", false);
     }
 
     public void MoveCharacter(Vector3 position)
