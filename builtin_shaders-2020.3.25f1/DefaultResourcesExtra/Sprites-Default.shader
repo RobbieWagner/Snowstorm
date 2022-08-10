@@ -26,7 +26,7 @@ Shader "Sprites/Default"
 
         Cull Off
         Lighting Off
-        ZWrite Off
+        ZWrite On
         Blend One OneMinusSrcAlpha
 
         Pass
