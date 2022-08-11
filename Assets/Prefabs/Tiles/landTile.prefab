@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3587221780750801417}
   - component: {fileID: 1597837226092457667}
   - component: {fileID: 138835179098632773}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: landTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

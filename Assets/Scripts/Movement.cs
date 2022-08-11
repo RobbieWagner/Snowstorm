@@ -70,7 +70,6 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
@@ -89,7 +88,7 @@ public class Movement : MonoBehaviour
 
             characterBody.Move(move * playerSpeed * Time.deltaTime);
 
-            velocity.y += gravity * Time.deltaTime;
+            if(!isGrounded) velocity.y += gravity * Time.deltaTime;
 
             characterBody.Move(velocity * Time.deltaTime);
         }
@@ -108,7 +107,7 @@ public class Movement : MonoBehaviour
 
     void OnGUI()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.W) && !running && currentStamina > maxStamina/4)
+        if(Input.GetKeyDown(KeyCode.Space) && !running && currentStamina > maxStamina/4)
         { 
             startsRunning = true;
         }
