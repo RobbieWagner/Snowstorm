@@ -229,8 +229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalOffset: 10
-  verticalOffset: 10
-  tilt: 45
+  verticalOffset: 6.4
+  tilt: 30
   playerT: {fileID: 8534359206972666262}
 --- !u!1 &8534359206972666257
 GameObject:
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMove: 1
   characterBody: {fileID: 8534359206972666256}
-  characterPos: {fileID: 0}
+  characterPos: {fileID: 8534359206972666262}
   playerSpeed: 7
   maxStamina: 16
   staminaLossRate: 1
@@ -330,4 +330,4 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
-  playerAnimator: {fileID: 0}
+  playerAnimator: {fileID: 8835780374676670851}
