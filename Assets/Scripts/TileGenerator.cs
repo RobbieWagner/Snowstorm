@@ -25,7 +25,6 @@ public class TileGenerator : MonoBehaviour
 
         random = GameObject.Find("Random").GetComponent<RND>();
         rnd = random.rnd;
-        if(rnd == null) Debug.Log("b");
 
         playerLayer = LayerMask.NameToLayer("Player");
         groundLayer = LayerMask.NameToLayer("Ground");
@@ -35,16 +34,12 @@ public class TileGenerator : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("hi");
 
         if(collision.gameObject.layer == playerLayer)
         {
-            Debug.Log("collision successful");
             if(!surroundingTilesGenerated)
             {
-                Debug.Log("Checking for Tiles");
                 CheckForSurroundingTiles();
-                Debug.Log("Generating Tiles");
                 GenerateTiles();
             }
         }
@@ -56,8 +51,9 @@ public class TileGenerator : MonoBehaviour
         for(int i = 0; i < tilesGenerated.Length; i++)
         {
             direction = TileDirection(i);
-            Debug.DrawRay(tileT.position, direction, Color.white, 5f, false);
-            if(Physics.Raycast(tileT.position, direction, 1f, groundLayer)) 
+            RaycastHit hit;
+            Debug.Log((tileT.position + direction).ToString());
+            if(Physics.SphereCast(tileT.position + direction, 3f, Vector3.zero, out hit, Mathf.Infinity, groundLayer)) 
             {
                 tilesGenerated[i] = true;
                 Debug.Log("Tile " + i + " already generated");
@@ -70,12 +66,15 @@ public class TileGenerator : MonoBehaviour
     {
         Vector3 direction;
         int tileToUse;
-        for(int i = 0; i < 6; i++)
+        for(int i = 0; i < 1; i++)
         {
-            direction = TileDirection(i);
-            tileToUse = rnd.Next(LevelsTiles.tileOptions.Count);
-            Instantiate(LevelsTiles.tileOptions[tileToUse], tileT.position + direction, Quaternion.identity);
-            Debug.Log("Tile " + i + " generated");
+            if(!tilesGenerated[i])
+            {
+                direction = TileDirection(i);
+                tileToUse = rnd.Next(LevelsTiles.tileOptions.Count);
+                Instantiate(LevelsTiles.tileOptions[tileToUse], tileT.position + direction, Quaternion.identity);
+                Debug.Log("Tile " + i + " generated");
+            }
         }
         surroundingTilesGenerated = true;
     }
@@ -88,5 +87,13 @@ public class TileGenerator : MonoBehaviour
         else if(adjacentTile == 3) return new Vector3(0f, 0f, -18f); 
         else if(adjacentTile == 4) return new Vector3(-15.5889f, 0f, -9f); 
         else return new Vector3(-15.5889f, 0f, 9f); 
+    }
+
+
+    //Debugging
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(tileT.position, 3f);
     }
 }
