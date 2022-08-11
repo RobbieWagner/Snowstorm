@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4717716938459988575}
   - component: {fileID: 6758757092287709054}
-  - component: {fileID: 7141488035252505360}
   m_Layer: 0
   m_Name: SnowyLandscapeTileList
   m_TagString: Untagged
@@ -47,18 +46,3 @@ MonoBehaviour:
   tileOptions:
   - {fileID: 67236344231706211, guid: 78899cdc577d7c9468572db4e899df16, type: 3}
   - {fileID: 67236344231706211, guid: 58427d4c6107b5c40b101055b0bf87a9, type: 3}
---- !u!114 &7141488035252505360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2108662961817811697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3a2ed24c03520c40bf51016741582e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tileT: {fileID: 4717716938459988575}
-  LevelsTiles: {fileID: 6758757092287709054}
-  random: {fileID: 0}

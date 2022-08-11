@@ -25,6 +25,7 @@ public class TileGenerator : MonoBehaviour
 
         random = GameObject.Find("Random").GetComponent<RND>();
         rnd = random.rnd;
+        if(rnd == null) Debug.Log("b");
 
         playerLayer = LayerMask.NameToLayer("Player");
         groundLayer = LayerMask.NameToLayer("Ground");
@@ -32,7 +33,7 @@ public class TileGenerator : MonoBehaviour
         tilesGenerated = new bool[] {false, false, false, false, false, false};
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
         Debug.Log("hi");
 

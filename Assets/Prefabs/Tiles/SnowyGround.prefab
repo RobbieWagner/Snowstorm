@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1597837226092457667}
   - component: {fileID: 138835179098632773}
   m_Layer: 3
-  m_Name: landTile
+  m_Name: SnowyGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
