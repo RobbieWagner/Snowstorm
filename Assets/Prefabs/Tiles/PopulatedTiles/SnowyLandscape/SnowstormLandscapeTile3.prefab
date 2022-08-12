@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2754cfb6d277a9e44ba3d3379551dadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnChances: 1
+  spawnChances: 25
 --- !u!1 &1142646466918553261
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,7 +56,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5491956372486263999}
   - component: {fileID: 5405592335787286053}
-  m_Layer: 7
+  - component: {fileID: 7796711550020239170}
+  m_Layer: 0
   m_Name: Firewood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,6 +129,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!65 &7796711550020239170
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142646466918553261}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 6, z: 1}
+  m_Center: {x: 0, y: 3, z: -0.5}
 --- !u!1 &9095120011653489647
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,10 +155,9 @@ GameObject:
   - component: {fileID: 6344699247680273466}
   - component: {fileID: 2796706754739693707}
   - component: {fileID: 2251246483030947332}
-  - component: {fileID: 5450512473525240037}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Fire
-  m_TagString: Untagged
+  m_TagString: Warmth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -260,19 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warmRate: 3
---- !u!65 &5450512473525240037
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9095120011653489647}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.5, y: 6, z: 1}
-  m_Center: {x: 0, y: 3, z: 0}
+  playerWarmer: {fileID: 0}
 --- !u!1001 &6087977131479376221
 PrefabInstance:
   m_ObjectHideFlags: 0

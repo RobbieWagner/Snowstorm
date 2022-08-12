@@ -7,9 +7,11 @@ public class DetectWarmth : MonoBehaviour
     [SerializeField]
     private ColdMeter coldMeter;
 
-    bool depleting;
+    [HideInInspector]
+    public bool depleting;
     bool runningDepletionFunction;
-    bool replenishing;
+    [HideInInspector]
+    public bool replenishing;
     bool runningReplenishFunction;
 
     public float depletionRate;
@@ -40,8 +42,9 @@ public class DetectWarmth : MonoBehaviour
 
     void OnTriggerStay(Collider collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Warmth"))
+        if(collision.gameObject.CompareTag("Warmth"))
         {
+            Debug.Log("flipped");
             depleting = false;
             replenishing = true;
         }
@@ -49,7 +52,7 @@ public class DetectWarmth : MonoBehaviour
 
     void OnTriggerExit(Collider collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Warmth"))
+        if(collision.gameObject.CompareTag("Warmth"))
         {
             depleting = true;
             replenishing = false;
@@ -58,6 +61,7 @@ public class DetectWarmth : MonoBehaviour
 
     IEnumerator RunDepletion(float rate)
     {
+        Debug.Log("Depleting");
         yield return StartCoroutine(coldMeter.DepleteMeter(rate));
         runningDepletionFunction = false;
         StopCoroutine(RunDepletion(rate));
@@ -65,6 +69,7 @@ public class DetectWarmth : MonoBehaviour
 
     IEnumerator RunReplenishment(float rate)
     {
+        Debug.Log("Replenishing");
         yield return StartCoroutine(coldMeter.ReplenishMeter(rate));
         runningReplenishFunction = false;
         StopCoroutine(RunReplenishment(rate));
