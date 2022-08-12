@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ColdMeter : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class ColdMeter : MonoBehaviour
     public float replenishingRate;
     [SerializeField]
     private float currentMeterReading;
+    
+    [SerializeField]
+    private Slider meter;
 
     bool depleting;
     bool replenishing;
@@ -22,6 +26,10 @@ public class ColdMeter : MonoBehaviour
     {
         depleting = false;
         replenishing = false;
+
+        meter.minValue = 0;
+        meter.maxValue = meterMax;
+        meter.value = currentMeterReading;
     }
 
     void Update()
@@ -30,6 +38,8 @@ public class ColdMeter : MonoBehaviour
         {
             sceneChanger.RunTransitionScene("MainMenu");
         }
+
+        meter.value = currentMeterReading;
     }
 
     public IEnumerator DepleteMeter()

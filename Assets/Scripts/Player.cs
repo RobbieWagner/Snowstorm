@@ -6,8 +6,6 @@ public class Player : MonoBehaviour
 {
     public bool canHide;
     public bool reading;
-    public bool firstTimeInLocker;
-    public bool firstButtonDoor;
 
     [SerializeField]
     GameObject playerGraphic;
@@ -16,7 +14,5 @@ public class Player : MonoBehaviour
     {
         canHide = true;
         reading = false;
-        firstTimeInLocker = true;
-        firstButtonDoor = true;
     }
 }

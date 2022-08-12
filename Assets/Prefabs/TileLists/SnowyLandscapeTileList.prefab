@@ -46,3 +46,5 @@ MonoBehaviour:
   tileOptions:
   - {fileID: 67236344231706211, guid: 78899cdc577d7c9468572db4e899df16, type: 3}
   - {fileID: 67236344231706211, guid: 58427d4c6107b5c40b101055b0bf87a9, type: 3}
+  - {fileID: 67236344231706211, guid: 902fc79a063f0d346b2ff24673c4fa6a, type: 3}
+  tileSpawns: 
