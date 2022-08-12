@@ -44,7 +44,6 @@ public class DetectWarmth : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Warmth"))
         {
-            Debug.Log("flipped");
             depleting = false;
             replenishing = true;
         }
@@ -61,7 +60,6 @@ public class DetectWarmth : MonoBehaviour
 
     IEnumerator RunDepletion(float rate)
     {
-        Debug.Log("Depleting");
         yield return StartCoroutine(coldMeter.DepleteMeter(rate));
         runningDepletionFunction = false;
         StopCoroutine(RunDepletion(rate));
@@ -69,7 +67,6 @@ public class DetectWarmth : MonoBehaviour
 
     IEnumerator RunReplenishment(float rate)
     {
-        Debug.Log("Replenishing");
         yield return StartCoroutine(coldMeter.ReplenishMeter(rate));
         runningReplenishFunction = false;
         StopCoroutine(RunReplenishment(rate));

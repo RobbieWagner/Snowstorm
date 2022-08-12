@@ -48,7 +48,6 @@ public class ColdMeter : MonoBehaviour
         {
             depleting = true;
             currentMeterReading -= depletionRate;
-            Debug.Log("Depleted " + depletionRate + " units");
             yield return new WaitForSeconds(1f);
         }
         depleting = false;
@@ -61,7 +60,6 @@ public class ColdMeter : MonoBehaviour
         {
             depleting = true;
             currentMeterReading -= depleteRate;
-            Debug.Log("Depleted " + depleteRate + " units");
             yield return new WaitForSeconds(1f);
         }
         depleting = false;
@@ -74,7 +72,6 @@ public class ColdMeter : MonoBehaviour
         {
             replenishing = true;
             currentMeterReading += replenishingRate;
-            Debug.Log("Replenished " + replenishingRate + " units");
             yield return new WaitForSeconds(1f);
         }
         replenishing = false;
@@ -87,7 +84,6 @@ public class ColdMeter : MonoBehaviour
         {
             replenishing = true;
             currentMeterReading += replenishRate;
-            Debug.Log("Replenished " + replenishRate + " units");
             yield return new WaitForSeconds(1f);
         }
         replenishing = false;

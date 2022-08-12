@@ -75,6 +75,7 @@ public class TileGenerator : MonoBehaviour
             }
         }
         surroundingTilesGenerated = true;
+        Destroy(gameObject);
     }
 
     Vector3 TileDirection(int adjacentTile)
