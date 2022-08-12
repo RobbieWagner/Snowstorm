@@ -22,8 +22,14 @@ public class ColdMeter : MonoBehaviour
     [SerializeField]
     private SceneChanger sceneChanger;
 
+    [SerializeField]
+    private Animator playerAnimator;
+
+    bool transitioningScene;
+
     void Start()
     {
+        transitioningScene = false;
         depleting = false;
         replenishing = false;
 
@@ -34,8 +40,10 @@ public class ColdMeter : MonoBehaviour
 
     void Update()
     {
-        if(currentMeterReading <= 0)
+        if(currentMeterReading <= 0 && !transitioningScene)
         {
+            transitioningScene = true;
+            playerAnimator.SetBool("Dying", true);
             sceneChanger.RunTransitionScene("MainMenu");
         }
 
