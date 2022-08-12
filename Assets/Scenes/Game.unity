@@ -663,7 +663,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2108662961817811697, guid: 5b37cb186c2df7547b28c7b189e2ae20, type: 3}
       propertyPath: m_Name
-      value: SnowyLandscapeTileList
+      value: TileList
       objectReference: {fileID: 0}
     - target: {fileID: 4717716938459988575, guid: 5b37cb186c2df7547b28c7b189e2ae20, type: 3}
       propertyPath: m_RootOrder

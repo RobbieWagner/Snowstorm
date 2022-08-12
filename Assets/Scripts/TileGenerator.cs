@@ -7,8 +7,7 @@ public class TileGenerator : MonoBehaviour
     [SerializeField]
     private Transform tileT;
 
-    [SerializeField]
-    private TileList LevelsTiles;
+    private TileList levelsTiles;
     private RND random;
     private System.Random rnd;
     private bool surroundingTilesGenerated;
@@ -30,6 +29,8 @@ public class TileGenerator : MonoBehaviour
         groundLayer = LayerMask.NameToLayer("Ground");
 
         tilesGenerated = new bool[] {false, false, false, false, false, false};
+
+        levelsTiles = GameObject.Find("TileList").GetComponent<TileList>();
     }
 
     void OnTriggerEnter(Collider collision)
@@ -69,8 +70,8 @@ public class TileGenerator : MonoBehaviour
             if(!tilesGenerated[i])
             {
                 direction = TileDirection(i);
-                tileToUse = rnd.Next(LevelsTiles.tileOptions.Count);
-                Instantiate(LevelsTiles.tileOptions[tileToUse], tileT.position + direction, Quaternion.identity);
+                tileToUse = levelsTiles.tileSpawns[rnd.Next(levelsTiles.tileSpawns.Count)];
+                Instantiate(levelsTiles.tileOptions[tileToUse], tileT.position + direction, Quaternion.identity);
             }
         }
         surroundingTilesGenerated = true;
