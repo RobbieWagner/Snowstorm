@@ -16,8 +16,10 @@ public class ColdMeter : MonoBehaviour
     [SerializeField]
     private Slider meter;
 
-    bool depleting;
-    bool replenishing;
+    [HideInInspector]
+    public bool depleting;
+    [HideInInspector]
+    public bool replenishing;
 
     [SerializeField]
     private SceneChanger sceneChanger;

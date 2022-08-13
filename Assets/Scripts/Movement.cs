@@ -87,11 +87,11 @@ public class Movement : MonoBehaviour
             else isMoving = false; 
 
             characterBody.Move(move * playerSpeed * Time.deltaTime);
-
-            if(!isGrounded) velocity.y += gravity * Time.deltaTime;
-
-            characterBody.Move(velocity * Time.deltaTime);
         }
+        
+        if(!isGrounded) velocity.y += gravity * Time.deltaTime;
+        characterBody.Move(velocity * Time.deltaTime);
+
     }
 
     void FixedUpdate()

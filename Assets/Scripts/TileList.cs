@@ -15,6 +15,5 @@ public class TileList : MonoBehaviour
             SpawnChance spawnChance = tileOptions[i].GetComponent<SpawnChance>();
             for(int j = 0; j < spawnChance.spawnChances; j++) tileSpawns.Add(i);
         }
-        Debug.Log(tileSpawns.Count);
     }
 }
