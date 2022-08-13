@@ -16,20 +16,15 @@ public class Fire : MonoBehaviour
     [SerializeField]
     GameObject burntFirewood;
 
-    private GameObject parentGO;
-
     void Start()
     {
         canLight = false;
         LIGHT_TIME = 60;
 
         playerMovement = GameObject.Find("Player").GetComponent<Movement>();
-
-        parentGO = gameObject.transform.parent.gameObject;
-        Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), parentGO.GetComponent<Collider>());
     }
 
-    void OnTriggerEnter(Collider collision)
+    void OnCollisionEnter(Collision collision)
     {
         Debug.Log("collision");
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player")) 
@@ -37,11 +32,13 @@ public class Fire : MonoBehaviour
             canLight = true;
             Debug.Log("can light");
         }
+        else Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
     }
 
-    void OnTriggerExit(Collider collision)
+    void OnCollisionExit(Collision collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player")) canLight = false;
+        else Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
     }
 
     void OnGUI()
