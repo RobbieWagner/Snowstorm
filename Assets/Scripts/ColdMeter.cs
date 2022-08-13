@@ -48,6 +48,7 @@ public class ColdMeter : MonoBehaviour
             playerAnimator.SetBool("Dying", true);
             sceneChanger.RunTransitionScene("MainMenu");
         }
+        else if(currentMeterReading > meterMax) currentMeterReading = meterMax;
 
         meter.value = currentMeterReading;
     }

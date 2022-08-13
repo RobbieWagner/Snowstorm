@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Fire : MonoBehaviour
 {
-    bool canLight;
+    public bool canLight;
     int LIGHT_TIME;
 
     Movement playerMovement;
+    DetectWarmth playerWarmthDetection;
 
     [SerializeField]
     GameObject firewood;
@@ -16,26 +17,28 @@ public class Fire : MonoBehaviour
     [SerializeField]
     GameObject burntFirewood;
 
+    bool fireLit;
+
     void Start()
     {
+        fireLit = false;
         canLight = false;
         LIGHT_TIME = 60;
 
         playerMovement = GameObject.Find("Player").GetComponent<Movement>();
+        playerWarmthDetection = GameObject.Find("Player").GetComponent<DetectWarmth>();
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("collision");
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player")) 
         {
             canLight = true;
-            Debug.Log("can light");
         }
         else Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
     }
 
-    void OnCollisionExit(Collision collision)
+    void OnTriggerExit(Collider collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player")) canLight = false;
         else Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
@@ -43,7 +46,7 @@ public class Fire : MonoBehaviour
 
     void OnGUI()
     {
-        if(Input.GetKeyDown(KeyCode.J) && playerMovement.canMove && canLight)
+        if(Input.GetKeyDown(KeyCode.J) && playerMovement.canMove && canLight && !fireLit)
         {
             LightFire();
         }
@@ -52,6 +55,7 @@ public class Fire : MonoBehaviour
     void LightFire()
     {
         flame.SetActive(true);
+        fireLit = true;
         StartCoroutine(BurnWood());
     }
 
@@ -61,6 +65,9 @@ public class Fire : MonoBehaviour
         flame.SetActive(false);
         firewood.SetActive(false);
         burntFirewood.SetActive(true);
+
+        playerWarmthDetection.depleting = true;
+        playerWarmthDetection.replenishing = false;
 
         StopCoroutine(BurnWood());
     }

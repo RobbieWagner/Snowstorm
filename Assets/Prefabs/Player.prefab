@@ -344,3 +344,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d7c7975268ed8649a407bdf6819aa90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coldMeter: {fileID: 0}
+  depleting: 0
+  replenishing: 0
+  depletionRate: 0
+  replenishmentRate: 0
