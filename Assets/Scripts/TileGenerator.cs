@@ -18,6 +18,8 @@ public class TileGenerator : MonoBehaviour
     private bool[] tilesGenerated; 
     private bool[] tilesBlockingMegaGeneration;
 
+    private int megaTileSpawnChance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,7 @@ public class TileGenerator : MonoBehaviour
         tilesBlockingMegaGeneration = new bool[] {false, false, false, false, false, false};
 
         levelsTiles = GameObject.Find("TileList").GetComponent<TileList>();
+        megaTileSpawnChance = levelsTiles.chanceOfMegaTile;
     }
 
     void OnTriggerEnter(Collider collision)
@@ -79,9 +82,17 @@ public class TileGenerator : MonoBehaviour
     {
         Vector3 direction;
         int tileToUse;
+        bool megaTileSpawned = false;
         for(int i = 0; i < 6; i++)
         {
-            if(!tilesGenerated[i])
+            if(!tilesBlockingMegaGeneration[i] && !megaTileSpawned && rnd.Next(1000) < megaTileSpawnChance)
+            {
+                direction = TileDirection(i) * 2;
+                tileToUse = levelsTiles.size2TileSpawns[rnd.Next(levelsTiles.size2TileSpawns.Count)];
+                Instantiate(levelsTiles.size2TileOptions[tileToUse], tileT.position + direction, Quaternion.identity);
+                megaTileSpawned = true;
+            }
+            else if(!tilesGenerated[i])
             {
                 direction = TileDirection(i);
                 tileToUse = levelsTiles.tileSpawns[rnd.Next(levelsTiles.tileSpawns.Count)];

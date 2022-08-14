@@ -1764,6 +1764,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6758757092287709054, guid: 5b37cb186c2df7547b28c7b189e2ae20, type: 3}
+      propertyPath: chanceOfMegaTile
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b37cb186c2df7547b28c7b189e2ae20, type: 3}
 --- !u!1001 &6190736136404945495

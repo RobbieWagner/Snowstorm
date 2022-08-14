@@ -12,8 +12,7 @@ public class TileList : MonoBehaviour
     [HideInInspector]
     public List<int> size2TileSpawns;
     
-    [SerializeField]
-    private int chanceOfMegaTile;
+    public int chanceOfMegaTile;
 
     void Start()
     {
