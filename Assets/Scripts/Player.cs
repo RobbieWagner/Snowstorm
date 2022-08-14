@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public bool canHide;
     public bool reading;
+    public bool hasSeenFireLightingTutorial;
+    public bool hasSeenWarmthTutorial;
 
     [SerializeField]
     GameObject playerGraphic;
 
     void Start()
     {
-        canHide = true;
         reading = false;
+        hasSeenFireLightingTutorial = false;
+        hasSeenWarmthTutorial = false;
     }
 }

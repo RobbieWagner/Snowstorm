@@ -496,6 +496,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &708829247 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 967403433018646216, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
+  m_PrefabInstance: {fileID: 1974045579}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &722798428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1615,6 +1620,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f25c33fc3f5fc6741bbf762e21b367b1, type: 2}
+    - target: {fileID: 6395317043812783100, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
+      propertyPath: playerGraphic
+      value: 
+      objectReference: {fileID: 708829247}
     - target: {fileID: 7335705189500621134, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
       propertyPath: coldMeter
       value: 
@@ -1766,7 +1775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6758757092287709054, guid: 5b37cb186c2df7547b28c7b189e2ae20, type: 3}
       propertyPath: chanceOfMegaTile
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b37cb186c2df7547b28c7b189e2ae20, type: 3}
