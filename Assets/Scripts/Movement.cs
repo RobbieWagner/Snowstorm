@@ -141,7 +141,7 @@ public class Movement : MonoBehaviour
     {
         playerSpeed = originalPlayerSpeed * 1.5f;
         StartCoroutine(ReduceStamina());
-        while(Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.W) && currentStamina > 0)
+        while(Input.GetKey(KeyCode.Space) && currentStamina > 0)
         {
             yield return null;
         }
