@@ -16,6 +16,7 @@ public class TileGenerator : MonoBehaviour
     private LayerMask groundLayer;
 
     private bool[] tilesGenerated; 
+    private bool[] tilesBlockingMegaGeneration;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,7 @@ public class TileGenerator : MonoBehaviour
         groundLayer = LayerMask.NameToLayer("Ground");
 
         tilesGenerated = new bool[] {false, false, false, false, false, false};
+        tilesBlockingMegaGeneration = new bool[] {false, false, false, false, false, false};
 
         levelsTiles = GameObject.Find("TileList").GetComponent<TileList>();
     }
@@ -52,11 +54,23 @@ public class TileGenerator : MonoBehaviour
         for(int i = 0; i < tilesGenerated.Length; i++)
         {
             direction = TileDirection(i);
-
             //Potential issue: layerMask was removed from if statement. May lead to issues further down the road            
             if(Physics.Linecast(tileT.position, tileT.position + direction))//, groundLayer)) 
             {
                 tilesGenerated[i] = true;
+            }
+
+            Vector3 centerOfMegaTile = tileT.position + (direction * 2);
+            //looks for potential of mega tile generation
+            for(int j = 0; j < tilesBlockingMegaGeneration.Length; j++)
+            {
+                direction = TileDirection(j);
+                Debug.Log(centerOfMegaTile.ToString() + " " + (centerOfMegaTile + direction).ToString());
+                if(Physics.Linecast(centerOfMegaTile, centerOfMegaTile + direction))
+                {
+                    tilesBlockingMegaGeneration[i] = true;
+                    Debug.Log(i + " cant form mega tile because of " + j);
+                }
             }
         }
     }

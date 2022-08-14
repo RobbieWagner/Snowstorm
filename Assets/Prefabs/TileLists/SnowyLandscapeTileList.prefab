@@ -48,3 +48,7 @@ MonoBehaviour:
   - {fileID: 67236344231706211, guid: 58427d4c6107b5c40b101055b0bf87a9, type: 3}
   - {fileID: 67236344231706211, guid: 902fc79a063f0d346b2ff24673c4fa6a, type: 3}
   tileSpawns: 
+  size2TileOptions:
+  - {fileID: 1526344459458245060, guid: ff072faca13a935499f0795620b3e864, type: 3}
+  size2TileSpawns: 
+  chanceOfMegaTile: 1
