@@ -68,11 +68,9 @@ public class TileGenerator : MonoBehaviour
             for(int j = 0; j < tilesBlockingMegaGeneration.Length; j++)
             {
                 direction = TileDirection(j);
-                Debug.Log(centerOfMegaTile.ToString() + " " + (centerOfMegaTile + direction).ToString());
                 if(Physics.Linecast(centerOfMegaTile, centerOfMegaTile + direction))
                 {
                     tilesBlockingMegaGeneration[i] = true;
-                    Debug.Log(i + " cant form mega tile because of " + j);
                 }
             }
         }
