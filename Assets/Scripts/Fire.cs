@@ -100,6 +100,7 @@ public class Fire : MonoBehaviour
 
     IEnumerator TimeTutorialDisplay(Canvas tutorialCanvas)
     {
+        player.hasSeenWarmthTutorial = true;
         ToggleCanvas(tutorialCanvas);
         yield return new WaitForSeconds(10f);
         ToggleCanvas(tutorialCanvas);

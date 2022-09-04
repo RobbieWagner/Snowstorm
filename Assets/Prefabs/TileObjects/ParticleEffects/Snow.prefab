@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7292876967956758425}
   - component: {fileID: 7292876967956758426}
   - component: {fileID: 7292876967956758424}
+  - component: {fileID: 4014378349741513922}
   m_Layer: 0
   m_Name: Snow
   m_TagString: Untagged
@@ -601,7 +602,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 450
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -4824,3 +4825,16 @@ RotationConstraint:
   m_Sources:
   - sourceTransform: {fileID: 0}
     weight: 1
+--- !u!114 &4014378349741513922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7292876967956758428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23387db1e8ba7b94ebd85fd613743ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snowfall: {fileID: 7292876967956758425}
