@@ -15,11 +15,19 @@ public class DoorKnock : MonoBehaviour
     [SerializeField]
     private AudioSource knockingSound;
 
+    [SerializeField]
+    private GameObject door;
+
+    [SerializeField]
+    private RoomController cabinDoor;
+
     void Start()
     {
         canGoIn = false;
         interactableTutorial = GameObject.Find("InteractableTutorial").GetComponent<Canvas>();
         player = GameObject.Find("Player").GetComponent<Player>();
+
+        cabinDoor.canEnter = false;
     }
 
     void OnTriggerEnter(Collider collision)
@@ -49,6 +57,7 @@ public class DoorKnock : MonoBehaviour
         if(isAtDoor && Input.GetKeyDown(KeyCode.K))
         {
             if(!canGoIn) knockingSound.Play();
+            StartCoroutine(OpenDoor());
         }
     }
 
@@ -65,5 +74,13 @@ public class DoorKnock : MonoBehaviour
         ToggleCanvas(tutorialCanvas);
 
         StopCoroutine(TimeTutorialDisplay(tutorialCanvas));
+    }
+
+    IEnumerator OpenDoor()
+    {
+        yield return new WaitForSeconds(2f);
+        cabinDoor.canEnter = true;
+        GameObject.Destroy(door);
+        StopCoroutine(OpenDoor());
     }
 }
