@@ -15,6 +15,7 @@ public class RoomController : MonoBehaviour
     private GameObject cabinInterior;
 
     private Transform playerT;
+    private Movement playerMovement;
 
     [SerializeField]
     private Vector3 enterRoomPositionOffset;
@@ -29,6 +30,7 @@ public class RoomController : MonoBehaviour
         isAtDoor = false;
 
         playerT = GameObject.Find("Player").GetComponent<Transform>();
+        playerMovement = playerT.gameObject.GetComponent<Movement>();
 
         isUsingDoor = false;
     }
@@ -66,7 +68,7 @@ public class RoomController : MonoBehaviour
     {
         cabinInterior.SetActive(true);
         isRoomOn = true;
-        playerT.Translate(enterRoomPositionOffset);
+        playerMovement.MoveCharacter(playerT.position + enterRoomPositionOffset);
         Debug.Log(playerT.position.ToString());
         Debug.Log("enter room");
     }
@@ -75,7 +77,7 @@ public class RoomController : MonoBehaviour
     {
         cabinInterior.SetActive(false);
         isRoomOn = false;
-        playerT.Translate(exitRoomPositionOffset);
+        playerMovement.MoveCharacter(playerT.position + exitRoomPositionOffset);
         Debug.Log(playerT.position.ToString());
         Debug.Log("exit room");
     }
