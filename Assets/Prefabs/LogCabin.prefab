@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4039448976420601713}
   - component: {fileID: 6956513097283444320}
   - component: {fileID: 5529095015093447908}
+  - component: {fileID: 4397404325187404134}
+  - component: {fileID: 183519569681672232}
   m_Layer: 0
   m_Name: LogCabin
   m_TagString: Untagged
@@ -129,6 +131,35 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &4397404325187404134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4039448976420600974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25696021bdf991459009b68cbd5cba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canEnter: 0
+  cabinInterior: {fileID: 2817697053264782594}
+  enterRoomPositionOffset: {x: 0, y: -50, z: 0}
+  exitRoomPositionOffset: {x: 0, y: 50, z: 0}
+--- !u!65 &183519569681672232
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4039448976420600974}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7, y: 59.441116, z: 2}
+  m_Center: {x: 0, y: -21.220528, z: -1.7137735}
 --- !u!1 &4853362388889384577
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,9 +256,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a85277ce013ab4a86c11eef9dabaef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canGoIn: 0
+  canEnter: 0
   knockingSound: {fileID: 5202373596139189266}
   door: {fileID: 4853362388889384577}
+  cabinDoor: {fileID: 4397404325187404134}
 --- !u!65 &581002022472780691
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -401,7 +433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3982301686080026331, guid: 2eda2e493ed8214408a635507acd7b68, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 5.1805263
       objectReference: {fileID: 0}
     - target: {fileID: 3982301686080026331, guid: 2eda2e493ed8214408a635507acd7b68, type: 3}
       propertyPath: m_LocalRotation.w

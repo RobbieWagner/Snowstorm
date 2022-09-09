@@ -5,7 +5,7 @@ using UnityEngine;
 public class DoorKnock : MonoBehaviour
 {
     [SerializeField]
-    private bool canGoIn = false;
+    private bool canEnter = false;
     private bool isAtDoor;
 
     private Player player;
@@ -23,7 +23,6 @@ public class DoorKnock : MonoBehaviour
 
     void Start()
     {
-        canGoIn = false;
         interactableTutorial = GameObject.Find("InteractableTutorial").GetComponent<Canvas>();
         player = GameObject.Find("Player").GetComponent<Player>();
 
@@ -56,8 +55,11 @@ public class DoorKnock : MonoBehaviour
     {
         if(isAtDoor && Input.GetKeyDown(KeyCode.K))
         {
-            if(!canGoIn) knockingSound.Play();
-            StartCoroutine(OpenDoor());
+            if(!cabinDoor.canEnter)
+            { 
+                knockingSound.Play();
+                StartCoroutine(OpenDoor());
+            }
         }
     }
 
