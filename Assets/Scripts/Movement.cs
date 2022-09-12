@@ -134,7 +134,9 @@ public class Movement : MonoBehaviour
 
     public void MoveCharacter(Vector3 position)
     {
+        characterBody.enabled = false;
         characterPos.position = position;
+        characterBody.enabled = true;
     }
 
     public IEnumerator CharacterRun()
