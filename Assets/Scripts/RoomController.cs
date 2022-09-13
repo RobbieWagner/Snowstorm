@@ -37,8 +37,6 @@ public class RoomController : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("enterCollision");
-
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player")) 
         {
             isAtDoor = true;
@@ -47,7 +45,6 @@ public class RoomController : MonoBehaviour
 
     void OnTriggerExit(Collider collision)
     {
-        Debug.Log("exitCollision");
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player")) 
         {
             isAtDoor = false;
