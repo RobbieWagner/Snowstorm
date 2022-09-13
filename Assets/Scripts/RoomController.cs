@@ -18,11 +18,16 @@ public class RoomController : MonoBehaviour
     private Movement playerMovement;
 
     [SerializeField]
-    private Vector3 enterRoomPositionOffset;
+    private Transform enterRoomT;
     [SerializeField]
-    private Vector3 exitRoomPositionOffset;
+    private Transform exitRoomT;
 
     private bool isUsingDoor;
+
+    [SerializeField]
+    private bool roomWarms;
+
+    private DetectWarmth playerDW;
 
     void Start()
     {
@@ -31,6 +36,7 @@ public class RoomController : MonoBehaviour
 
         playerT = GameObject.Find("Player").GetComponent<Transform>();
         playerMovement = playerT.gameObject.GetComponent<Movement>();
+        playerDW = playerT.gameObject.GetComponent<DetectWarmth>();
 
         isUsingDoor = false;
     }
@@ -65,18 +71,22 @@ public class RoomController : MonoBehaviour
     {
         cabinInterior.SetActive(true);
         isRoomOn = true;
-        playerMovement.MoveCharacter(playerT.position + enterRoomPositionOffset);
+        playerMovement.MoveCharacter(enterRoomT.position);
         Debug.Log(playerT.position.ToString());
-        Debug.Log("enter room");
+
+        playerDW.replenishing = true;
+        playerDW.depleting = false;
     }
 
     void ExitRoom()
     {
         cabinInterior.SetActive(false);
         isRoomOn = false;
-        playerMovement.MoveCharacter(playerT.position + exitRoomPositionOffset);
+        playerMovement.MoveCharacter(exitRoomT.position);
         Debug.Log(playerT.position.ToString());
-        Debug.Log("exit room");
+
+        playerDW.replenishing = false;
+        playerDW.depleting = true;
     }
 
     IEnumerator CoolDownDoorUsage()

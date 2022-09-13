@@ -181,9 +181,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3982301686080026331}
   - component: {fileID: 6323611171164724972}
+  - component: {fileID: 8447151462822622471}
   m_Layer: 0
   m_Name: CabinInterior
-  m_TagString: Untagged
+  m_TagString: Warmth
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,6 +224,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!65 &8447151462822622471
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4325754602198494305}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09536581, y: 3.9310732, z: 7.0649066}
+  m_Center: {x: -2.5814123, y: 1.4655361, z: 0.34211355}
 --- !u!1 &4901563434821390549
 GameObject:
   m_ObjectHideFlags: 0
