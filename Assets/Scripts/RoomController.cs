@@ -79,6 +79,7 @@ public class RoomController : MonoBehaviour
         playerDW.replenishing = true;
         playerDW.depleting = false;
 
+        if(doorKnock.interactableTutorial != null)
         StartCoroutine(doorKnock.TimeTutorialDisplay(doorKnock.interactableTutorial));
     }
 

@@ -24,7 +24,9 @@ public class DoorKnock : MonoBehaviour
 
     void Start()
     {
-        interactableTutorial = GameObject.Find("InteractableTutorial").GetComponent<Canvas>();
+        GameObject interactableTutorialGO = GameObject.Find("InteractableTutorial");
+        if(interactableTutorialGO != null)
+        interactableTutorial = interactableTutorialGO.GetComponent<Canvas>();
         player = GameObject.Find("Player").GetComponent<Player>();
 
         cabinDoor.canEnter = false;
@@ -37,6 +39,7 @@ public class DoorKnock : MonoBehaviour
             if(!player.hasSeenInteractableTutorial)
             {
                 player.hasSeenInteractableTutorial = true;
+                if(interactableTutorial.gameObject != null)
                 ToggleCanvas(interactableTutorial);
             }
 
@@ -49,6 +52,7 @@ public class DoorKnock : MonoBehaviour
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player")) 
         {
             isAtDoor = false;
+            if(interactableTutorial != null)
             StartCoroutine(TimeTutorialDisplay(interactableTutorial));
         }
     }
@@ -67,15 +71,18 @@ public class DoorKnock : MonoBehaviour
 
     void ToggleCanvas(Canvas tutorialCanvas)
     {
-        if(!tutorialCanvas.isActiveAndEnabled) tutorialCanvas.enabled = true;
-        else tutorialCanvas.enabled = false;
+        if(tutorialCanvas != null && !tutorialCanvas.isActiveAndEnabled) tutorialCanvas.enabled = true;
+        else if (tutorialCanvas != null) tutorialCanvas.enabled = false;
     }
 
     public IEnumerator TimeTutorialDisplay(Canvas tutorialCanvas)
     {
         yield return new WaitForSeconds(5f);
         ToggleCanvas(tutorialCanvas);
+        if(tutorialCanvas != null)
+        GameObject.Destroy(tutorialCanvas.gameObject);
 
+        if(interactableTutorial != null)
         StopCoroutine(TimeTutorialDisplay(tutorialCanvas));
     }
 
