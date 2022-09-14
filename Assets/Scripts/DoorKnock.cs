@@ -10,7 +10,8 @@ public class DoorKnock : MonoBehaviour
 
     private Player player;
 
-    Canvas interactableTutorial;
+    [HideInInspector]
+    public Canvas interactableTutorial;
 
     [SerializeField]
     private AudioSource knockingSound;
@@ -36,7 +37,7 @@ public class DoorKnock : MonoBehaviour
             if(!player.hasSeenInteractableTutorial)
             {
                 player.hasSeenInteractableTutorial = true;
-                StartCoroutine(TimeTutorialDisplay(interactableTutorial));
+                ToggleCanvas(interactableTutorial);
             }
 
             isAtDoor = true;
@@ -48,6 +49,7 @@ public class DoorKnock : MonoBehaviour
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player")) 
         {
             isAtDoor = false;
+            StartCoroutine(TimeTutorialDisplay(interactableTutorial));
         }
     }
 
@@ -69,9 +71,8 @@ public class DoorKnock : MonoBehaviour
         else tutorialCanvas.enabled = false;
     }
 
-    IEnumerator TimeTutorialDisplay(Canvas tutorialCanvas)
+    public IEnumerator TimeTutorialDisplay(Canvas tutorialCanvas)
     {
-        ToggleCanvas(tutorialCanvas);
         yield return new WaitForSeconds(5f);
         ToggleCanvas(tutorialCanvas);
 
@@ -82,7 +83,7 @@ public class DoorKnock : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         cabinDoor.canEnter = true;
-        GameObject.Destroy(door);
+        door.GetComponent<SpriteRenderer>().enabled = false;
         StopCoroutine(OpenDoor());
     }
 }

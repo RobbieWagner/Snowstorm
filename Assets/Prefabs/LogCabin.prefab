@@ -180,6 +180,7 @@ MonoBehaviour:
   enterRoomT: {fileID: 5150130723595825136}
   exitRoomT: {fileID: 693161504719316245}
   roomWarms: 0
+  doorKnock: {fileID: 8812992274298905875}
 --- !u!65 &183519569681672232
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -290,6 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canEnter: 0
+  interactableTutorial: {fileID: 0}
   knockingSound: {fileID: 5202373596139189266}
   door: {fileID: 4853362388889384577}
   cabinDoor: {fileID: 4397404325187404134}

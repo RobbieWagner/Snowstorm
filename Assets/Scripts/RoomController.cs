@@ -29,6 +29,9 @@ public class RoomController : MonoBehaviour
 
     private DetectWarmth playerDW;
 
+    [SerializeField]
+    private DoorKnock doorKnock;
+
     void Start()
     {
         canEnter = true;
@@ -72,10 +75,11 @@ public class RoomController : MonoBehaviour
         cabinInterior.SetActive(true);
         isRoomOn = true;
         playerMovement.MoveCharacter(enterRoomT.position);
-        Debug.Log(playerT.position.ToString());
 
         playerDW.replenishing = true;
         playerDW.depleting = false;
+
+        StartCoroutine(doorKnock.TimeTutorialDisplay(doorKnock.interactableTutorial));
     }
 
     void ExitRoom()
@@ -83,7 +87,6 @@ public class RoomController : MonoBehaviour
         cabinInterior.SetActive(false);
         isRoomOn = false;
         playerMovement.MoveCharacter(exitRoomT.position);
-        Debug.Log(playerT.position.ToString());
 
         playerDW.replenishing = false;
         playerDW.depleting = true;
@@ -95,7 +98,6 @@ public class RoomController : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         isUsingDoor = false;
 
-        Debug.Log(playerT.position.ToString());
         StopCoroutine(CoolDownDoorUsage());
     }
 }
