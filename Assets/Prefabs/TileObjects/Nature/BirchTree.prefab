@@ -46,7 +46,7 @@ CapsuleCollider:
   m_Radius: 0.75
   m_Height: 300
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 100, z: 0}
 --- !u!212 &5808186715493893582
 SpriteRenderer:
   m_ObjectHideFlags: 0
