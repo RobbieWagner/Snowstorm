@@ -710,9 +710,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4924343147151193198, guid: 522e500f681beb2408ce666916e7cd5a, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 4924343147151193199, guid: 522e500f681beb2408ce666916e7cd5a, type: 3}
       propertyPath: m_Name
       value: Fireplace
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924343148485885894, guid: 522e500f681beb2408ce666916e7cd5a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924343148485885894, guid: 522e500f681beb2408ce666916e7cd5a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4924343148485885894, guid: 522e500f681beb2408ce666916e7cd5a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 522e500f681beb2408ce666916e7cd5a, type: 3}
