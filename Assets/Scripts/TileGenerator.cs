@@ -20,9 +20,13 @@ public class TileGenerator : MonoBehaviour
 
     private int megaTileSpawnChance;
 
+    private Player player;
+
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player").GetComponent<Player>();
+
         surroundingTilesGenerated = false;
 
         random = GameObject.Find("Random").GetComponent<RND>();
@@ -89,12 +93,14 @@ public class TileGenerator : MonoBehaviour
                 tileToUse = levelsTiles.size2TileSpawns[rnd.Next(levelsTiles.size2TileSpawns.Count)];
                 Instantiate(levelsTiles.size2TileOptions[tileToUse], tileT.position + direction, Quaternion.identity);
                 megaTileSpawned = true;
+                player.tilesGenerated++;
             }
             else if(!tilesGenerated[i])
             {
                 direction = TileDirection(i);
                 tileToUse = levelsTiles.tileSpawns[rnd.Next(levelsTiles.tileSpawns.Count)];
                 Instantiate(levelsTiles.tileOptions[tileToUse], tileT.position + direction, Quaternion.identity);
+                player.tilesGenerated++;
             }
         }
         surroundingTilesGenerated = true;
