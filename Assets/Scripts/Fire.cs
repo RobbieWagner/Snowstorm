@@ -25,6 +25,7 @@ public class Fire : MonoBehaviour
     bool fireLit;
 
     Player player;
+    GameMatchsticks matchsticks;
 
     void Start()
     {
@@ -36,6 +37,7 @@ public class Fire : MonoBehaviour
 
         playerMovement = GameObject.Find("Player").GetComponent<Movement>();
         playerWarmthDetection = GameObject.Find("Player").GetComponent<DetectWarmth>();
+        matchsticks = GameObject.Find("GameMatchsticks").GetComponent<GameMatchsticks>();
     }
 
     void OnTriggerEnter(Collider collision)
@@ -66,9 +68,10 @@ public class Fire : MonoBehaviour
 
     void OnGUI()
     {
-        if(Input.GetKeyDown(KeyCode.J) && playerMovement.canMove && canLight && !fireLit)
+        if(Input.GetKeyDown(KeyCode.J) && playerMovement.canMove && canLight && !fireLit && matchsticks.matchsticksCount > 0)
         {
             LightFire();
+            StartCoroutine(matchsticks.ChangeNumberOfMatchsticks(matchsticks.matchsticksCount - 1));
         }
     }
 
