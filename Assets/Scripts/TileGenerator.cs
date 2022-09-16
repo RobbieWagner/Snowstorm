@@ -75,6 +75,7 @@ public class TileGenerator : MonoBehaviour
                 if(Physics.Linecast(centerOfMegaTile, centerOfMegaTile + direction))
                 {
                     tilesBlockingMegaGeneration[i] = true;
+                    Debug.Log("tile " + j + " blocking generation at direction " + i);
                 }
             }
         }

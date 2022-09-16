@@ -12,7 +12,7 @@ public class RoomController : MonoBehaviour
     private bool isRoomOn;
 
     [SerializeField]
-    private GameObject cabinInterior;
+    private GameObject interior;
 
     private Transform playerT;
     private Movement playerMovement;
@@ -40,6 +40,8 @@ public class RoomController : MonoBehaviour
         playerT = GameObject.Find("Player").GetComponent<Transform>();
         playerMovement = playerT.gameObject.GetComponent<Movement>();
         playerDW = playerT.gameObject.GetComponent<DetectWarmth>();
+
+        interior.SetActive(false);
 
         isUsingDoor = false;
     }
@@ -72,20 +74,26 @@ public class RoomController : MonoBehaviour
 
     void EnterRoom()
     {
-        cabinInterior.SetActive(true);
+        interior.SetActive(true);
         isRoomOn = true;
         playerMovement.MoveCharacter(enterRoomT.position);
 
-        playerDW.replenishing = true;
-        playerDW.depleting = false;
+        if(roomWarms)
+        {
+            playerDW.replenishing = true;
+            playerDW.depleting = false;
+        }
 
-        if(doorKnock.interactableTutorial != null)
-        StartCoroutine(doorKnock.TimeTutorialDisplay(doorKnock.interactableTutorial));
+        if(doorKnock != null)
+        {
+            if(doorKnock.interactableTutorial != null)
+            StartCoroutine(doorKnock.TimeTutorialDisplay(doorKnock.interactableTutorial));
+        }
     }
 
     void ExitRoom()
     {
-        cabinInterior.SetActive(false);
+        interior.SetActive(false);
         isRoomOn = false;
         playerMovement.MoveCharacter(exitRoomT.position);
 
