@@ -2225,6 +2225,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3344321181858371326, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3344321181858371326, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
       propertyPath: m_MaskInteraction
       value: 0
       objectReference: {fileID: 0}
