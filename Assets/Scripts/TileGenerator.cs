@@ -44,7 +44,6 @@ public class TileGenerator : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
-
         if(collision.gameObject.layer == playerLayer)
         {
             if(!surroundingTilesGenerated)
@@ -75,7 +74,6 @@ public class TileGenerator : MonoBehaviour
                 if(Physics.Linecast(centerOfMegaTile, centerOfMegaTile + direction))
                 {
                     tilesBlockingMegaGeneration[i] = true;
-                    Debug.Log("tile " + j + " blocking generation at direction " + i);
                 }
             }
         }
@@ -88,7 +86,8 @@ public class TileGenerator : MonoBehaviour
         bool megaTileSpawned = false;
         for(int i = 0; i < 6; i++)
         {
-            if(!tilesBlockingMegaGeneration[i] && !megaTileSpawned && rnd.Next(1000) < megaTileSpawnChance)
+            int randomNumber = rnd.Next(1000);
+            if(!tilesBlockingMegaGeneration[i] && !megaTileSpawned && randomNumber < megaTileSpawnChance)
             {
                 direction = TileDirection(i) * 2;
                 tileToUse = levelsTiles.size2TileSpawns[rnd.Next(levelsTiles.size2TileSpawns.Count)];

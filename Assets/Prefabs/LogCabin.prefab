@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canEnter: 0
-  cabinInterior: {fileID: 2817697053264782594}
+  interior: {fileID: 2817697053264782594}
   enterRoomT: {fileID: 5150130723595825136}
   exitRoomT: {fileID: 693161504719316245}
   roomWarms: 0

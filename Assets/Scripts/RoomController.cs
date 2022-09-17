@@ -34,6 +34,7 @@ public class RoomController : MonoBehaviour
 
     void Start()
     {
+        if(doorKnock == null)
         canEnter = true;
         isAtDoor = false;
 
