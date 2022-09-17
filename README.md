@@ -7,9 +7,9 @@ As you wander around the freezing lnadscaoe, you will slowly begin to succumb to
 To stay alive, you will have to find sources of wamrth all around you. Can you survive?
 
 To play the game:
-Head to the "releases" section of the main repository page on GitHub (github.com/RobbieWagner/Snowstorm)
-Select the version you would like to play (later versions will have more content than older ones)
-Download the game file (Antivirus software may false-positive detect this file as a virus)
-Unzip the game file in your file explorer
-Open the file marked as "Snowstormv#.#.#"
+Head to the "releases" section of the main repository page on GitHub (github.com/RobbieWagner/Snowstorm).
+Select the version you would like to play (later versions will have more content than older ones).
+Download the game file (Antivirus software may false-positive detect this file as a virus).
+Unzip the game file in your file explorer.
+Open the file marked as "Snowstormv#.#.#".
 Enjoy!
