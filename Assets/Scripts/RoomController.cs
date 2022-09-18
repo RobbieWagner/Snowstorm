@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomController : MonoBehaviour
+public class RoomController : Interactable
 {
     [HideInInspector]
     public bool canEnter;
@@ -32,8 +32,10 @@ public class RoomController : MonoBehaviour
     [SerializeField]
     private DoorKnock doorKnock;
 
-    void Start()
+    protected void Start()
     {
+        base.Start();
+
         if(doorKnock == null)
         canEnter = true;
         isAtDoor = false;
@@ -47,23 +49,27 @@ public class RoomController : MonoBehaviour
         isUsingDoor = false;
     }
 
-    void OnTriggerEnter(Collider collision)
+    protected override void OnTriggerEnter(Collider collision)
     {
+        base.OnTriggerEnter(collision);
+
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player")) 
         {
             isAtDoor = true;
         }
     }
 
-    void OnTriggerExit(Collider collision)
+    protected override void OnTriggerExit(Collider collision)
     {
+        base.OnTriggerExit(collision);
+
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player")) 
         {
             isAtDoor = false;
         }
     }
 
-    void OnGUI()
+    protected override void OnGUI()
     {
         if(isAtDoor && canEnter && Input.GetKeyDown(KeyCode.K) && !isUsingDoor)
         {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fire : MonoBehaviour
+public class Fire : Interactable
 {
     public bool canLight;
     int LIGHT_TIME;
@@ -24,26 +24,33 @@ public class Fire : MonoBehaviour
 
     bool fireLit;
 
-    Player player;
     GameMatchsticks matchsticks;
 
-    void Start()
+    protected void Start()
     {
+        base.Start();
+
+        keyboardKey = GameObject.Find("J");
         fireLit = false;
         canLight = false;
         LIGHT_TIME = 60;
-
-        player = GameObject.Find("Player").GetComponent<Player>();
 
         playerMovement = GameObject.Find("Player").GetComponent<Movement>();
         playerWarmthDetection = GameObject.Find("Player").GetComponent<DetectWarmth>();
         matchsticks = GameObject.Find("GameMatchsticks").GetComponent<GameMatchsticks>();
     }
 
-    void OnTriggerEnter(Collider collision)
+    protected override void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player")) 
         {
+            //display keyhint if fire is not lit
+            if(!fireLit)
+            {
+                keyboardKey = FindObject(player.gameObject, "J");
+                keyboardKey.SetActive(true);
+            }
+
             canLight = true;
             if(!player.hasSeenFireLightingTutorial)
             {
@@ -54,10 +61,13 @@ public class Fire : MonoBehaviour
         else Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
     }
 
-    void OnTriggerExit(Collider collision)
+    protected override void OnTriggerExit(Collider collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player")) 
         {
+            keyboardKey.SetActive(false);
+            keyboardKey = FindObject(player.gameObject, "K");
+            
             canLight = false;
             if(!player.hasSeenWarmthTutorial) StartCoroutine(TimeTutorialDisplay(warmthTutorial));
         }
@@ -66,10 +76,11 @@ public class Fire : MonoBehaviour
         if(fireLightingTutorial.isActiveAndEnabled) ToggleCanvas(fireLightingTutorial);
     }
 
-    void OnGUI()
+    protected override void OnGUI()
     {
         if(Input.GetKeyDown(KeyCode.J) && playerMovement.canMove && canLight && !fireLit && matchsticks.matchsticksCount > 0)
         {
+            keyboardKey.SetActive(false);
             LightFire();
             StartCoroutine(matchsticks.ChangeNumberOfMatchsticks(matchsticks.matchsticksCount - 1));
         }
