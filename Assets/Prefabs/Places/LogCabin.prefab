@@ -180,7 +180,7 @@ MonoBehaviour:
   interior: {fileID: 2817697053264782594}
   enterRoomT: {fileID: 5150130723595825136}
   exitRoomT: {fileID: 693161504719316245}
-  roomWarms: 0
+  roomWarms: 1
   doorKnock: {fileID: 8812992274298905875}
 --- !u!65 &183519569681672232
 BoxCollider:
