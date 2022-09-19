@@ -21,3 +21,6 @@ We want your feedback! If you enjoy the game, want to offer suggestions for futu
 
 ### Credits
 Development Lead: [Robbie Wagner](https://github.com/RobbieWagner)
+Game Developed using Unity Engine
+Music Developed using BandLab
+Sprites Created using Aseprite
