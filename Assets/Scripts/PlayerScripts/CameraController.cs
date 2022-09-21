@@ -1,35 +1,73 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
     [SerializeField]
-    float horizontalOffset;
+    float xzOffset;
     [SerializeField]
-    float verticalOffset;
+    float yOffset;
     [SerializeField]
     float tilt;
 
     [SerializeField]
     private Transform playerT;
 
-    int rotationState;
+    int currentRotationState;
+    RotationState[] rotationStates;
 
     void Start()
     {
-        rotationState = 0;
-        transform.position = new Vector3(playerT.position.x,
-                                         playerT.position.y + verticalOffset, 
-                                         playerT.position.z - horizontalOffset);
-        transform.rotation = Quaternion.Euler(tilt, 0, 0);
+        currentRotationState = 0;
+
+        rotationStates = new RotationState[6];
+        for(int i = 0; i < rotationStates.Length; i++)
+        {
+            rotationStates[i] = new RotationState(new Vector3(xzOffset * (float)Math.Sin(i * 360/rotationStates.Length),
+                                                                yOffset,
+                                                                -xzOffset * (float)Math.Cos(i * 360/rotationStates.Length)),
+                                                    Quaternion.Euler(tilt,
+                                                                        i * 360/rotationStates.Length,
+                                                                        0),
+                                                    playerT,
+                                                    gameObject);
+        }
+
+        rotationStates[currentRotationState].SetRotationState();
     }
 
-    void Update()
+    void OnGUI() 
     {
-        transform.position = new Vector3(playerT.position.x,
-                                         playerT.position.y + verticalOffset, 
-                                         playerT.position.z - horizontalOffset);
-        transform.rotation = Quaternion.Euler(tilt, 0, 0);
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            if(currentRotationState == rotationStates.Length - 1) currentRotationState = 0;
+            else currentRotationState++;
+
+            rotationStates[currentRotationState].SetRotationState();
+        }
+    }
+}
+
+public class RotationState: MonoBehaviour
+{
+    Vector3 CameraPosition;
+    Quaternion Rotation;
+    Transform PlayerT;
+    GameObject CameraGO;
+
+    public RotationState(Vector3 cameraPosition, Quaternion rotation, Transform playerT, GameObject cameraGO)
+    {
+        CameraPosition = cameraPosition;
+        Rotation = rotation;
+        PlayerT = playerT;
+        CameraGO = cameraGO;
+    }
+
+    public void SetRotationState()
+    {
+        CameraGO.transform.position = PlayerT.position + CameraPosition;
+        CameraGO.transform.rotation = Rotation;
     }
 }

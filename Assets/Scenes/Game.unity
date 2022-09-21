@@ -664,11 +664,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &708829247 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 967403433018646216, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
-  m_PrefabInstance: {fileID: 1974045579}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &722798428
 GameObject:
   m_ObjectHideFlags: 0
@@ -2337,10 +2332,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 6395317043812783100, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
-      propertyPath: playerGraphic
-      value: 
-      objectReference: {fileID: 708829247}
     - target: {fileID: 6891493331939809790, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -2349,17 +2340,17 @@ PrefabInstance:
       propertyPath: coldMeter
       value: 
       objectReference: {fileID: 383923328}
-    - target: {fileID: 7335705189500621134, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
-      propertyPath: depletionRate
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7335705189500621134, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
-      propertyPath: replenishmentRate
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8534359205724213988, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534359206195217365, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
+      propertyPath: yOffset
+      value: 6.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534359206195217365, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
+      propertyPath: xzOffset
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8534359206195217370, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
       propertyPath: m_LocalPosition.y

@@ -616,8 +616,8 @@ MonoBehaviour:
   coldMeter: {fileID: 0}
   depleting: 0
   replenishing: 0
-  depletionRate: 0
-  replenishmentRate: 0
+  depletionRate: 1
+  replenishmentRate: 3
 --- !u!114 &6395317043812783100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,7 +634,7 @@ MonoBehaviour:
   hasSeenFireLightingTutorial: 0
   hasSeenWarmthTutorial: 0
   hasSeenInteractableTutorial: 0
-  playerGraphic: {fileID: 0}
+  playerGraphic: {fileID: 967403433018646216}
   tilesGenerated: 0
 --- !u!1001 &5863365040499311489
 PrefabInstance:
