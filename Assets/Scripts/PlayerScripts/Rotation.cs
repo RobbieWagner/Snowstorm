@@ -6,9 +6,12 @@ public class Rotation : MonoBehaviour
 {
     [SerializeField]
     Transform playerT;
+    private Player player;
 
-    int currentRotationState;
-    Quaternion[] rotationStates;
+    [HideInInspector]
+    public int currentRotationState;
+    [HideInInspector]
+    public Quaternion[] rotationStates;
 
     [SerializeField]
     float rotationSpeed;
@@ -27,25 +30,27 @@ public class Rotation : MonoBehaviour
 
         rotatingPlayer = true;
         StartCoroutine(SetRotationState(rotationSpeed));
+        player = playerT.gameObject.GetComponent<Player>();
     }
 
     void Update() 
     {
-        if(Input.GetKeyDown(KeyCode.R) && !rotatingPlayer)
-        {
-            if(currentRotationState == rotationStates.Length - 1) currentRotationState = 0;
-            else currentRotationState++;
+        if(!player.playerIsInside && !rotatingPlayer)
+            if(Input.GetKeyDown(KeyCode.R))
+            {
+                if(currentRotationState == rotationStates.Length - 1) currentRotationState = 0;
+                else currentRotationState++;
 
-            StartCoroutine(SetRotationState(rotationSpeed));
-        }
+                StartCoroutine(SetRotationState(rotationSpeed));
+            }
 
-        else if(Input.GetKeyDown(KeyCode.E) && !rotatingPlayer)
-        {
-            if(currentRotationState == 0) currentRotationState = rotationStates.Length - 1;
-            else currentRotationState--;
+            else if(Input.GetKeyDown(KeyCode.E))
+            {
+                if(currentRotationState == 0) currentRotationState = rotationStates.Length - 1;
+                else currentRotationState--;
 
-            StartCoroutine(SetRotationState(rotationSpeed));
-        }
+                StartCoroutine(SetRotationState(rotationSpeed));
+            }
     }
 
     public IEnumerator SetRotationState(float rotationSpeed)

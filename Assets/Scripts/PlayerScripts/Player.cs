@@ -20,6 +20,9 @@ public class Player : MonoBehaviour
 
     public int tilesGenerated;
 
+    [HideInInspector]
+    public bool playerIsInside;
+
     void Start()
     {
         tilesGenerated = 0;
@@ -29,5 +32,7 @@ public class Player : MonoBehaviour
         hasSeenWarmthTutorial = false;
 
         hasSeenInteractableTutorial = false;
+
+        playerIsInside = false;
     }
 }

@@ -40,12 +40,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4039448976420601712}
   - component: {fileID: 4039448976420600975}
-  - component: {fileID: 4039448976420601713}
   - component: {fileID: 6956513097283444320}
   - component: {fileID: 5529095015093447908}
   - component: {fileID: 4397404325187404134}
   - component: {fileID: 183519569681672232}
   - component: {fileID: 6806526974673630570}
+  - component: {fileID: 1304282690578045245}
   m_Layer: 0
   m_Name: LogCabin
   m_TagString: Untagged
@@ -123,18 +123,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!114 &4039448976420601713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4039448976420600974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5f7a72e0562ca54dbd6d6df284e370d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &6956513097283444320
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -208,6 +196,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7, y: 15.899506, z: 0.90817213}
   m_Center: {x: 0, y: -45.806652, z: -6.2553654}
+--- !u!114 &1304282690578045245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4039448976420600974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4853362388889384577
 GameObject:
   m_ObjectHideFlags: 0

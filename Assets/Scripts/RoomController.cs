@@ -15,7 +15,9 @@ public class RoomController : Interactable
     private GameObject interior;
 
     private Transform playerT;
-    private Movement playerMovement;
+    private Movement playerM;
+    private Rotation playerR;
+    private Player player;
 
     [SerializeField]
     private Transform enterRoomT;
@@ -41,8 +43,10 @@ public class RoomController : Interactable
         isAtDoor = false;
 
         playerT = GameObject.Find("Player").GetComponent<Transform>();
-        playerMovement = playerT.gameObject.GetComponent<Movement>();
+        playerM = playerT.gameObject.GetComponent<Movement>();
         playerDW = playerT.gameObject.GetComponent<DetectWarmth>();
+        playerR = playerT.gameObject.GetComponent<Rotation>();
+        player = playerT.gameObject.GetComponent<Player>();
 
         interior.SetActive(false);
 
@@ -83,7 +87,10 @@ public class RoomController : Interactable
     {
         interior.SetActive(true);
         isRoomOn = true;
-        playerMovement.MoveCharacter(enterRoomT.position);
+        playerM.MoveCharacter(enterRoomT.position);
+
+        playerR.currentRotationState = 0;
+        playerT.rotation = playerR.rotationStates[0];
 
         if(roomWarms)
         {
@@ -96,16 +103,20 @@ public class RoomController : Interactable
             if(doorKnock.interactableTutorial != null)
             StartCoroutine(doorKnock.TimeTutorialDisplay(doorKnock.interactableTutorial));
         }
+
+        player.playerIsInside = true;
     }
 
     void ExitRoom()
     {
         interior.SetActive(false);
         isRoomOn = false;
-        playerMovement.MoveCharacter(exitRoomT.position);
+        playerM.MoveCharacter(exitRoomT.position);
 
         playerDW.replenishing = false;
         playerDW.depleting = true;
+
+        player.playerIsInside = false;
     }
 
     IEnumerator CoolDownDoorUsage()

@@ -55,6 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4333183644170260719}
   - component: {fileID: 1672048423709997564}
+  - component: {fileID: 6207160853485578453}
   m_Layer: 0
   m_Name: LogCabin (2)
   m_TagString: Untagged
@@ -127,6 +128,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6207160853485578453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797089041226223041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1720413555440840032
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,6 +151,7 @@ GameObject:
   - component: {fileID: 8674958304004987411}
   - component: {fileID: 1316497723690540097}
   - component: {fileID: 1633808288180782031}
+  - component: {fileID: 8719075596629048854}
   m_Layer: 0
   m_Name: ConcreteWall2 (7)
   m_TagString: Untagged
@@ -223,6 +237,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.0625, y: 2, z: 1.5185566}
   m_Center: {x: 0, y: 1, z: 0.43279362}
+--- !u!114 &8719075596629048854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720413555440840032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1730223835956463132
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,6 +297,7 @@ GameObject:
   - component: {fileID: 1279775426125547039}
   - component: {fileID: 771266131084666805}
   - component: {fileID: 3285254011059592254}
+  - component: {fileID: 6687574276279183225}
   m_Layer: 0
   m_Name: ConcreteWall2 (1)
   m_TagString: Untagged
@@ -356,6 +383,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.0625, y: 2, z: 0.8509865}
   m_Center: {x: 0, y: 1, z: 0.09900856}
+--- !u!114 &6687574276279183225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2873723687686345565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3128628478187108344
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,6 +406,7 @@ GameObject:
   - component: {fileID: 9190574663953494598}
   - component: {fileID: 7991276715055287286}
   - component: {fileID: 1828796194735697579}
+  - component: {fileID: 5231738222384480931}
   m_Layer: 0
   m_Name: ConcreteWall2 (5)
   m_TagString: Untagged
@@ -452,6 +492,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.0625, y: 2, z: 1.5195599}
   m_Center: {x: 0, y: 1, z: 0.43329525}
+--- !u!114 &5231738222384480931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3128628478187108344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3231497138458610410
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,6 +515,7 @@ GameObject:
   - component: {fileID: 2367060673664653449}
   - component: {fileID: 5524200640680795619}
   - component: {fileID: 3438993148197694866}
+  - component: {fileID: 5982714953278928428}
   m_Layer: 0
   m_Name: ConcreteWall (1)
   m_TagString: Untagged
@@ -548,6 +601,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.1133075, y: 2, z: 0.8509865}
   m_Center: {x: -1.99566, y: 1, z: 0.099038735}
+--- !u!114 &5982714953278928428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3231497138458610410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3518278880656908856
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,6 +624,7 @@ GameObject:
   - component: {fileID: 8633928484598179081}
   - component: {fileID: 7800485811114844198}
   - component: {fileID: 6732897874548859723}
+  - component: {fileID: 3801431029507772566}
   m_Layer: 0
   m_Name: ConcreteWall2 (6)
   m_TagString: Untagged
@@ -644,6 +710,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.0625, y: 2, z: 1.4855022}
   m_Center: {x: 0, y: 1, z: 0.41626644}
+--- !u!114 &3801431029507772566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3518278880656908856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4150770932211844129
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,6 +733,7 @@ GameObject:
   - component: {fileID: 1188149930684708765}
   - component: {fileID: 6920519472327529815}
   - component: {fileID: 4874062066880182758}
+  - component: {fileID: 6896819822166772250}
   m_Layer: 0
   m_Name: ConcreteWall2 (2)
   m_TagString: Untagged
@@ -740,6 +819,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.0625, y: 2, z: 0.8509865}
   m_Center: {x: 0, y: 1, z: 0.09900856}
+--- !u!114 &6896819822166772250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4150770932211844129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4241981138898197041
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,6 +842,7 @@ GameObject:
   - component: {fileID: 1051588913212959930}
   - component: {fileID: 6388333294142092879}
   - component: {fileID: 7120194346077446308}
+  - component: {fileID: 3657740480002561686}
   m_Layer: 0
   m_Name: ConcreteWall2 (9)
   m_TagString: Untagged
@@ -836,6 +928,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.0625, y: 2, z: 0.8509865}
   m_Center: {x: 0, y: 1, z: 0.09900856}
+--- !u!114 &3657740480002561686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4241981138898197041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4409069727062123291
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,6 +951,7 @@ GameObject:
   - component: {fileID: 6652320379649755260}
   - component: {fileID: 7384950001273859641}
   - component: {fileID: 7206058577496604732}
+  - component: {fileID: 7488788088261614763}
   m_Layer: 0
   m_Name: ConcreteWall2 (4)
   m_TagString: Untagged
@@ -932,6 +1037,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.0625, y: 2, z: 0.8509865}
   m_Center: {x: 0, y: 1, z: 0.09900856}
+--- !u!114 &7488788088261614763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4409069727062123291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4992754947569602557
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,6 +1059,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7115837361860847586}
   - component: {fileID: 101700638729885558}
+  - component: {fileID: 2870601908146168778}
   m_Layer: 0
   m_Name: LogCabin
   m_TagString: Untagged
@@ -1014,6 +1132,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2870601908146168778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4992754947569602557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6035321644013122983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,6 +1155,7 @@ GameObject:
   - component: {fileID: 4492628446186531144}
   - component: {fileID: 2041836852532045468}
   - component: {fileID: 5506171580776261013}
+  - component: {fileID: 2721566440148497818}
   m_Layer: 0
   m_Name: ConcreteWallOpening
   m_TagString: Untagged
@@ -1110,6 +1241,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.0625, y: 2, z: 0.8509865}
   m_Center: {x: 0, y: 1, z: 0.09900856}
+--- !u!114 &2721566440148497818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6035321644013122983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6535777651693644583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1121,6 +1264,7 @@ GameObject:
   - component: {fileID: 5289106951066258136}
   - component: {fileID: 1294335945941415893}
   - component: {fileID: 726512107358911369}
+  - component: {fileID: 8700661146889193398}
   m_Layer: 0
   m_Name: ConcreteWall2 (3)
   m_TagString: Untagged
@@ -1206,6 +1350,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.0625, y: 2, z: 0.8509865}
   m_Center: {x: 0, y: 1, z: 0.09900856}
+--- !u!114 &8700661146889193398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6535777651693644583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6642291742346280508
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,6 +1373,7 @@ GameObject:
   - component: {fileID: 3587800350364276106}
   - component: {fileID: 6815995518108997135}
   - component: {fileID: 7991674739109462903}
+  - component: {fileID: 399833285778276230}
   m_Layer: 0
   m_Name: ConcreteWall2 (8)
   m_TagString: Untagged
@@ -1302,6 +1459,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.0625, y: 2, z: 1.5343609}
   m_Center: {x: 0, y: 1, z: 0.44069576}
+--- !u!114 &399833285778276230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6642291742346280508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7029341043659614772
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,6 +1481,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7613460053144408684}
   - component: {fileID: 3240536089892303}
+  - component: {fileID: 1510345821500948773}
   m_Layer: 0
   m_Name: LogCabin (1)
   m_TagString: Untagged
@@ -1384,6 +1554,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1510345821500948773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7029341043659614772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7561565648107188955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,6 +1577,7 @@ GameObject:
   - component: {fileID: 7218333394004599695}
   - component: {fileID: 4674050633155995475}
   - component: {fileID: 8187768225808651074}
+  - component: {fileID: 5466847862019567841}
   m_Layer: 0
   m_Name: ConcreteWall2 (11)
   m_TagString: Untagged
@@ -1480,6 +1663,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.0625, y: 2, z: 0.8509865}
   m_Center: {x: 0, y: 1, z: 0.09900856}
+--- !u!114 &5466847862019567841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7561565648107188955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7711444718281735938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,6 +1686,7 @@ GameObject:
   - component: {fileID: 3317080630272500321}
   - component: {fileID: 7972108167167230186}
   - component: {fileID: 3361606900433517829}
+  - component: {fileID: 931069130328339362}
   m_Layer: 0
   m_Name: ConcreteWall2
   m_TagString: Untagged
@@ -1576,6 +1772,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.1935754, y: 2, z: 1.0641968}
   m_Center: {x: 2.0121849, y: 1, z: -0.0076142712}
+--- !u!114 &931069130328339362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7711444718281735938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8074216962341056463
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,6 +1828,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5267461455412710799}
   - component: {fileID: 2463165681108472685}
+  - component: {fileID: 454332737743264280}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -1692,6 +1901,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &454332737743264280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8077484956075908399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8500947857789480613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,6 +1923,7 @@ GameObject:
   m_Component:
   - component: {fileID: 801025794234067929}
   - component: {fileID: 7791699865136992745}
+  - component: {fileID: 9071483702174454445}
   m_Layer: 0
   m_Name: LogCabin (3)
   m_TagString: Untagged
@@ -1774,6 +1996,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &9071483702174454445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8500947857789480613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9010452843553371599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,6 +2019,7 @@ GameObject:
   - component: {fileID: 6657326611059525407}
   - component: {fileID: 8000205650841914485}
   - component: {fileID: 6888598023363814532}
+  - component: {fileID: 2415783462197100859}
   m_Layer: 0
   m_Name: ConcreteWall2 (10)
   m_TagString: Untagged
@@ -1870,6 +2105,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.0625, y: 2, z: 0.8509865}
   m_Center: {x: 0, y: 1, z: 0.09900856}
+--- !u!114 &2415783462197100859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9010452843553371599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1112478335538977349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1927,11 +2174,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
+--- !u!1 &5958093694266168536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6764186201703616157, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
+  m_PrefabInstance: {fileID: 1112478335538977349}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8247342620389871170 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9008363965437793287, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
   m_PrefabInstance: {fileID: 1112478335538977349}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6535610530788620079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5958093694266168536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2601353318904273188
 PrefabInstance:
   m_ObjectHideFlags: 0
