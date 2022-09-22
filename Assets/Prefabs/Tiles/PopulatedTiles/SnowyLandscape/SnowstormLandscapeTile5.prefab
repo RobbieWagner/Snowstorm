@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2754cfb6d277a9e44ba3d3379551dadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnChances: 100
+  spawnChances: 1
 --- !u!1001 &2102835741944835204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -246,20 +246,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 839094179251184857}
     m_Modifications:
     - target: {fileID: 183519569681672232, guid: 63877940af02c764ca745858704ce6cc, type: 3}
+      propertyPath: m_Size.y
+      value: 18.223364
+      objectReference: {fileID: 0}
+    - target: {fileID: 183519569681672232, guid: 63877940af02c764ca745858704ce6cc, type: 3}
       propertyPath: m_Size.z
-      value: 3.0299525
+      value: 4.9089503
+      objectReference: {fileID: 0}
+    - target: {fileID: 183519569681672232, guid: 63877940af02c764ca745858704ce6cc, type: 3}
+      propertyPath: m_Center.y
+      value: -1.0024261
       objectReference: {fileID: 0}
     - target: {fileID: 183519569681672232, guid: 63877940af02c764ca745858704ce6cc, type: 3}
       propertyPath: m_Center.z
-      value: 0.23524444
+      value: 1.1747427
       objectReference: {fileID: 0}
     - target: {fileID: 581002022472780691, guid: 63877940af02c764ca745858704ce6cc, type: 3}
       propertyPath: m_Size.z
-      value: 2.3051722
+      value: 4.3276477
       objectReference: {fileID: 0}
     - target: {fileID: 581002022472780691, guid: 63877940af02c764ca745858704ce6cc, type: 3}
       propertyPath: m_Center.z
-      value: 0.13506135
+      value: 1.1462984
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817697053264782594, guid: 63877940af02c764ca745858704ce6cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4039448976420600974, guid: 63877940af02c764ca745858704ce6cc, type: 3}
       propertyPath: m_Name
@@ -319,7 +331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6956513097283444320, guid: 63877940af02c764ca745858704ce6cc, type: 3}
       propertyPath: m_Size.z
-      value: 29.87403
+      value: 30.777668
       objectReference: {fileID: 0}
     - target: {fileID: 6956513097283444320, guid: 63877940af02c764ca745858704ce6cc, type: 3}
       propertyPath: m_Center.y
@@ -327,7 +339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6956513097283444320, guid: 63877940af02c764ca745858704ce6cc, type: 3}
       propertyPath: m_Center.z
-      value: -14.83369
+      value: -14.381873
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63877940af02c764ca745858704ce6cc, type: 3}
