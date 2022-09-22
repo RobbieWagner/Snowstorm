@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6613849498822067655}
   - component: {fileID: 6613849498822067652}
   - component: {fileID: 6613849498822067654}
+  - component: {fileID: -1425616121937951972}
   m_Layer: 0
   m_Name: SnowyBush
   m_TagString: Untagged
@@ -96,3 +97,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.881584, y: 4.1719694, z: 0.2}
   m_Center: {x: -0.08785312, y: 2.0859847, z: 0}
+--- !u!114 &-1425616121937951972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6613849498822067653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f7a72e0562ca54dbd6d6df284e370d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

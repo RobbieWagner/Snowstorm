@@ -363,8 +363,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8534359206195217366}
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 10, z: -10}
+  m_LocalRotation: {x: 0.13700959, y: 0.000000030506012, z: -0.000000004208159, w: 0.9905698}
+  m_LocalPosition: {x: 0, y: 6, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8534359206972666262}
@@ -433,10 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa9ce8e3aea2d9a46b828ded50e8699d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalOffset: 10
-  verticalOffset: 6.4
-  tilt: 30
-  playerT: {fileID: 8534359206972666262}
+  tilt: 15.75
 --- !u!114 &1479162050604236088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,6 +508,7 @@ GameObject:
   - component: {fileID: 8534359206972666261}
   - component: {fileID: 7335705189500621134}
   - component: {fileID: 6395317043812783100}
+  - component: {fileID: 576953277147204961}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -636,6 +634,20 @@ MonoBehaviour:
   hasSeenInteractableTutorial: 0
   playerGraphic: {fileID: 967403433018646216}
   tilesGenerated: 0
+--- !u!114 &576953277147204961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8534359206972666257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ab00cdad8fa59541b30ce8ca6dceda5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerT: {fileID: 0}
+  rotationSpeed: 0
 --- !u!1001 &5863365040499311489
 PrefabInstance:
   m_ObjectHideFlags: 0

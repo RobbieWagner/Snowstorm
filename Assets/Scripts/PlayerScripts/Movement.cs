@@ -79,10 +79,10 @@ public class Movement : MonoBehaviour
 
         if(canMove)
         {
-            float horizontal = Input.GetAxisRaw("Horizontal");
-            float vertical = Input.GetAxisRaw("Vertical");
+            float horizontal = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
 
-            Vector3 move = transform.right * horizontal + transform.forward * vertical;
+            Vector3 move = transform.right * horizontal + transform.forward * z;
             if(move != Vector3.zero) isMoving = true;
             else isMoving = false; 
 
