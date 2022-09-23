@@ -16,31 +16,31 @@ public class StaticSpriteLayering : MonoBehaviour
 
     void Start()
     {
-        // cameraT = Camera.allCameras[0].transform;
-        // playerT = GameObject.Find("Player").transform;
+        cameraT = Camera.allCameras[0].transform;
+        playerT = GameObject.Find("Player").transform;
 
-        // goSR = gameObject.GetComponent<SpriteRenderer>();
+        goSR = gameObject.GetComponent<SpriteRenderer>();
 
-        // playerCameraDistance = Vector3.Distance(cameraT.position, playerT.position);
+        playerCameraDistance = Vector3.Distance(cameraT.position, playerT.position);
 
-        // isLayerAbovePlayer = false;
+        isLayerAbovePlayer = false;
     }
 
     void FixedUpdate()
     {
-        // Place sprite on higher layer if in front of player, lower otherwise
-        // ISSUE: Calculates every frame. Might become expensive when there are a lot of objects.
-        // isObjectBeforePlayer = Vector3.Distance(cameraT.position, transform.position) < playerCameraDistance;
+        //Place sprite on higher layer if in front of player, lower otherwise
+        //ISSUE: Calculates every frame. Might become expensive when there are a lot of objects.
+        //isObjectBeforePlayer = Vector3.Distance(cameraT.position, transform.position) < playerCameraDistance;
 
-        // if(isLayerAbovePlayer && !isObjectBeforePlayer) 
-        // {
-        //     goSR.sortingOrder = -1;
-        //     isLayerAbovePlayer = false;
-        // }
-        // else if(!isLayerAbovePlayer && isObjectBeforePlayer) 
-        // {
-        //     goSR.sortingOrder = 1;
-        //     isLayerAbovePlayer = true;
-        // }
+        if(isLayerAbovePlayer && !isObjectBeforePlayer) 
+        {
+            goSR.sortingOrder = -1;
+            isLayerAbovePlayer = false;
+        }
+        else if(!isLayerAbovePlayer && isObjectBeforePlayer) 
+        {
+            goSR.sortingOrder = 1;
+            isLayerAbovePlayer = true;
+        }
     }
 }
