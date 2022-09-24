@@ -90,7 +90,7 @@ public class RoomController : Interactable
         playerM.MoveCharacter(enterRoomT.position);
 
         playerR.currentRotationState = 0;
-        playerT.rotation = playerR.rotationStates[0];
+        StartCoroutine(playerR.SetRotationState(300f));
 
         if(roomWarms)
         {

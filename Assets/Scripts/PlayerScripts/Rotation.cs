@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Rotation : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class Rotation : MonoBehaviour
     public int currentRotationState;
     [HideInInspector]
     public Quaternion[] rotationStates;
+    [SerializeField]
+    private Sprite[] compassStates;
+    [SerializeField]
+    private Image compassSprite;
 
     [SerializeField]
     float rotationSpeed;
@@ -59,6 +64,7 @@ public class Rotation : MonoBehaviour
 
         while(playerT.eulerAngles.y != rotationStates[currentRotationState].eulerAngles.y)
         {
+            compassSprite.sprite = compassStates[currentRotationState];
             float angle = Mathf.MoveTowardsAngle(transform.eulerAngles.y, rotationStates[currentRotationState].eulerAngles.y, rotationSpeed * Time.deltaTime);
             transform.eulerAngles = new Vector3(0, angle, 0);
             yield return null;

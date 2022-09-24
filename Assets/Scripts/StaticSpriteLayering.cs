@@ -32,15 +32,15 @@ public class StaticSpriteLayering : MonoBehaviour
         //ISSUE: Calculates every frame. Might become expensive when there are a lot of objects.
         //isObjectBeforePlayer = Vector3.Distance(cameraT.position, transform.position) < playerCameraDistance;
 
-        if(isLayerAbovePlayer && !isObjectBeforePlayer) 
-        {
-            goSR.sortingOrder = -1;
-            isLayerAbovePlayer = false;
-        }
-        else if(!isLayerAbovePlayer && isObjectBeforePlayer) 
-        {
-            goSR.sortingOrder = 1;
-            isLayerAbovePlayer = true;
-        }
+        // if(isLayerAbovePlayer && !isObjectBeforePlayer) 
+        // {
+        //     goSR.sortingOrder = -1;
+        //     isLayerAbovePlayer = false;
+        // }
+        // else if(!isLayerAbovePlayer && isObjectBeforePlayer) 
+        // {
+        //     goSR.sortingOrder = 1;
+        //     isLayerAbovePlayer = true;
+        // }
     }
 }

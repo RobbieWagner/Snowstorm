@@ -23,7 +23,6 @@ public class PlayGameMusic : MonoBehaviour
 
     private IEnumerator PlaySong()
     {
-        Debug.Log("Song Playing ");
         song.Stop();
         song.Play();
         song.volume = 0;

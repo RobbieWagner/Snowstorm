@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4912165924429698628}
   - component: {fileID: 4328557565151437303}
   - component: {fileID: 8910405246541496060}
+  - component: {fileID: 3674959942999731886}
   m_Layer: 0
   m_Name: Gravestone
   m_TagString: Untagged
@@ -97,6 +98,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.2716488, z: 1.0291588}
   m_Center: {x: 0, y: 1.3641763, z: 0.22811592}
+--- !u!114 &3674959942999731886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2446336585516759596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2619264945537778972
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,6 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1872890678744829041}
   - component: {fileID: 4166403978205376700}
+  - component: {fileID: 4023495473087617325}
   m_Layer: 0
   m_Name: Snow
   m_TagString: Untagged
@@ -167,7 +181,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: ce71e0d1f035932489f3d4719083ed13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -179,3 +193,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!114 &4023495473087617325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619264945537778972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d8818fb398a44488810103ee60727a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
