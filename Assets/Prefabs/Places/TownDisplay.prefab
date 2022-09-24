@@ -1687,6 +1687,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6138363483981814774}
     m_Modifications:
+    - target: {fileID: 4288856004899742131, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6764186201703616157, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
       propertyPath: m_Name
       value: ConcreteWall (9)
@@ -1902,6 +1906,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6138363483981814774}
     m_Modifications:
+    - target: {fileID: 4288856004899742131, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6764186201703616157, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
       propertyPath: m_Name
       value: ConcreteWall
@@ -2525,6 +2533,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6138363483981814774}
     m_Modifications:
+    - target: {fileID: 4288856004899742131, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6764186201703616157, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
       propertyPath: m_Name
       value: ConcreteWall (6)
@@ -2607,6 +2619,10 @@ PrefabInstance:
     - target: {fileID: 6764186201703616157, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
       propertyPath: m_Name
       value: ConcreteWall (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410811242077801294, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9008363965437793287, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
       propertyPath: m_RootOrder
@@ -2757,6 +2773,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6138363483981814774}
     m_Modifications:
+    - target: {fileID: 4288856004899742131, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6764186201703616157, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
       propertyPath: m_Name
       value: ConcreteWall (10)
@@ -3257,6 +3277,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConcreteWall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7410811242077801294, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9008363965437793287, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -3545,6 +3569,10 @@ PrefabInstance:
     - target: {fileID: 6764186201703616157, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
       propertyPath: m_Name
       value: ConcreteWall (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410811242077801294, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9008363965437793287, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
       propertyPath: m_RootOrder
@@ -4306,6 +4334,10 @@ PrefabInstance:
     - target: {fileID: 6764186201703616157, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
       propertyPath: m_Name
       value: ConcreteWall (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7410811242077801294, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9008363965437793287, guid: d909f4becc7a7dc4aa05429408b5332c, type: 3}
       propertyPath: m_RootOrder
