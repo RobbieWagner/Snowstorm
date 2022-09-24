@@ -41,7 +41,7 @@ public class Rotation : MonoBehaviour
     void Update() 
     {
         if(!player.playerIsInside && !rotatingPlayer)
-            if(Input.GetKeyDown(KeyCode.R))
+            if(Input.GetKeyDown(KeyCode.E))
             {
                 if(currentRotationState == rotationStates.Length - 1) currentRotationState = 0;
                 else currentRotationState++;
@@ -49,7 +49,7 @@ public class Rotation : MonoBehaviour
                 StartCoroutine(SetRotationState(rotationSpeed));
             }
 
-            else if(Input.GetKeyDown(KeyCode.E))
+            else if(Input.GetKeyDown(KeyCode.Q))
             {
                 if(currentRotationState == 0) currentRotationState = rotationStates.Length - 1;
                 else currentRotationState--;
