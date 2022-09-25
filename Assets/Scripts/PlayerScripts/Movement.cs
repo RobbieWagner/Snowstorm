@@ -26,9 +26,6 @@ public class Movement : MonoBehaviour
     bool isMoving;
 
     bool playingWalkingSound;
-
-    [SerializeField]
-    private AudioSource movementSounds;
     
     [SerializeField]
     private Volume staminaExhaustionFilter;
@@ -53,6 +50,10 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private Animator playerAnimator;
 
+    public AudioSource[] footstepSounds;
+    [HideInInspector]
+    public AudioSource currentFootstepsSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +66,8 @@ public class Movement : MonoBehaviour
         playingWalkingSound = false;
 
         rnd = random.rnd;
+
+        currentFootstepsSound = footstepSounds[0];
     }
 
     // Update is called once per frame
@@ -121,10 +124,10 @@ public class Movement : MonoBehaviour
             running = false;
         }
 
-        if((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)) && !playingWalkingSound && isMoving) 
-        {
-            StartCoroutine(PlayMovementSounds());
-        }
+        if((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) 
+            || Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)) 
+            && isMoving) 
+            PlayMovementSounds();
 
         if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) playerAnimator.SetBool("WalkingBack", true);
         if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) playerAnimator.SetBool("WalkingLeft", true);
@@ -181,16 +184,9 @@ public class Movement : MonoBehaviour
         StopCoroutine(ReplenishStamina());
     }
 
-    public IEnumerator PlayMovementSounds()
+    public void PlayMovementSounds()
     {
-        playingWalkingSound = true;
-        movementSounds.Play();
-        if(!running) yield return new WaitForSeconds(.7f);
-        else
-        { 
-            yield return new WaitForSeconds(.3f);
-        }
-        playingWalkingSound = false;
-        StopCoroutine(PlayMovementSounds());
+        if(!currentFootstepsSound.isPlaying)
+        currentFootstepsSound.Play();
     }
 }

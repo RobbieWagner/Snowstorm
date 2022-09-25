@@ -36,6 +36,9 @@ public class RoomController : Interactable
     [SerializeField]
     private DoorKnock doorKnock;
 
+    [SerializeField]
+    private bool changesFootstepSounds;
+
     protected void Start()
     {
         base.Start();
@@ -87,6 +90,8 @@ public class RoomController : Interactable
 
     void EnterRoom()
     {
+        if(changesFootstepSounds)
+        playerM.currentFootstepsSound = playerM.footstepSounds[1];
         interior.SetActive(true);
         isRoomOn = true;
         playerM.MoveCharacter(enterRoomT.position);
@@ -111,6 +116,8 @@ public class RoomController : Interactable
 
     void ExitRoom()
     {
+        if(changesFootstepSounds)
+        playerM.currentFootstepsSound = playerM.footstepSounds[0];
         interior.SetActive(false);
         isRoomOn = false;
         playerM.MoveCharacter(exitRoomT.position);
