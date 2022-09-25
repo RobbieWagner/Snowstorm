@@ -22,8 +22,10 @@ We want your feedback! If you enjoy the game, want to offer suggestions for futu
 ### Credits
 Development Lead: [Robbie Wagner](https://github.com/RobbieWagner)
 
-Game Developed using Unity Engine
+Game Developed using [Unity Engine](https://unity.com/)
 
-Music Developed using BandLab
+Music Developed using [BandLab](https://www.bandlab.com/?lang=en)
 
-Sprites Created using Aseprite
+Sprites Created using [Aseprite](https://www.aseprite.org/)
+
+Footstep sounds (walking on snow, walking on wood) found on [Soundjay](https://www.soundjay.com/)
