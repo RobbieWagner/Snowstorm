@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class SceneChanger : MonoBehaviour
 {
+    // Used to change scenes 
+
     [SerializeField]
     private string sceneName;
 

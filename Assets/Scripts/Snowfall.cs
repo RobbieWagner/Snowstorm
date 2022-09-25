@@ -7,6 +7,7 @@ using Debug = UnityEngine.Debug;
 
 public class Snowfall : MonoBehaviour
 {
+    // Have snow fall around the player, but only around the player
     [SerializeField]
     private ParticleSystem snowfall;
     private GameObject player;

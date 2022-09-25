@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameMenu : MonoBehaviour
 {
+    // Opens and closes the game menu in game
+
     [SerializeField]
     private Canvas gameMenu;
 

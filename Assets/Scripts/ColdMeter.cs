@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ColdMeter : MonoBehaviour
 {
+    // Class handling the cold meter. Main functionality of the game
 
     [SerializeField]
     private float meterMax;
@@ -56,6 +57,7 @@ public class ColdMeter : MonoBehaviour
         meter.value = currentMeterReading;
     }
 
+    // Lowers the current reading on the meter
     public IEnumerator DepleteMeter()
     {
         if(!depleting && !replenishing)
@@ -80,6 +82,7 @@ public class ColdMeter : MonoBehaviour
         StopCoroutine(DepleteMeter());
     }
 
+    // Raises the reading on the meter
     public IEnumerator ReplenishMeter()
     {
         if(!depleting && !replenishing)

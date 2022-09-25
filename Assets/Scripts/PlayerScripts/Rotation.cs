@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Rotation : MonoBehaviour
 {
+    // Handles the rotation of the player
     [SerializeField]
     Transform playerT;
     private Player player;
@@ -38,6 +39,7 @@ public class Rotation : MonoBehaviour
         player = playerT.gameObject.GetComponent<Player>();
     }
 
+    // Allow rotation for players that are outside and not currently rotating
     void Update() 
     {
         if(!player.playerIsInside && !rotatingPlayer)
@@ -58,6 +60,7 @@ public class Rotation : MonoBehaviour
             }
     }
 
+    // Rotates the player
     public IEnumerator SetRotationState(float rotationSpeed)
     {
         rotatingPlayer = true;

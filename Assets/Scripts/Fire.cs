@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Fire : Interactable
 {
+    // Functionality for lightable fires, inherits interactable
+
     public bool canLight;
     int LIGHT_TIME;
 
@@ -40,6 +42,7 @@ public class Fire : Interactable
         matchsticks = GameObject.Find("GameMatchsticks").GetComponent<GameMatchsticks>();
     }
 
+    // Allow player to interact with fire only if they are close enough
     protected override void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player")) 
@@ -76,6 +79,7 @@ public class Fire : Interactable
         if(fireLightingTutorial.isActiveAndEnabled) ToggleCanvas(fireLightingTutorial);
     }
 
+    // Press J to light a fire
     protected override void OnGUI()
     {
         if(Input.GetKeyDown(KeyCode.J) && playerMovement.canMove && canLight && !fireLit && matchsticks.matchsticksCount > 0)
@@ -99,6 +103,7 @@ public class Fire : Interactable
         else tutorialCanvas.enabled = false;
     }
 
+    // Times the fire burning. Fire will go out after LIGHT_TIME seconds
     IEnumerator BurnWood()
     {
         yield return new WaitForSeconds(LIGHT_TIME);
@@ -112,6 +117,7 @@ public class Fire : Interactable
         StopCoroutine(BurnWood());
     }
 
+    // Display tutorial for lighting fires
     IEnumerator TimeTutorialDisplay(Canvas tutorialCanvas)
     {
         player.hasSeenWarmthTutorial = true;

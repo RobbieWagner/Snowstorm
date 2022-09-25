@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class RollCredits : MonoBehaviour
 {
+    // Displays game credits from menu. Pulled from another project
 
     [SerializeField]
     private TextMeshProUGUI developerCreditCard;
     [SerializeField]
     private TextMeshProUGUI rollingCredits;
 
-    // Start is called before the first frame update
     void Start()
     {
         developerCreditCard.gameObject.SetActive(true);

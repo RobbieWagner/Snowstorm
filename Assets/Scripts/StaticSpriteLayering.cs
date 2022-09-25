@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StaticSpriteLayering : MonoBehaviour
 {
+    // Handles sprites that don't billboard
     Transform cameraT;
     Transform playerT;
 

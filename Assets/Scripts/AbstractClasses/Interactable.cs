@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Interface to handle interactable objects
 public abstract class Interactable : MonoBehaviour
 {
     protected GameObject keyboardKey;

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class RoomController : Interactable
 {
+    // Functionality for players to go into buildings or other structures outside of game map
+
     [HideInInspector]
     public bool canEnter;
     private bool isAtDoor;

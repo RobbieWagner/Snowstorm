@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DoorKnock : MonoBehaviour
 {
+    // Door handling
+
     [SerializeField]
     private bool canEnter = false;
     private bool isAtDoor;
@@ -32,6 +34,7 @@ public class DoorKnock : MonoBehaviour
         cabinDoor.canEnter = false;
     }
 
+    // Allow the player to knock on closed doors only if they are close enough
     void OnTriggerEnter(Collider collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player")) 
@@ -57,6 +60,7 @@ public class DoorKnock : MonoBehaviour
         }
     }
 
+    // Press K to knock on a door
     void OnGUI()
     {
         if(isAtDoor && Input.GetKeyDown(KeyCode.K))
@@ -75,6 +79,7 @@ public class DoorKnock : MonoBehaviour
         else if (tutorialCanvas != null) tutorialCanvas.enabled = false;
     }
 
+    // Display the door knock tutorial for a short time
     public IEnumerator TimeTutorialDisplay(Canvas tutorialCanvas)
     {
         yield return new WaitForSeconds(5f);
@@ -86,6 +91,7 @@ public class DoorKnock : MonoBehaviour
         StopCoroutine(TimeTutorialDisplay(tutorialCanvas));
     }
 
+    // Open the door after knocking if the door is openable
     IEnumerator OpenDoor()
     {
         yield return new WaitForSeconds(2f);

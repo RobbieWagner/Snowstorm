@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     float tilt;
 
+    //handles the initial camera rotation
     void Start()
     {
         transform.rotation = Quaternion.Euler(tilt, 0, 0);

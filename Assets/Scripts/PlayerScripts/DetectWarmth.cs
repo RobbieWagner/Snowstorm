@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DetectWarmth : MonoBehaviour
 {
+    // Class attached to the player
+    // Looks for sources of warmth
+
     [SerializeField]
     private ColdMeter coldMeter;
 
@@ -40,6 +43,7 @@ public class DetectWarmth : MonoBehaviour
         }
     }
 
+    //When standing near source of warmth, warm player
     void OnTriggerStay(Collider collision)
     {
         if(collision.gameObject.CompareTag("Warmth"))
@@ -49,6 +53,7 @@ public class DetectWarmth : MonoBehaviour
         }
     }
 
+    //When going away from a source of warmth, stop warming player
     void OnTriggerExit(Collider collision)
     {
         if(collision.gameObject.CompareTag("Warmth"))
@@ -58,6 +63,7 @@ public class DetectWarmth : MonoBehaviour
         }
     }
 
+    //Change cold meter values accordingly
     IEnumerator RunDepletion(float rate)
     {
         yield return StartCoroutine(coldMeter.DepleteMeter(rate));

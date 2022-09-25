@@ -6,9 +6,8 @@ using TMPro;
 
 public class GameMatchsticks : MonoBehaviour
 {
-    // have a current number of matchsticks
-    // create a function to change number of matchsticks
-    //have a function to display these changes
+    // Functionality for matchsticks, which limits the usage of fires
+    
     public int matchsticksCount;
     [SerializeField]
     private Image matchsticksIcon;

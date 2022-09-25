@@ -6,7 +6,7 @@ public class RND : MonoBehaviour
 {
     public System.Random rnd;
 
-    // Start is called before the first frame update
+    // Creates a random number generator for any class to use
     void Start()
     {
         rnd = new System.Random();

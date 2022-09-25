@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Warmer : MonoBehaviour
 {
+    //sets the layer of a warm object, and find the detectWarmth component on the player
     public float warmRate;
 
     [SerializeField]

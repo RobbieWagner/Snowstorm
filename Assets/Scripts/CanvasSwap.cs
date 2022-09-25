@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CanvasSwap : MonoBehaviour
 {
+    // Swaps two canvases
     [SerializeField]
     private Canvas thisCanvas;
     [SerializeField]

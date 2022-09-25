@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TileGenerator : MonoBehaviour
 {
+    // Handles tile generation
     [SerializeField]
     private Transform tileT;
 
@@ -56,6 +57,7 @@ public class TileGenerator : MonoBehaviour
 
     void CheckForSurroundingTiles()
     {
+        // Linecasts from tile out to empty space, checking if tiles were already generated
         Vector3 direction;
         for(int i = 0; i < tilesGenerated.Length; i++)
         {
@@ -81,6 +83,7 @@ public class TileGenerator : MonoBehaviour
 
     void GenerateTiles()
     {
+        // generates tiles in empty spots
         Vector3 direction;
         int tileToUse;
         bool megaTileSpawned = false;
@@ -109,6 +112,7 @@ public class TileGenerator : MonoBehaviour
 
     Vector3 TileDirection(int adjacentTile)
     {
+        // returns the direction a linecast will be performed in
         if(adjacentTile == 0) return new Vector3(0f, 0f, 18f);
         else if(adjacentTile == 1) return new Vector3(15.5889f, 0f, 9f);
         else if(adjacentTile == 2) return new Vector3(15.5889f, 0f, -9f); 

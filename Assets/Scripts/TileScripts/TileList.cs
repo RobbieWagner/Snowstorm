@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TileList : MonoBehaviour
 {
+    // Stores the list of possible tiles, and also the chance of a mega tile spawning
     public List<GameObject> tileOptions;
     [HideInInspector]
     public List<int> tileSpawns;

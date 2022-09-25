@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    // Class keeps track of variables called by multiple classes
+    
     [HideInInspector]
     public bool reading;
 

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
-
+    // Class handling the player's movement
     public bool canMove;
 
     public CharacterController characterBody;
@@ -70,6 +70,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Check if the player is on the ground, set vertical velocity accordingly
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
@@ -77,6 +78,7 @@ public class Movement : MonoBehaviour
             velocity.y = -2f;
         }
 
+        // Handles movement input from arrow keys or WASD
         if(canMove)
         {
             float horizontal = Input.GetAxis("Horizontal");
@@ -94,6 +96,7 @@ public class Movement : MonoBehaviour
 
     }
 
+    // Handles running
     void FixedUpdate()
     {
         if(startsRunning && !running)
@@ -105,6 +108,7 @@ public class Movement : MonoBehaviour
         }
     }
 
+    // Handles visual elements of movement
     void OnGUI()
     {
         if(Input.GetKeyDown(KeyCode.Space) && !running && currentStamina > maxStamina/4)
@@ -132,6 +136,7 @@ public class Movement : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow)) playerAnimator.SetBool("WalkingRight", false);
     }
 
+    // Handles "teleporting" the player
     public void MoveCharacter(Vector3 position)
     {
         characterBody.enabled = false;

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayGameMusic : MonoBehaviour
 {
+    // Controls the playing of music in game
+
     [SerializeField]
     private AudioSource song;
 
