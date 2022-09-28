@@ -6,7 +6,7 @@ Deep in the cold landscapes, a single traveller wanders the snowstorm, avoiding 
 
 Welcome to the world of Snowstorm! Snowstorm is a 2.5D exploration game where you play as a lone wanderer trying to find shelter from the cold blizzard. 
 As you wander around the freezing lnadscape, you will slowly begin to succumb to the elements. 
-To stay alive, you will have to find sources of wamrth all around you. Can you survive?
+To stay alive, you will have to find sources of warmth all around you. Can you survive?
 
 ### To play the game
 Head to the "releases" section of the main repository page on GitHub [link here](github.com/RobbieWagner/Snowstorm).
