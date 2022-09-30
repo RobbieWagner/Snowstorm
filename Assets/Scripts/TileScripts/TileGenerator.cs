@@ -63,7 +63,12 @@ public class TileGenerator : MonoBehaviour
         {
             direction = TileDirection(i);
             //Potential issue: layerMask was removed from if statement. May lead to issues further down the road            
-            if(Physics.Linecast(tileT.position, tileT.position + direction))//, groundLayer)) 
+            // if(Physics.Linecast(tileT.position, tileT.position + direction))//, groundLayer))
+            // {
+            //     tilesGenerated[i] = true;
+            // }
+
+            if(Physics.Linecast(tileT.position + direction + new Vector3(0, -1, 0), tileT.position + direction + new Vector3(0, 1, 0)))//, groundLayer))
             {
                 tilesGenerated[i] = true;
             }

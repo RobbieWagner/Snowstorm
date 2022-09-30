@@ -168,6 +168,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TriggerGeneration
       objectReference: {fileID: 0}
+    - target: {fileID: 1416724210113713631, guid: 953fbd89e0785dd438ee9500891d85f0, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4187079215513244930, guid: 953fbd89e0785dd438ee9500891d85f0, type: 3}
       propertyPath: m_RootOrder
       value: 2
