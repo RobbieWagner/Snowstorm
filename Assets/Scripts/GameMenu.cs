@@ -18,11 +18,17 @@ public class GameMenu : MonoBehaviour
     [SerializeField]
     private Movement playerMovement;
 
+    bool wasColdMeterDepleting;
+    bool wasColdMeterReplenishing;
+
     void Start()
     {
         menuOpen = false;
         menuChanging = false;
         gameMenu.enabled = false;
+
+        wasColdMeterDepleting = true;
+        wasColdMeterReplenishing = true;
     }
 
     void OnGUI()
@@ -31,18 +37,17 @@ public class GameMenu : MonoBehaviour
         {
             if(!menuOpen && !menuChanging)
             { 
+                Time.timeScale = 0f;
                 menuChanging = true;
                 gameMenu.enabled = true;
-                coldMeter.depleting = false;
-                coldMeter.replenishing = false;
                 menuOpen = true;
                 playerMovement.canMove = false;
             }
             else if(menuOpen && !menuChanging) 
             {
+                Time.timeScale = 1.0f;
                 menuChanging = true;
                 gameMenu.enabled = false;
-                coldMeter.depleting = true;
                 menuOpen = false;
                 playerMovement.canMove = true;
             }
