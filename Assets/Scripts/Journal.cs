@@ -6,6 +6,12 @@ using TMPro;
 
 public class Journal : MonoBehaviour
 {
+    [SerializeField]
+    private Canvas journalCanvas;
+
+    [SerializeField]
+    private CanvasSwap journalCS;
+
     [HideInInspector]
     public bool hasUnreadEntries;
 
@@ -50,6 +56,15 @@ public class Journal : MonoBehaviour
         if(!journalEntries.journalEntries[0].entryInJournal && player.tilesGenerated > 10){
             journalText.text += "\n" + journalEntries.journalEntries[0].text;
             journalEntries.journalEntries[0].entryInJournal = true;
+            hasUnreadEntries = true;
+        }
+    }
+
+    private void OnGUI() 
+    {
+        if(Input.GetKeyDown(KeyCode.Escape) && journalCanvas.enabled)
+        {
+            journalCS.SwapCanvases();
         }
     }
 }

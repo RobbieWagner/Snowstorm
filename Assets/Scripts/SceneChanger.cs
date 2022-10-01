@@ -52,7 +52,7 @@ public class SceneChanger : MonoBehaviour
 
     public IEnumerator TransitionScene(string scene)
     {
-        
+        Debug.Log("Hello");
         screenCoverCanvas.gameObject.SetActive(true);
 
         while(uiImage.color.a < 1f)

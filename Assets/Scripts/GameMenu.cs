@@ -24,6 +24,8 @@ public class GameMenu : MonoBehaviour
     [SerializeField]
     private Journal gameJournal;
 
+    private bool canLeaveMenu;
+
     void Start()
     {
         menuOpen = false;
@@ -31,6 +33,8 @@ public class GameMenu : MonoBehaviour
         gameMenu.enabled = false;
 
         player = playerMovement.gameObject.GetComponent<Player>();
+
+        canLeaveMenu = true;
     }
 
     void OnGUI()
@@ -45,7 +49,7 @@ public class GameMenu : MonoBehaviour
                 menuOpen = true;
                 playerMovement.canMove = false;
             }
-            else if(menuOpen && !menuChanging) 
+            else if(menuOpen && gameMenu.enabled && !menuChanging && canLeaveMenu) 
             {
                 Time.timeScale = 1.0f;
                 menuChanging = true;
@@ -53,11 +57,16 @@ public class GameMenu : MonoBehaviour
                 menuOpen = false;
                 playerMovement.canMove = true;
             }
+            else
+            {
+                canLeaveMenu = false;
+            }
         }
 
         if(Input.GetKeyUp(KeyCode.Escape))
         {
             menuChanging = false;
+            canLeaveMenu = true;
         }
     }
 
@@ -68,6 +77,13 @@ public class GameMenu : MonoBehaviour
             foreach(GameObject notifIcon in notifIcons)
             {
                 notifIcon.SetActive(true);
+            }
+        }
+        else if(notifIcons[0].activeSelf && !gameJournal.hasUnreadEntries)
+        {
+            foreach(GameObject notifIcon in notifIcons)
+            {
+                notifIcon.SetActive(false);
             }
         }
     }
