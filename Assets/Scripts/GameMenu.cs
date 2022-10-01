@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameMenu : MonoBehaviour
 {
@@ -13,13 +15,14 @@ public class GameMenu : MonoBehaviour
     bool menuChanging;
 
     [SerializeField]
-    private ColdMeter coldMeter;
-
-    [SerializeField]
     private Movement playerMovement;
+    private Player player;
 
-    bool wasColdMeterDepleting;
-    bool wasColdMeterReplenishing;
+    
+    [SerializeField]
+    private GameObject[] notifIcons;
+    [SerializeField]
+    private Journal gameJournal;
 
     void Start()
     {
@@ -27,8 +30,7 @@ public class GameMenu : MonoBehaviour
         menuChanging = false;
         gameMenu.enabled = false;
 
-        wasColdMeterDepleting = true;
-        wasColdMeterReplenishing = true;
+        player = playerMovement.gameObject.GetComponent<Player>();
     }
 
     void OnGUI()
@@ -56,6 +58,17 @@ public class GameMenu : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.Escape))
         {
             menuChanging = false;
+        }
+    }
+
+    void Update()
+    {
+        if(!notifIcons[0].activeSelf && gameJournal.hasUnreadEntries)
+        {
+            foreach(GameObject notifIcon in notifIcons)
+            {
+                notifIcon.SetActive(true);
+            }
         }
     }
 }
