@@ -53,7 +53,7 @@ public class Journal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!journalEntries.journalEntries[0].entryInJournal && player.tilesGenerated > 10){
+        if(!journalEntries.journalEntries[0].entryInJournal && player.tilesGenerated > 7){
             journalText.text += "\n" + journalEntries.journalEntries[0].text;
             journalEntries.journalEntries[0].entryInJournal = true;
             hasUnreadEntries = true;
@@ -65,6 +65,7 @@ public class Journal : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape) && journalCanvas.enabled)
         {
             journalCS.SwapCanvases();
+            hasUnreadEntries = false;
         }
     }
 }
