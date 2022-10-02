@@ -29,3 +29,5 @@ Music Developed using [BandLab](https://www.bandlab.com/?lang=en)
 Sprites Created using [Aseprite](https://www.aseprite.org/)
 
 Footstep sounds (walking on snow, walking on wood), page scribbling sound, and door knock sound found on [Soundjay](https://www.soundjay.com/)
+
+Font "Snowstorm Handwriting" created using [Calligraphr](https://www.calligraphr.com/en/)
