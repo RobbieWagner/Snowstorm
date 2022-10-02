@@ -26,6 +26,9 @@ public class GameMenu : MonoBehaviour
 
     private bool canLeaveMenu;
 
+    [SerializeField]
+    private AudioSource scribblingSound; 
+
     void Start()
     {
         menuOpen = false;
@@ -77,6 +80,7 @@ public class GameMenu : MonoBehaviour
             foreach(GameObject notifIcon in notifIcons)
             {
                 notifIcon.SetActive(true);
+                scribblingSound.Play();
             }
         }
         else if(notifIcons[0].activeSelf && !gameJournal.hasUnreadEntries)
