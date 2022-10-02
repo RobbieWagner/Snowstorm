@@ -113,7 +113,7 @@ public class Journal : MonoBehaviour
         //handle page turning input
         if(entriesInJournal.Count > 0 && journalCanvas.enabled && canFlipPage && !flippingPage && (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)))
         {
-            //pageFlipSound.Stop();
+            pageFlipSound.Stop();
 
             if(currentPage == 0)
             {
@@ -131,7 +131,7 @@ public class Journal : MonoBehaviour
 
         if(entriesInJournal.Count > 0 && journalCanvas.enabled && canFlipPage && !flippingPage && (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)))
         {
-            //pageFlipSound.Stop();
+            pageFlipSound.Stop();
 
             if(currentPage == entriesInJournal.Count - 1)
             {
@@ -175,6 +175,6 @@ public class Journal : MonoBehaviour
             journalText.text = string.Empty;
             journalText.text = "\n" + entriesInJournal[page].text;
         }
-        //pageFlipSound.Play();
+        pageFlipSound.Play();
     }
 }
