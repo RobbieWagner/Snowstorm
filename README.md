@@ -28,4 +28,4 @@ Music Developed using [BandLab](https://www.bandlab.com/?lang=en)
 
 Sprites Created using [Aseprite](https://www.aseprite.org/)
 
-Footstep sounds (walking on snow, walking on wood) found on [Soundjay](https://www.soundjay.com/)
+Footstep sounds (walking on snow, walking on wood), page scribbling sound, and door knock sound found on [Soundjay](https://www.soundjay.com/)
