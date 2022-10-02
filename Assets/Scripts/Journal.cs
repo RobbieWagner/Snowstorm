@@ -15,7 +15,17 @@ public class Journal : MonoBehaviour
     [HideInInspector]
     public bool hasUnreadEntries;
 
+    private JournalEntry blankPage;
+
     public JournalEntryList journalEntries = new JournalEntryList();
+    public List<JournalEntry> entriesInJournal;
+
+    [SerializeField]
+    private AudioSource pageFlipSound;
+
+    private bool canFlipPage;
+    private bool flippingPage;
+    private int currentPage;
 
     private Player player;
 
@@ -44,19 +54,51 @@ public class Journal : MonoBehaviour
     void Start()
     {
         journalEntries = JsonUtility.FromJson<JournalEntryList>(textJSON.text);
+        entriesInJournal = new List<JournalEntry>();
 
         hasUnreadEntries = false;
 
         player = GameObject.Find("Player").GetComponent<Player>();
+
+        currentPage = 0;
+        canFlipPage = false;
+        flippingPage = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!journalEntries.journalEntries[0].entryInJournal && player.tilesGenerated > 7){
-            journalText.text += "\n" + journalEntries.journalEntries[0].text;
-            journalEntries.journalEntries[0].entryInJournal = true;
-            hasUnreadEntries = true;
+        //Page adding checks
+        //Adds wandering pages to journal
+        if(!journalEntries.journalEntries[0].entryInJournal && player.tilesGenerated > 7)
+        {
+            AddPage(journalEntries.journalEntries[0]);
+        }
+        else if(!journalEntries.journalEntries[1].entryInJournal && player.tilesGenerated > 100)
+        {
+            AddPage(journalEntries.journalEntries[1]);
+        }
+
+        //Adds fire lighting page to journal
+        else if(!journalEntries.journalEntries[2].entryInJournal && player.hasSeenFireLightingTutorial && player.hasSeenWarmthTutorial)
+        {
+            AddPage(journalEntries.journalEntries[2]);
+        }
+
+        if(!canFlipPage && !flippingPage && journalCanvas.enabled)
+        {
+            canFlipPage = true;
+        }
+
+        //adds the blank page at the end of the journal
+        if(entriesInJournal.Count == 0)
+        {
+            blankPage = new JournalEntry();
+            blankPage.entryID = -1;
+            blankPage.text = "";
+            blankPage.entryInJournal = true;
+
+            entriesInJournal.Insert(0, blankPage);
         }
     }
 
@@ -67,5 +109,72 @@ public class Journal : MonoBehaviour
             journalCS.SwapCanvases();
             hasUnreadEntries = false;
         }
+
+        //handle page turning input
+        if(entriesInJournal.Count > 0 && journalCanvas.enabled && canFlipPage && !flippingPage && (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)))
+        {
+            //pageFlipSound.Stop();
+
+            if(currentPage == 0)
+            {
+                flippingPage = true;
+                currentPage = entriesInJournal.Count - 1;
+                FlipPage(currentPage);
+            }
+            else 
+            {
+                flippingPage = true;
+                currentPage--;
+                FlipPage(currentPage);
+            }
+        }
+
+        if(entriesInJournal.Count > 0 && journalCanvas.enabled && canFlipPage && !flippingPage && (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)))
+        {
+            //pageFlipSound.Stop();
+
+            if(currentPage == entriesInJournal.Count - 1)
+            {
+                flippingPage = true;
+                currentPage = 0;
+                FlipPage(currentPage);
+            }
+            else 
+            {
+                flippingPage = true;
+                currentPage++;
+                FlipPage(currentPage);
+            }
+        }
+
+        if(Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.A))
+        {
+            flippingPage = false;
+        }
+
+    }
+
+    public void AddPage(JournalEntry journalEntry)
+    {
+        entriesInJournal.Add(journalEntry);
+        journalEntry.entryInJournal = true;
+        currentPage = entriesInJournal.Count-1;
+        hasUnreadEntries = true;
+    }
+
+    public void FlipPage(int page)
+    {
+        //sets the text of the journal to the correct page
+        if(page < 0 && entriesInJournal.Count > 0)
+        {
+            journalText.text = string.Empty;
+            journalText.text = "\n" + entriesInJournal[currentPage].text;
+        }
+        else if(page >= 0)
+        {
+            journalText.text = string.Empty;
+            journalText.text = "\n" + entriesInJournal[page].text;
+        }
+        //pageFlipSound.Play();
     }
 }

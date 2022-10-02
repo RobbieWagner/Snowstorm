@@ -1,8 +1,20 @@
 {
     "journalEntries": [
-       { "entryID":0,
-        "text":"I'm cold, my head hurts, and I don't know where I am. There may be civilization around here, but right now all I need is to stay warm. I have a few matches on my, and a compass. Hoepefully I find a way to stay warm soon.",
-        "entryInJournal": false
+        { 
+            "entryID" : 0,
+            "text" : "I woke up to find myself in a strange place. There is a snowstorm currently blowing, and it's getting colder by the minute. If I stick around, I'll likely succumb to hypothermia.",
+            "entryInJournal" : false
+        },
+        {
+            "entryID" : 1,
+            "text" : "I find myself in a strange, snowy landscape. I don't know how I got here, but I do know that I shouldn't stay. I need to find some semblance of civilization, somehow.",
+            "entryInJournal" : false
+        },
+        {
+            "entryID" : 2,
+            "text" : "Upon finding a dry log on the ground, I decided to use one of my matches and light it. Hopefully this will help me stay warm.",
+            "entryInJournal" : false
         }
     ]
+
 }

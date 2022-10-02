@@ -2790,6 +2790,8 @@ MonoBehaviour:
   hasUnreadEntries: 0
   journalEntries:
     journalEntries: []
+  entriesInJournal: []
+  pageFlipSound: {fileID: 0}
   journalText: {fileID: 1103325011}
   textJSON: {fileID: 4900000, guid: ba1853061adb728468474d46f55d567b, type: 3}
 --- !u!1 &1294609382
@@ -3266,14 +3268,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 276537201}
-        m_TargetAssemblyTypeName: CanvasSwap, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1240917094}
+        m_TargetAssemblyTypeName: Journal, Assembly-CSharp
+        m_MethodName: FlipPage
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
