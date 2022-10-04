@@ -40,6 +40,11 @@ public class PlayGameMusic : MonoBehaviour
             if(currentSong < songs.Length - 1) currentSong++;
             else currentSong = 0;
         }
+
+        if(player.playerIsInside && songs[currentSong].isPlaying)
+        {
+            songs[currentSong].Stop();
+        }
     }
 
     private IEnumerator PlaySong(int songNumber)

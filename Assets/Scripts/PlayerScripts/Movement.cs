@@ -137,6 +137,10 @@ public class Movement : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow)) playerAnimator.SetBool("WalkingLeft", false);
         if(Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow)) playerAnimator.SetBool("WalkingForward", false);
         if(Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow)) playerAnimator.SetBool("WalkingRight", false);
+
+        if((Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D) 
+            || Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)))
+            isMoving = false;
     }
 
     // Handles "teleporting" the player

@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press J to light the fire.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4cb5e83707fcdcb439b535d0281cf020, type: 2}
+  m_sharedMaterial: {fileID: 7667839700382162395, guid: 4cb5e83707fcdcb439b535d0281cf020, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -658,8 +658,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Stand by fires or other warm objects to stay warm.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4cb5e83707fcdcb439b535d0281cf020, type: 2}
+  m_sharedMaterial: {fileID: 7667839700382162395, guid: 4cb5e83707fcdcb439b535d0281cf020, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

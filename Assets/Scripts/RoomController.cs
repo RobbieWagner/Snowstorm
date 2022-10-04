@@ -83,35 +83,9 @@ public class RoomController : Interactable
         if(isAtDoor && canEnter && Input.GetKeyDown(KeyCode.K) && !isUsingDoor)
         {
             if(isRoomOn) ExitRoom();
-            else EnterRoom();
+            else StartCoroutine(EnterRoom());
             StartCoroutine(CoolDownDoorUsage());
         }
-    }
-
-    void EnterRoom()
-    {
-        if(changesFootstepSounds)
-        playerM.currentFootstepsSound = playerM.footstepSounds[1];
-        interior.SetActive(true);
-        isRoomOn = true;
-        playerM.MoveCharacter(enterRoomT.position);
-
-        playerR.currentRotationState = 0;
-        StartCoroutine(playerR.SetRotationState(300f));
-
-        if(roomWarms)
-        {
-            playerDW.replenishing = true;
-            playerDW.depleting = false;
-        }
-
-        if(doorKnock != null)
-        {
-            if(doorKnock.interactableTutorial != null)
-            StartCoroutine(doorKnock.TimeTutorialDisplay(doorKnock.interactableTutorial));
-        }
-
-        player.playerIsInside = true;
     }
 
     void ExitRoom()
@@ -126,11 +100,43 @@ public class RoomController : Interactable
         playerDW.depleting = true;
 
         player.playerIsInside = false;
+
+        StartCoroutine(CoolDownDoorUsage());
+    }
+
+    IEnumerator EnterRoom()
+    {
+        isUsingDoor = true;
+        playerR.currentRotationState = 0;
+        yield return StartCoroutine(playerR.SetRotationState(300f));
+        yield return new WaitForSeconds(.3f);
+
+        if(changesFootstepSounds)
+        playerM.currentFootstepsSound = playerM.footstepSounds[1];
+        interior.SetActive(true);
+        isRoomOn = true;
+        playerM.MoveCharacter(enterRoomT.position);
+
+        if(roomWarms)
+        {
+            playerDW.replenishing = true;
+            playerDW.depleting = false;
+        }
+
+        if(doorKnock != null)
+        {
+            if(doorKnock.interactableTutorial != null)
+            StartCoroutine(doorKnock.TimeTutorialDisplay(doorKnock.interactableTutorial));
+        }
+
+        player.playerIsInside = true;
+
+        yield return StartCoroutine(CoolDownDoorUsage());
+        StopCoroutine(EnterRoom());
     }
 
     IEnumerator CoolDownDoorUsage()
     {
-        isUsingDoor = true;
         yield return new WaitForSeconds(.5f);
         isUsingDoor = false;
 
