@@ -22,6 +22,11 @@ public class RoomController : Interactable
     private Player player;
 
     [SerializeField]
+    private bool togglesPlayerHasEnteredLogCabin;
+    [SerializeField]
+    private bool togglesPlayerHasEnteredTown;
+
+    [SerializeField]
     private Transform enterRoomT;
     [SerializeField]
     private Transform exitRoomT;
@@ -130,6 +135,9 @@ public class RoomController : Interactable
         }
 
         player.playerIsInside = true;
+
+        if(togglesPlayerHasEnteredLogCabin) player.playerHasEneteredCabin = true;
+        if(togglesPlayerHasEnteredTown) player.playerhasEnteredTown = true;
 
         yield return StartCoroutine(CoolDownDoorUsage());
         StopCoroutine(EnterRoom());

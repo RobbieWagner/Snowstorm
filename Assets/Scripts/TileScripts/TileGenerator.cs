@@ -62,11 +62,6 @@ public class TileGenerator : MonoBehaviour
         for(int i = 0; i < tilesGenerated.Length; i++)
         {
             direction = TileDirection(i);
-            //Potential issue: layerMask was removed from if statement. May lead to issues further down the road            
-            // if(Physics.Linecast(tileT.position, tileT.position + direction))//, groundLayer))
-            // {
-            //     tilesGenerated[i] = true;
-            // }
 
             if(Physics.Linecast(tileT.position + direction + new Vector3(0, -1, 0), tileT.position + direction + new Vector3(0, 1, 0)))//, groundLayer))
             {
@@ -98,7 +93,11 @@ public class TileGenerator : MonoBehaviour
             if(!tilesBlockingMegaGeneration[i] && !megaTileSpawned && randomNumber < megaTileSpawnChance)
             {
                 direction = TileDirection(i) * 2;
+
                 tileToUse = levelsTiles.size2TileSpawns[rnd.Next(levelsTiles.size2TileSpawns.Count)];
+                
+                if(levelsTiles.size2TileOptions[tileToUse].GetComponent<SpawnChance>().onlySpawnsOnce) levelsTiles.RemoveFromSize2List(levelsTiles.size2TileOptions[tileToUse]);
+                
                 Instantiate(levelsTiles.size2TileOptions[tileToUse], tileT.position + direction, Quaternion.identity);
                 megaTileSpawned = true;
                 player.tilesGenerated++;
@@ -107,6 +106,9 @@ public class TileGenerator : MonoBehaviour
             {
                 direction = TileDirection(i);
                 tileToUse = levelsTiles.tileSpawns[rnd.Next(levelsTiles.tileSpawns.Count)];
+
+                if(levelsTiles.tileOptions[tileToUse].GetComponent<SpawnChance>().onlySpawnsOnce) levelsTiles.RemoveFromList(levelsTiles.tileOptions[tileToUse]);
+
                 Instantiate(levelsTiles.tileOptions[tileToUse], tileT.position + direction, Quaternion.identity);
                 player.tilesGenerated++;
             }

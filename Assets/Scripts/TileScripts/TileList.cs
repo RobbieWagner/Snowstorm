@@ -29,4 +29,14 @@ public class TileList : MonoBehaviour
             for(int j = 0; j < spawnChance.spawnChances; j++) size2TileSpawns.Add(i);
         }
     }
+
+    public void RemoveFromSize2List(GameObject tile)
+    {
+        while(size2TileOptions.Contains(tile)) size2TileOptions.Remove(tile);
+    }
+
+    public void RemoveFromList(GameObject tile)
+    {
+        while(tileOptions.Contains(tile)) tileOptions.Remove(tile);
+    }
 }

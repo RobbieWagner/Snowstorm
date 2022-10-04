@@ -23,6 +23,24 @@
             "text" : "The walk is long and difficult. I've found sources of warmth, but I'm afraid that my options may soon run out if I'm not careful.",
             "entryInJournal" : false,
             "tileRequirement" : 500
+        },
+        {
+            "entryID" : 4,
+            "text" : "I miss them",
+            "entryInJournal" : false,
+            "tileRequirement" : 1000
+        },
+        {
+            "entryID" : 5,
+            "text" : "I found a log cabin. It looks like nobody is around, but the fireplace is lit. I hope no one minds that I'm here. Who's the person in the picture?",
+            "entryInJournal" : false,
+            "requirement" : "enterLogCabin"
+        },
+        {
+            "entryID" : 6,
+            "text" : "After walking for what feels like ages, I've finally come across some semblance of a town. The houses seem abandoned, but the tower looks promising.",
+            "entryInJournal" : false,
+            "requirement" : "enterTown"
         }
     ]
 

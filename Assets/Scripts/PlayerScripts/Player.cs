@@ -25,6 +25,11 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public bool playerIsInside;
 
+    [HideInInspector]
+    public bool playerHasEneteredCabin;
+    [HideInInspector]
+    public bool playerhasEnteredTown;
+
     void Start()
     {
         tilesGenerated = 0;
@@ -36,5 +41,7 @@ public class Player : MonoBehaviour
         hasSeenInteractableTutorial = false;
 
         playerIsInside = false;
+        playerHasEneteredCabin = false;
+        playerhasEnteredTown = false;
     }
 }

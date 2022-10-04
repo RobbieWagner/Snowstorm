@@ -88,6 +88,14 @@ public class Journal : MonoBehaviour
                     {
                         AddPage(journalEntries.journalEntries[i]);
                     }
+                    if(journalEntries.journalEntries[i].requirement.Equals("enterLogCabin") && player.playerHasEneteredCabin)
+                    {
+                        StartCoroutine(WaitToAddPage(journalEntries.journalEntries[i]));
+                    }
+                    if(journalEntries.journalEntries[i].requirement.Equals("enterTown") && player.playerhasEnteredTown)
+                    {
+                        StartCoroutine(WaitToAddPage(journalEntries.journalEntries[i]));
+                    }
                 }
             }
         }
@@ -183,5 +191,12 @@ public class Journal : MonoBehaviour
             journalText.text = "\n" + entriesInJournal[page].text;
         }
         pageFlipSound.Play();
+    }
+
+    IEnumerator WaitToAddPage(JournalEntry page)
+    {
+        yield return new WaitForSeconds(1f);
+        AddPage(page);
+        StopCoroutine(WaitToAddPage(page));
     }
 }
