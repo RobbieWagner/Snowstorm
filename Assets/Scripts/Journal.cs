@@ -47,6 +47,8 @@ public class Journal : MonoBehaviour
         public int entryID;
         public string text;
         public bool entryInJournal;
+        public int tileRequirement;
+        public string requirement;
     }
     
 
@@ -70,19 +72,24 @@ public class Journal : MonoBehaviour
     {
         //Page adding checks
         //Adds wandering pages to journal
-        if(!journalEntries.journalEntries[0].entryInJournal && player.tilesGenerated > 7)
+        for(int i = 0; i < journalEntries.journalEntries.Length; i++)
         {
-            AddPage(journalEntries.journalEntries[0]);
-        }
-        else if(!journalEntries.journalEntries[1].entryInJournal && player.tilesGenerated > 100)
-        {
-            AddPage(journalEntries.journalEntries[1]);
-        }
+            if(!journalEntries.journalEntries[i].entryInJournal)
+            {
+                if(journalEntries.journalEntries[i].tileRequirement != 0 && player.tilesGenerated > journalEntries.journalEntries[i].tileRequirement)
+                {
+                    AddPage(journalEntries.journalEntries[i]);
+                }
 
-        //Adds fire lighting page to journal
-        else if(!journalEntries.journalEntries[2].entryInJournal && player.hasSeenFireLightingTutorial && player.hasSeenWarmthTutorial)
-        {
-            AddPage(journalEntries.journalEntries[2]);
+                //Adds fire lighting page to journal
+                else if(journalEntries.journalEntries[i].requirement != null)
+                {
+                    if(journalEntries.journalEntries[i].requirement.Equals("lightFire") && player.hasSeenFireLightingTutorial && player.hasSeenWarmthTutorial)
+                    {
+                        AddPage(journalEntries.journalEntries[i]);
+                    }
+                }
+            }
         }
 
         if(!canFlipPage && !flippingPage && journalCanvas.enabled)

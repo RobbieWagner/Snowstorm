@@ -3,17 +3,26 @@
         { 
             "entryID" : 0,
             "text" : "I woke up to find myself in a strange place. There is a snowstorm currently blowing, and it's getting colder by the minute. If I stick around, I'll likely succumb to hypothermia.",
-            "entryInJournal" : false
+            "entryInJournal" : false,
+            "tileRequirement" : 7
         },
         {
             "entryID" : 1,
             "text" : "I find myself in a strange, snowy landscape. I don't know how I got here, but I do know that I shouldn't stay. I need to find some semblance of civilization, somehow.",
-            "entryInJournal" : false
+            "entryInJournal" : false,
+            "tileRequirement" : 100
         },
         {
             "entryID" : 2,
             "text" : "Upon finding a dry log on the ground, I decided to use one of my matches and light it. Hopefully this will help me stay warm.",
-            "entryInJournal" : false
+            "entryInJournal" : false,
+            "requirement" : "lightFire"
+        },
+        {
+            "entryID" : 3,
+            "text" : "The walk is long and difficult. I've found sources of warmth, but I'm afraid that my options may soon run out if I'm not careful.",
+            "entryInJournal" : false,
+            "tileRequirement" : 500
         }
     ]
 
