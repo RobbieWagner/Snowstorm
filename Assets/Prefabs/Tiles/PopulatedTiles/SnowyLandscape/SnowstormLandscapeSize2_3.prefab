@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnChances: 1
+  onlySpawnsOnce: 0
 --- !u!114 &163616197128533826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,10 +68,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canEnter: 0
   interior: {fileID: 5878275704390137087}
+  togglesPlayerHasEnteredLogCabin: 0
+  togglesPlayerHasEnteredTown: 0
   enterRoomT: {fileID: 2450780164763500490}
   exitRoomT: {fileID: 6509115968800101074}
   roomWarms: 0
   doorKnock: {fileID: 0}
+  changesFootstepSounds: 0
 --- !u!54 &7218712136122019674
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -155,8 +159,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.2524266, y: 2.515798, z: 1.3526192}
-  m_Center: {x: -0.047264338, y: 0.7578993, z: 0.61642456}
+  m_Size: {x: 4.4584246, y: 2.515798, z: 2.5216389}
+  m_Center: {x: -0.0020303726, y: 0.7578993, z: 1.2009344}
 --- !u!1001 &1964877049701936257
 PrefabInstance:
   m_ObjectHideFlags: 0

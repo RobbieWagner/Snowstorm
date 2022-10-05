@@ -88,7 +88,7 @@ public class RoomController : Interactable
         if(isAtDoor && canEnter && Input.GetKeyDown(KeyCode.K) && !isUsingDoor)
         {
             if(isRoomOn) ExitRoom();
-            else StartCoroutine(EnterRoom());
+            else if(!player.playerIsInside) StartCoroutine(EnterRoom());
             StartCoroutine(CoolDownDoorUsage());
         }
     }
@@ -97,6 +97,7 @@ public class RoomController : Interactable
     {
         if(changesFootstepSounds)
         playerM.currentFootstepsSound = playerM.footstepSounds[0];
+        isUsingDoor = true;
         interior.SetActive(false);
         isRoomOn = false;
         playerM.MoveCharacter(exitRoomT.position);

@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnChances: 10
+  onlySpawnsOnce: 0
 --- !u!1001 &1964877049701936257
 PrefabInstance:
   m_ObjectHideFlags: 0
