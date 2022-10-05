@@ -8,4 +8,9 @@ public class SpawnChance : MonoBehaviour
     public int spawnChances;
 
     public bool onlySpawnsOnce = false;
+
+    public int tileRequirementsForSpawn = 0;
+
+    [HideInInspector]
+    public bool placedIntoArray = false;
 }

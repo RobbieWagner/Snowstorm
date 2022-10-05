@@ -15,18 +15,58 @@ public class TileList : MonoBehaviour
     
     public int chanceOfMegaTile;
 
+    private Player player;
+
     void Start()
     {
+        player = GameObject.Find("Player").GetComponent<Player>();
+
         for(int i = 0; i < tileOptions.Count; i++)
         {
             SpawnChance spawnChance = tileOptions[i].GetComponent<SpawnChance>();
-            for(int j = 0; j < spawnChance.spawnChances; j++) tileSpawns.Add(i);
+            spawnChance.placedIntoArray = false;
+            if(spawnChance.tileRequirementsForSpawn == 0)
+            {
+                spawnChance.placedIntoArray = true;
+                for(int j = 0; j < spawnChance.spawnChances; j++) tileSpawns.Add(i);
+            }
         }
 
         for(int i = 0; i < size2TileOptions.Count; i++)
         {
             SpawnChance spawnChance = size2TileOptions[i].GetComponent<SpawnChance>();
-            for(int j = 0; j < spawnChance.spawnChances; j++) size2TileSpawns.Add(i);
+            spawnChance.placedIntoArray = false;
+            if(spawnChance.tileRequirementsForSpawn == 0)
+            {
+                spawnChance.placedIntoArray = true;
+                for(int j = 0; j < spawnChance.spawnChances; j++) size2TileSpawns.Add(i);
+            }
+        }
+    }
+
+    //Slow function
+    void Update()
+    {
+        for(int i = 0; i < tileOptions.Count; i++)
+        {
+            SpawnChance spawnChance = tileOptions[i].GetComponent<SpawnChance>();
+            if(!spawnChance.placedIntoArray && spawnChance.tileRequirementsForSpawn <= player.tilesGenerated)
+            {
+                Debug.Log(player.tilesGenerated + " " + spawnChance.tileRequirementsForSpawn + " updated");
+                spawnChance.placedIntoArray = true;
+                for(int j = 0; j < spawnChance.spawnChances; j++) tileSpawns.Add(i);
+            }
+        }
+
+        for(int i = 0; i < size2TileOptions.Count; i++)
+        {
+            SpawnChance spawnChance = size2TileOptions[i].GetComponent<SpawnChance>();
+            if(!spawnChance.placedIntoArray && spawnChance.tileRequirementsForSpawn <= player.tilesGenerated)
+            {
+                Debug.Log("updated");
+                spawnChance.placedIntoArray = true;
+                for(int j = 0; j < spawnChance.spawnChances; j++) size2TileSpawns.Add(i);
+            }
         }
     }
 

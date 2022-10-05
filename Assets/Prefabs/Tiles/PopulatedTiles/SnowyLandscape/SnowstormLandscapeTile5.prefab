@@ -48,6 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnChances: 1
+  onlySpawnsOnce: 0
+  tileRequirementsForSpawn: 100
+  placedIntoArray: 1
 --- !u!1001 &2102835741944835204
 PrefabInstance:
   m_ObjectHideFlags: 0
