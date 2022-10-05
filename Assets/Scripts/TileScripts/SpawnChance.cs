@@ -8,6 +8,7 @@ public class SpawnChance : MonoBehaviour
     public int spawnChances;
 
     public bool onlySpawnsOnce = false;
+    public bool canSpawn = true;
 
     public int tileRequirementsForSpawn = 0;
 

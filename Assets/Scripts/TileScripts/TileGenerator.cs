@@ -95,8 +95,13 @@ public class TileGenerator : MonoBehaviour
                 direction = TileDirection(i) * 2;
 
                 tileToUse = levelsTiles.size2TileSpawns[rnd.Next(levelsTiles.size2TileSpawns.Count)];
+                SpawnChance goSpawnChance = levelsTiles.size2TileOptions[tileToUse].GetComponent<SpawnChance>();
+                while(!goSpawnChance.canSpawn) {
+                    tileToUse = levelsTiles.size2TileSpawns[rnd.Next(levelsTiles.size2TileSpawns.Count)];
+                    goSpawnChance = levelsTiles.size2TileOptions[tileToUse].GetComponent<SpawnChance>();
+                }
                 
-                if(levelsTiles.size2TileOptions[tileToUse].GetComponent<SpawnChance>().onlySpawnsOnce) levelsTiles.RemoveFromSize2List(levelsTiles.size2TileOptions[tileToUse]);
+                if(goSpawnChance.onlySpawnsOnce) goSpawnChance.canSpawn = false;
                 
                 Instantiate(levelsTiles.size2TileOptions[tileToUse], tileT.position + direction, Quaternion.identity);
                 megaTileSpawned = true;
@@ -105,9 +110,15 @@ public class TileGenerator : MonoBehaviour
             else if(!tilesGenerated[i])
             {
                 direction = TileDirection(i);
-                tileToUse = levelsTiles.tileSpawns[rnd.Next(levelsTiles.tileSpawns.Count)];
 
-                if(levelsTiles.tileOptions[tileToUse].GetComponent<SpawnChance>().onlySpawnsOnce) levelsTiles.RemoveFromList(levelsTiles.tileOptions[tileToUse]);
+                tileToUse = levelsTiles.tileSpawns[rnd.Next(levelsTiles.tileSpawns.Count)];
+                SpawnChance goSpawnChance = levelsTiles.tileOptions[tileToUse].GetComponent<SpawnChance>();
+                while(!goSpawnChance.canSpawn) {
+                    tileToUse = levelsTiles.tileSpawns[rnd.Next(levelsTiles.tileSpawns.Count)];
+                    goSpawnChance = levelsTiles.tileOptions[tileToUse].GetComponent<SpawnChance>();
+                }
+
+                if(goSpawnChance.onlySpawnsOnce) goSpawnChance.canSpawn = false;
 
                 Instantiate(levelsTiles.tileOptions[tileToUse], tileT.position + direction, Quaternion.identity);
                 player.tilesGenerated++;

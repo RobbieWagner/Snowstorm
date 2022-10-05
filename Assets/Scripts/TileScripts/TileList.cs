@@ -6,11 +6,11 @@ public class TileList : MonoBehaviour
 {
     // Stores the list of possible tiles, and also the chance of a mega tile spawning
     public List<GameObject> tileOptions;
-    [HideInInspector]
+    //[HideInInspector]
     public List<int> tileSpawns;
 
     public List<GameObject> size2TileOptions;
-    [HideInInspector]
+    //[HideInInspector]
     public List<int> size2TileSpawns;
     
     public int chanceOfMegaTile;
@@ -52,7 +52,6 @@ public class TileList : MonoBehaviour
             SpawnChance spawnChance = tileOptions[i].GetComponent<SpawnChance>();
             if(!spawnChance.placedIntoArray && spawnChance.tileRequirementsForSpawn <= player.tilesGenerated)
             {
-                Debug.Log(player.tilesGenerated + " " + spawnChance.tileRequirementsForSpawn + " updated");
                 spawnChance.placedIntoArray = true;
                 for(int j = 0; j < spawnChance.spawnChances; j++) tileSpawns.Add(i);
             }
@@ -63,7 +62,6 @@ public class TileList : MonoBehaviour
             SpawnChance spawnChance = size2TileOptions[i].GetComponent<SpawnChance>();
             if(!spawnChance.placedIntoArray && spawnChance.tileRequirementsForSpawn <= player.tilesGenerated)
             {
-                Debug.Log("updated");
                 spawnChance.placedIntoArray = true;
                 for(int j = 0; j < spawnChance.spawnChances; j++) size2TileSpawns.Add(i);
             }
