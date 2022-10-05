@@ -60,4 +60,4 @@ MonoBehaviour:
   - {fileID: 5957318111964017104, guid: a753404ee7de2ba4c8f7205e0276f2ca, type: 3}
   - {fileID: 1526344459458245060, guid: 6631e4bb5500cf2448c136fd56099fe8, type: 3}
   size2TileSpawns: 
-  chanceOfMegaTile: 100
+  chanceOfMegaTile: 10

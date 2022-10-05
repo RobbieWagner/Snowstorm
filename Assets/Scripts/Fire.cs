@@ -72,7 +72,7 @@ public class Fire : Interactable
             keyboardKey = FindObject(player.gameObject, "K");
             
             canLight = false;
-            if(!player.hasSeenWarmthTutorial) StartCoroutine(TimeTutorialDisplay(warmthTutorial));
+            if(!player.hasSeenWarmthTutorial && fireLit) StartCoroutine(TimeTutorialDisplay(warmthTutorial));
         }
         else Physics.IgnoreCollision(collision.gameObject.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
 

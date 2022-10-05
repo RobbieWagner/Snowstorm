@@ -585,11 +585,10 @@ MonoBehaviour:
   canMove: 1
   characterBody: {fileID: 8534359206972666256}
   characterPos: {fileID: 8534359206972666262}
-  playerSpeed: 7
+  playerSpeed: 8
   maxStamina: 16
   staminaLossRate: 1
   staminaGainRate: 2
-  movementSounds: {fileID: 0}
   staminaExhaustionFilter: {fileID: 0}
   random: {fileID: 0}
   gravity: -9.81
@@ -599,6 +598,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   playerAnimator: {fileID: 8835780374676670851}
+  footstepSounds: []
+  currentFootstepsSound: {fileID: 0}
 --- !u!114 &7335705189500621134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,6 +635,9 @@ MonoBehaviour:
   hasSeenInteractableTutorial: 0
   playerGraphic: {fileID: 967403433018646216}
   tilesGenerated: 0
+  playerIsInside: 0
+  playerHasEneteredCabin: 0
+  playerhasEnteredTown: 0
 --- !u!114 &576953277147204961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,6 +651,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerT: {fileID: 0}
+  currentRotationState: 0
+  rotationStates: []
+  compassStates: []
+  compassSprite: {fileID: 0}
   rotationSpeed: 0
 --- !u!1001 &5863365040499311489
 PrefabInstance:

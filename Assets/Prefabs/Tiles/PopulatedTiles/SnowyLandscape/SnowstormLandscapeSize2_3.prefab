@@ -72,7 +72,7 @@ MonoBehaviour:
   canEnter: 0
   interior: {fileID: 5878275704390137087}
   togglesPlayerHasEnteredLogCabin: 0
-  togglesPlayerHasEnteredTown: 0
+  togglesPlayerHasEnteredTown: 1
   enterRoomT: {fileID: 2450780164763500490}
   exitRoomT: {fileID: 6509115968800101074}
   roomWarms: 0

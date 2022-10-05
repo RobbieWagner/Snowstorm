@@ -91,10 +91,12 @@ public class Journal : MonoBehaviour
                     if(journalEntries.journalEntries[i].requirement.Equals("enterLogCabin") && player.playerHasEneteredCabin)
                     {
                         StartCoroutine(WaitToAddPage(journalEntries.journalEntries[i]));
+                        journalEntries.journalEntries[i].entryInJournal = true;
                     }
                     if(journalEntries.journalEntries[i].requirement.Equals("enterTown") && player.playerhasEnteredTown)
                     {
                         StartCoroutine(WaitToAddPage(journalEntries.journalEntries[i]));
+                        journalEntries.journalEntries[i].entryInJournal = true;
                     }
                 }
             }
