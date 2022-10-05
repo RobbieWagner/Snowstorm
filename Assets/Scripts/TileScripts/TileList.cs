@@ -6,11 +6,11 @@ public class TileList : MonoBehaviour
 {
     // Stores the list of possible tiles, and also the chance of a mega tile spawning
     public List<GameObject> tileOptions;
-    //[HideInInspector]
+    [HideInInspector]
     public List<int> tileSpawns;
 
     public List<GameObject> size2TileOptions;
-    //[HideInInspector]
+    [HideInInspector]
     public List<int> size2TileSpawns;
     
     public int chanceOfMegaTile;
@@ -44,9 +44,10 @@ public class TileList : MonoBehaviour
         }
     }
 
-    //Slow function
-    void Update()
+    //Find a way to make this less intensive
+    public void CheckForTileAdditions()
     {
+        //Checks if a tile has met the requirements needed to be added onto the tile lists
         for(int i = 0; i < tileOptions.Count; i++)
         {
             SpawnChance spawnChance = tileOptions[i].GetComponent<SpawnChance>();

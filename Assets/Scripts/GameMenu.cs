@@ -40,6 +40,7 @@ public class GameMenu : MonoBehaviour
         canLeaveMenu = true;
     }
 
+    //For opening and closing the in game menu
     void OnGUI()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -73,6 +74,7 @@ public class GameMenu : MonoBehaviour
         }
     }
 
+    //Toggles notifcation Icons
     void Update()
     {
         if(!notifIcons[0].activeSelf && gameJournal.hasUnreadEntries)

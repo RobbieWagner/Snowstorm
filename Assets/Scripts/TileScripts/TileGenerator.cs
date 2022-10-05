@@ -45,12 +45,13 @@ public class TileGenerator : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
+        //When player steps on a tile, generate next tiles
         if(collision.gameObject.layer == playerLayer)
         {
             if(!surroundingTilesGenerated)
             {
                 CheckForSurroundingTiles();
-                GenerateTiles();
+                RunTileGenerator();
             }
         }
     }
@@ -81,56 +82,68 @@ public class TileGenerator : MonoBehaviour
         }
     }
 
-    void GenerateTiles()
+    void RunTileGenerator()
     {
         // generates tiles in empty spots
         Vector3 direction;
-        int tileToUse;
         bool megaTileSpawned = false;
         for(int i = 0; i < 6; i++)
         {
             int randomNumber = rnd.Next(1000);
+            //generate mega tile
             if(!tilesBlockingMegaGeneration[i] && !megaTileSpawned && randomNumber < megaTileSpawnChance)
             {
                 direction = TileDirection(i) * 2;
 
-                tileToUse = levelsTiles.size2TileSpawns[rnd.Next(levelsTiles.size2TileSpawns.Count)];
-                SpawnChance goSpawnChance = levelsTiles.size2TileOptions[tileToUse].GetComponent<SpawnChance>();
-                while(!goSpawnChance.canSpawn) {
-                    tileToUse = levelsTiles.size2TileSpawns[rnd.Next(levelsTiles.size2TileSpawns.Count)];
-                    goSpawnChance = levelsTiles.size2TileOptions[tileToUse].GetComponent<SpawnChance>();
-                }
-                
-                if(goSpawnChance.onlySpawnsOnce) goSpawnChance.canSpawn = false;
-                
-                Instantiate(levelsTiles.size2TileOptions[tileToUse], tileT.position + direction, Quaternion.identity);
+                List<int> tileSpawns = levelsTiles.size2TileSpawns;
+                List<GameObject> tiles = levelsTiles.size2TileOptions;
+
+                GenerateTile(tiles, tileSpawns, direction);
+
                 megaTileSpawned = true;
-                player.tilesGenerated++;
+                player.tilesGenerated += 6;
+                
             }
+            //generate regular tile
             else if(!tilesGenerated[i])
             {
                 direction = TileDirection(i);
 
-                tileToUse = levelsTiles.tileSpawns[rnd.Next(levelsTiles.tileSpawns.Count)];
-                SpawnChance goSpawnChance = levelsTiles.tileOptions[tileToUse].GetComponent<SpawnChance>();
-                while(!goSpawnChance.canSpawn) {
-                    tileToUse = levelsTiles.tileSpawns[rnd.Next(levelsTiles.tileSpawns.Count)];
-                    goSpawnChance = levelsTiles.tileOptions[tileToUse].GetComponent<SpawnChance>();
-                }
+                List<int> tileSpawns = levelsTiles.tileSpawns;
+                List<GameObject> tiles = levelsTiles.tileOptions;
 
-                if(goSpawnChance.onlySpawnsOnce) goSpawnChance.canSpawn = false;
+                GenerateTile(tiles, tileSpawns, direction);
 
-                Instantiate(levelsTiles.tileOptions[tileToUse], tileT.position + direction, Quaternion.identity);
-                player.tilesGenerated++;
             }
         }
         surroundingTilesGenerated = true;
+        levelsTiles.CheckForTileAdditions();
         Destroy(gameObject);
+    }
+
+    void GenerateTile(List<GameObject> tiles, List<int> tileSpawns, Vector3 direction)
+    {
+        int tileToUse = tileSpawns[rnd.Next(tileSpawns.Count)];
+        SpawnChance goSpawnChance = tiles[tileToUse].GetComponent<SpawnChance>();
+
+        //find a tile that can generate
+        while(!goSpawnChance.canSpawn) {
+            tileToUse = tileSpawns[rnd.Next(tileSpawns.Count)];
+            goSpawnChance = tiles[tileToUse].GetComponent<SpawnChance>();
+        }
+        
+        //remove from list if it cannot spawn again
+        if(goSpawnChance.onlySpawnsOnce) goSpawnChance.canSpawn = false;
+        
+        //generate the tile
+        Instantiate(tiles[tileToUse], tileT.position + direction, Quaternion.identity);
+        
+        player.tilesGenerated++;
     }
 
     Vector3 TileDirection(int adjacentTile)
     {
-        // returns the direction a linecast will be performed in
+        // returns the direction for tile checks and generation
         if(adjacentTile == 0) return new Vector3(0f, 0f, 18f);
         else if(adjacentTile == 1) return new Vector3(15.5889f, 0f, 9f);
         else if(adjacentTile == 2) return new Vector3(15.5889f, 0f, -9f); 

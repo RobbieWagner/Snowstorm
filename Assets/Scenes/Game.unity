@@ -4705,6 +4705,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1694479043}
     - target: {fileID: 8534359206972666261, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
+      propertyPath: playerSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8534359206972666261, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
       propertyPath: movementSounds
       value: 
       objectReference: {fileID: 744178012}
@@ -5104,7 +5108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6758757092287709054, guid: 5b37cb186c2df7547b28c7b189e2ae20, type: 3}
       propertyPath: chanceOfMegaTile
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b37cb186c2df7547b28c7b189e2ae20, type: 3}

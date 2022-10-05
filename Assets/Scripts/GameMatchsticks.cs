@@ -24,6 +24,7 @@ public class GameMatchsticks : MonoBehaviour
         matchsticksText.color = imageColor;
     }
 
+    //Flickers icon. Indicates to player that they have used a match
     public IEnumerator ChangeNumberOfMatchsticks(int newMatchsticksCount)
     {
         Color imageColor = matchsticksIcon.color;
