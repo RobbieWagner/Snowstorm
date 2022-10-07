@@ -16,6 +16,15 @@ public class SceneChanger : MonoBehaviour
     [SerializeField]
     private Canvas screenCoverCanvas;
 
+    [SerializeField]
+    private bool changeSceneOnStart;
+
+    private void Start() 
+    {
+        if(changeSceneOnStart)
+        StartCoroutine(TransitionScene(sceneName));
+    }
+
     public void ChangeScene()
     {
         SceneManager.LoadScene(sceneName);    

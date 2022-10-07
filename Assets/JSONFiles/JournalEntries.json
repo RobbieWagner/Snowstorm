@@ -16,7 +16,8 @@
             "entryID" : 2,
             "text" : "Upon finding a dry log on the ground, I decided to use one of my matches and light it. Hopefully this will help me stay warm.",
             "entryInJournal" : false,
-            "requirement" : "lightFire"
+            "requirement" : "lightFire",
+            "foo":"foo"
         },
         {
             "entryID" : 3,
@@ -45,3 +46,4 @@
     ]
 
 }
+
