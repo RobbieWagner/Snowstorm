@@ -1,0 +1,12 @@
+{
+    "Dialogue":{
+        "sentences":[
+            {"textID": 0, "text": "Let me tell you a story of the prophets", "togglesMusic": false, "turnsImageOff": false},
+            {"textID": 1, "text": "A long time ago, 5 prophets, kind souls...", "togglesMusic": true, "imageIndex": 1, "turnsImageOff": false},
+            {"textID": 2, "text": "began a quest to bring prosperity to their peoples", "togglesMusic": false, "turnsImageOff": false},
+            {"textID": 2, "text": "began a quest to bring prosperity to their peoples", "togglesMusic": false, "turnsImageOff": false},
+            {"textID": 2, "text": "began a quest to bring prosperity to their peoples", "togglesMusic": false, "turnsImageOff": false},
+            {"textID": 2, "text": "began a quest to bring prosperity to their peoples", "togglesMusic": false, "turnsImageOff": false}
+        ]
+    }
+}
