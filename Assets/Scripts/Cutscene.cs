@@ -6,13 +6,13 @@ using TMPro;
 
 public class Cutscene : MonoBehaviour
 {
-
-    public TextAsset textJSON;
+    [SerializeField]
+    private TextAsset textJSON;
 
     [System.Serializable]
     public class Dialogue
     {
-        public Sentence[] dialogue;
+        public Sentence[] sentences;
     }
 
     [System.Serializable]
@@ -21,7 +21,7 @@ public class Cutscene : MonoBehaviour
         public int textID;
         public string text;
         public bool togglesMusic;
-        public int imgaeIndex;
+        public int imageIndex;
         public bool turnsOffImage;
     }
 
@@ -80,7 +80,7 @@ public class Cutscene : MonoBehaviour
 
     IEnumerator ReadDialogue()
     {
-        foreach(Sentence sentence in dialogue.dialogue)
+        foreach(Sentence sentence in dialogue.sentences)
         {
             yield return StartCoroutine(StartNextSentence(sentence));
             yield return new WaitForSeconds(3f);
@@ -94,9 +94,9 @@ public class Cutscene : MonoBehaviour
         if(sentence.togglesMusic && cutsceneMusic.isPlaying) cutsceneMusic.Stop();
         else if(sentence.togglesMusic) cutsceneMusic.Play();
 
-        if(sentence.imgaeIndex != 0) 
+        if(sentence.imageIndex != 0) 
         {
-            image.sprite = cutsceneImages[sentence.imgaeIndex - 1];
+            image.sprite = cutsceneImages[sentence.imageIndex - 1];
             runDisplayImage = true;
         }
         else runDisplayImage = false;

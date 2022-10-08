@@ -4431,7 +4431,7 @@ MonoBehaviour:
   image: {fileID: 1829171881}
   cutsceneText: {fileID: 1626222783}
   cutsceneMusic: {fileID: 603188797}
-  textDelay: 0
+  textDelay: 0.1
   canvasSwap: {fileID: 1901901864}
 --- !u!114 &1901901864
 MonoBehaviour:

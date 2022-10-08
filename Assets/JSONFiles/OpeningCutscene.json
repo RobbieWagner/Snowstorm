@@ -1,22 +1,20 @@
 {
-    "Dialogue":{
-        "sentences":[
-            {"textID": 0, "text": "Let me tell you a story of the prophets", "togglesMusic": false, "turnsImageOff": false},
-            {"textID": 1, "text": "A long time ago, 5 prophets, kind souls...", "togglesMusic": true, "imageIndex": 1, "turnsImageOff": false},
-            {"textID": 2, "text": "...began a quest to bring prosperity to their peoples", "togglesMusic": false, "turnsImageOff": true},
-            {"textID": 3, "text": "The journey was harsh, the land unforgiving...", "togglesMusic": false, "imageIndex": 2, "turnsImageOff": true},
-            {"textID": 4, "text": "...but the power of the prophets was greater", "togglesMusic": false, "imageIndex": 3, "turnsImageOff": true},
-            {"textID": 5, "text": "Along the way, the prophets made many friends and allies", "togglesMusic": false, "imageIndex": 4, "turnsImageOff": false},
-            {"textID": 6, "text": "One of these friends, a young hermit...", "togglesMusic": false, "turnsImageOff": false},
-            {"textID": 7, "text": "...led them through lands unfamiliar to the prophets", "togglesMusic": false, "turnsImageOff": true},
-            {"textID": 8, "text": "With the help of their new friend...", "togglesMusic": false, "imageIndex": 5, "turnsImageOff": false},
-            {"textID": 9, "text": "...the prophets found the artifact they were looking for", "togglesMusic": false, "turnsImageOff": false},
-            {"textID": 10, "text": "On celebrating their success, the prophets became distracted", "togglesMusic": false, "turnsImageOff": true},
-            {"textID": 11, "text": "Their new friend decided to take advantage of their celebration", "togglesMusic": false, "imageIndex": 6, "turnsImageOff": true},
-            {"textID": 12, "text": "With the artifact missing, the land grew cold and barren", "togglesMusic": false, "imageIndex": 7, "turnsImageOff": false},
-            {"textID": 13, "text": "Populations depleted, temples fell to ruin", "togglesMusic": false, "turnsImageOff": false},
-            {"textID": 14, "text": "What was once a prosperous land now harbors little life", "togglesMusic": false, "turnsImageOff": true},
-            {"textID": 15, "text": "That, however, was a long time ago.", "togglesMusic": true, "turnsImageOff": false}
-        ]
-    }
+    "sentences":[
+        {"textID": 0, "text": "Let me tell you a story of the prophets", "togglesMusic": false, "turnsImageOff": false},
+        {"textID": 1, "text": "A long time ago, five prophets, kind souls...", "togglesMusic": true, "imageIndex": 1, "turnsImageOff": false},
+        {"textID": 2, "text": "...began a quest to bring prosperity to their peoples", "togglesMusic": false, "turnsImageOff": true},
+        {"textID": 3, "text": "The journey was harsh, the land unforgiving...", "togglesMusic": false, "imageIndex": 2, "turnsImageOff": true},
+        {"textID": 4, "text": "...but the power of the prophets was greater", "togglesMusic": false, "imageIndex": 3, "turnsImageOff": true},
+        {"textID": 5, "text": "Along the way, the prophets made many friends and allies", "togglesMusic": false, "imageIndex": 4, "turnsImageOff": false},
+        {"textID": 6, "text": "One of these friends, a young hermit...", "togglesMusic": false, "turnsImageOff": false},
+        {"textID": 7, "text": "...led them through lands unfamiliar to the prophets", "togglesMusic": false, "turnsImageOff": true},
+        {"textID": 8, "text": "With the help of their new friend...", "togglesMusic": false, "imageIndex": 5, "turnsImageOff": false},
+        {"textID": 9, "text": "...the prophets found the artifact they were looking for", "togglesMusic": false, "turnsImageOff": false},
+        {"textID": 10, "text": "On celebrating their success, the prophets became distracted", "togglesMusic": false, "turnsImageOff": true},
+        {"textID": 11, "text": "Their new friend decided to take advantage of their celebration", "togglesMusic": false, "imageIndex": 6, "turnsImageOff": true},
+        {"textID": 12, "text": "With the artifact missing, the land grew cold and barren", "togglesMusic": false, "imageIndex": 7, "turnsImageOff": false},
+        {"textID": 13, "text": "Populations depleted, temples fell to ruin", "togglesMusic": false, "turnsImageOff": false},
+        {"textID": 14, "text": "What was once a prosperous land now harbors little life", "togglesMusic": false, "turnsImageOff": true},
+        {"textID": 15, "text": "That, however, was a long time ago.", "togglesMusic": true, "turnsImageOff": false}
+    ]
 }
