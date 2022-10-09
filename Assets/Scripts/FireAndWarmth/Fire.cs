@@ -127,4 +127,9 @@ public class Fire : Interactable
 
         StopCoroutine(TimeTutorialDisplay(tutorialCanvas));
     }
+
+    protected override void Interact()
+    {
+        
+    }
 }

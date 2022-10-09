@@ -151,4 +151,9 @@ public class RoomController : Interactable
 
         StopCoroutine(CoolDownDoorUsage());
     }
+
+    protected override void Interact()
+    {
+        
+    }
 }
