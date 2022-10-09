@@ -20,7 +20,7 @@ public class GameMatchsticks : MonoBehaviour
         imageColor.a = .5f;
         matchsticksIcon.color = imageColor;
 
-        imageColor = new Color(0, 0, 0, .5f);
+        imageColor = new Color(1, 1, 1, .5f);
         matchsticksText.color = imageColor;
     }
 
@@ -31,7 +31,7 @@ public class GameMatchsticks : MonoBehaviour
         imageColor.a = 1f;
         matchsticksIcon.color = imageColor;
 
-        imageColor = new Color(0, 0, 0, 1f);
+        imageColor = new Color(1, 1, 1, 1f);
         matchsticksText.color = imageColor;
 
         matchsticksCount = newMatchsticksCount;
@@ -43,7 +43,7 @@ public class GameMatchsticks : MonoBehaviour
         imageColor.a = .5f;
         matchsticksIcon.color = imageColor;
 
-        imageColor = new Color(0, 0, 0, .5f);
+        imageColor = new Color(1, 1, 1, .5f);
         matchsticksText.color = imageColor;
 
         StopCoroutine(ChangeNumberOfMatchsticks(newMatchsticksCount));

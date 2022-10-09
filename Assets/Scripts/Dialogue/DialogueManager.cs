@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class DialogueManager : MonoBehaviour
 
     public TextAsset textJSON;
 
+    //Dialogue class stores a list of sentences and possible choices
     [System.Serializable]
     public class Dialogue
     {
@@ -19,6 +21,7 @@ public class DialogueManager : MonoBehaviour
         public StrongChoice[] strongChoice;
     }
 
+    //Sentence class holds properties for the person speaking, text, and choices
     [System.Serializable]
     public class Sentence
     {
@@ -29,6 +32,7 @@ public class DialogueManager : MonoBehaviour
         public Impact[] gameImpact;
     }
 
+    //WeakChoice class, stores potential outcomes to choices made
     [System.Serializable]
     public class WeakChoice
     {
@@ -36,6 +40,7 @@ public class DialogueManager : MonoBehaviour
         public int nextTextID;
     }
 
+    //StrongChoice class, stores potential lasting impacts to choices made
     [System.Serializable]
     public class StrongChoice
     {
@@ -44,6 +49,7 @@ public class DialogueManager : MonoBehaviour
         public string lastingImpact;
     }
 
+    //Impact class. Keeps track of possible branching paths.
     [System.Serializable]
     public class Impact
     {
@@ -75,6 +81,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private Player player;
     private Movement playerM;
+    [SerializeField]
+    private ColdMeter gameColdMeter;
+    bool coldMeterWasDepleting;
 
     void Start()
     {
@@ -86,14 +95,19 @@ public class DialogueManager : MonoBehaviour
 
         lastingImpacts = new List<string>();
 
+        player = GameObject.Find("Player").GetComponent<Player>();
         playerM = player.GetComponent<Movement>();
+        gameColdMeter = GameObject.Find("ColdMeterCanvas").transform.Find("ColdMeter").GetComponent<ColdMeter>();
 
         StartDialogue(dialogueToDisplay);
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
-
+        coldMeterWasDepleting = gameColdMeter.depleting;
+        gameColdMeter.depleting = false;
+        playerM.canMove = false;
+        
         sentences.Clear();
         foreach(GameObject button in buttons) if(button != null) Destroy(button);
 
@@ -150,13 +164,16 @@ public class DialogueManager : MonoBehaviour
                 }
             }
         }
+
+        if(buttons.Length > 0 && buttons[0] != null)
+        EventSystem.current.SetSelectedGameObject(buttons[0]);
     }
 
     void GrantStrongChoice(int numberOfChoices, StrongChoice[] strongChoice)
     {
         if(numberOfChoices == 1 && strongChoice[0].choiceText.Equals(""))
         {
-            
+            EndDialogue();
         }
 
         foreach(GameObject button in buttons) if(button != null) Destroy(button);
@@ -181,6 +198,13 @@ public class DialogueManager : MonoBehaviour
     public void StrongChoiceMade(int nextDialogueID, string lastingImpact)
     {
         if (lastingImpact != null) lastingImpacts.Add(lastingImpact);
+    }
+
+    private void EndDialogue()
+    {
+        if(coldMeterWasDepleting) gameColdMeter.depleting = true;
+        playerM.canMove = true;
+        Destroy(gameObject);
     }
 
     IEnumerator TypeSentence(Sentence sentence)
