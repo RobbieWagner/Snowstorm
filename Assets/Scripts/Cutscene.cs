@@ -56,6 +56,7 @@ public class Cutscene : MonoBehaviour
     [SerializeField]
     private CanvasSwap canvasSwap;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,6 +79,14 @@ public class Cutscene : MonoBehaviour
         }
     }
 
+    void OnGUI()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            StartCoroutine(SkipCutscene());
+        }
+    }
+
     IEnumerator ReadDialogue()
     {
         foreach(Sentence sentence in dialogue.sentences)
@@ -92,7 +101,7 @@ public class Cutscene : MonoBehaviour
 
     IEnumerator StartNextSentence(Sentence sentence)
     {
-        if(sentence.togglesMusic && cutsceneMusic.isPlaying) cutsceneMusic.Stop();
+        if(sentence.togglesMusic && cutsceneMusic.isPlaying) StartCoroutine(FadeMusicOut());
         else if(sentence.togglesMusic) cutsceneMusic.Play();
 
         if(sentence.imageIndex != 0) 
@@ -150,4 +159,20 @@ public class Cutscene : MonoBehaviour
         StopCoroutine(HideImage(uiImage));
     }
 
+    IEnumerator SkipCutscene()
+    {
+        yield return StartCoroutine(canvasSwap.SwapCanvasesSlowly());
+        parentCanvas.gameObject.SetActive(false);
+        StopCoroutine(SkipCutscene());
+    }
+
+    IEnumerator FadeMusicOut()
+    {
+        while(cutsceneMusic.volume > 0f)
+        {
+            cutsceneMusic.volume -=.1f;
+            yield return new WaitForSeconds(.1f);
+        }
+        StopCoroutine(FadeMusicOut());
+    }
 }

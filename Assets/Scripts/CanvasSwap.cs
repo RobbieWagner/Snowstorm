@@ -33,7 +33,7 @@ public class CanvasSwap : MonoBehaviour
         }
     }
 
-    private IEnumerator SwapCanvasesSlowly()
+    public IEnumerator SwapCanvasesSlowly()
     {
         screenCoverCanvas.gameObject.SetActive(true);
 
