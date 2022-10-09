@@ -2099,6 +2099,7 @@ MonoBehaviour:
   sceneName: MainMenu
   uiImage: {fileID: 1801197143}
   screenCoverCanvas: {fileID: 722798431}
+  changeSceneOnStart: 0
 --- !u!4 &1016003942
 Transform:
   m_ObjectHideFlags: 0
@@ -2367,15 +2368,15 @@ RectTransform:
   m_GameObject: {fileID: 1103325009}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.15, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.72, z: 1}
   m_Children: []
   m_Father: {fileID: 1240917091}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 17.920013}
-  m_SizeDelta: {x: 0, y: 35.83997}
+  m_AnchoredPosition: {x: 0, y: -10.999985}
+  m_SizeDelta: {x: 0, y: -22.00003}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1103325011
 MonoBehaviour:
@@ -2424,8 +2425,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 61.25
-  m_fontSizeBase: 61.25
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2460,7 +2461,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -1.5475615, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2725,7 +2726,7 @@ RectTransform:
   m_GameObject: {fileID: 1240917090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 4.5, z: 1}
+  m_LocalScale: {x: 1, y: 1.25, z: 1}
   m_Children:
   - {fileID: 1103325010}
   m_Father: {fileID: 1294609386}
@@ -2914,6 +2915,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisCanvas: {fileID: 1294609385}
   otherCanvas: {fileID: 276537204}
+  swanpsCanvasesSlowly: 0
+  uiImage: {fileID: 0}
+  screenCoverCanvas: {fileID: 0}
+  hasAssociatedMusic: 0
+  associatedMusic: {fileID: 0}
 --- !u!1 &1392379392
 GameObject:
   m_ObjectHideFlags: 0
@@ -3215,6 +3221,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisCanvas: {fileID: 276537204}
   otherCanvas: {fileID: 1294609385}
+  swanpsCanvasesSlowly: 0
+  uiImage: {fileID: 0}
+  screenCoverCanvas: {fileID: 0}
+  hasAssociatedMusic: 0
+  associatedMusic: {fileID: 0}
 --- !u!114 &1440816433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4094,6 +4105,7 @@ MonoBehaviour:
   sceneName: MainMenu
   uiImage: {fileID: 824167027}
   screenCoverCanvas: {fileID: 276537204}
+  changeSceneOnStart: 0
 --- !u!114 &1752679768
 MonoBehaviour:
   m_ObjectHideFlags: 0

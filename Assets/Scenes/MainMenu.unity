@@ -4406,11 +4406,10 @@ MonoBehaviour:
   cutsceneImages:
   - {fileID: 21300000, guid: a86b05b56662f7c449d51244c16776b2, type: 3}
   - {fileID: 21300000, guid: 1010ab62c1aedaf46aa394735bd72674, type: 3}
-  - {fileID: 21300000, guid: a86b05b56662f7c449d51244c16776b2, type: 3}
-  - {fileID: 21300000, guid: a86b05b56662f7c449d51244c16776b2, type: 3}
-  - {fileID: 21300000, guid: a86b05b56662f7c449d51244c16776b2, type: 3}
-  - {fileID: 21300000, guid: a86b05b56662f7c449d51244c16776b2, type: 3}
-  - {fileID: 21300000, guid: a86b05b56662f7c449d51244c16776b2, type: 3}
+  - {fileID: 21300000, guid: 520e71b6d29f1894084add4ab1347097, type: 3}
+  - {fileID: 21300000, guid: de4d465be406bbe43b1b07423215cb39, type: 3}
+  - {fileID: 21300000, guid: 94fb0800409012942bd256764b784eb5, type: 3}
+  - {fileID: 21300000, guid: a46269e3d3f31ca4eb94a4d34e11ee1d, type: 3}
   image: {fileID: 1829171881}
   cutsceneText: {fileID: 1626222783}
   cutsceneMusic: {fileID: 603188797}
