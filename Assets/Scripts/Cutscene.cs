@@ -22,7 +22,7 @@ public class Cutscene : MonoBehaviour
         public string text;
         public bool togglesMusic;
         public int imageIndex;
-        public bool turnsOffImage;
+        public bool turnsImageOff;
     }
 
 
@@ -83,7 +83,8 @@ public class Cutscene : MonoBehaviour
         foreach(Sentence sentence in dialogue.sentences)
         {
             yield return StartCoroutine(StartNextSentence(sentence));
-            yield return new WaitForSeconds(3f);
+            if(sentence.turnsImageOff) yield return new WaitForSeconds(1f);
+            else yield return new WaitForSeconds(3f);
         }
         StopCoroutine(ReadDialogue());
         canvasSwap.SwapCanvases();
@@ -108,7 +109,7 @@ public class Cutscene : MonoBehaviour
 
         while(sentenceReaderRunning || displayImageRunning) yield return null;
         
-        if(sentence.turnsOffImage) yield return StartCoroutine(HideImage(image));
+        if(sentence.turnsImageOff) yield return StartCoroutine(HideImage(image));
 
         StopCoroutine(StartNextSentence(sentence));
     }
