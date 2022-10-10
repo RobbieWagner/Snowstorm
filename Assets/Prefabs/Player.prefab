@@ -638,6 +638,7 @@ MonoBehaviour:
   playerIsInside: 0
   playerHasEneteredCabin: 0
   playerhasEnteredTown: 0
+  k: {fileID: 2781806073861799696}
 --- !u!114 &576953277147204961
 MonoBehaviour:
   m_ObjectHideFlags: 0

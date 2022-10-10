@@ -8,13 +8,18 @@ public class DialogueInteractable : Interactable
     [SerializeField]
     private TextAsset textJSON;
 
+    [System.Serializable]
+    public class DialogueD
+    {
+        public Dialogue dialogue;
+    }
+
     //Dialogue class stores a list of sentences and possible choices
     [System.Serializable]
     public class Dialogue
     {
         public int dialogueID;
         public Sentence[] sentences;
-        public StrongChoice[] strongChoice;
     }
 
     //Sentence class holds properties for the person speaking, text, and choices
@@ -54,14 +59,16 @@ public class DialogueInteractable : Interactable
     }
 
     DialogueManager dialogueM;
-    Dialogue dialogue;
+    [SerializeField]
+    Dialogue dialogue = new Dialogue();
 
-    // Start is called before the first frame update
+    //Start is called before the first frame update
     protected void Start()
     {
+        base.Start();
         playerCanInteract = false;
 
-        dialogue = JsonUtility.FromJson<Dialogue>(textJSON.text);
+        dialogue = JsonUtility.FromJson<DialogueD>(textJSON.text).dialogue;
 
         dialogueM = GameObject.Find("TextBoxCanvas").GetComponent<DialogueManager>();
     }

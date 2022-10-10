@@ -30,6 +30,9 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public bool playerhasEnteredTown;
 
+    [SerializeField]
+    private GameObject k;
+
     void Start()
     {
         tilesGenerated = 0;
@@ -43,5 +46,7 @@ public class Player : MonoBehaviour
         playerIsInside = false;
         playerHasEneteredCabin = false;
         playerhasEnteredTown = false;
+
+        k.SetActive(false);
     }
 }

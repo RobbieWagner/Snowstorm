@@ -12,7 +12,7 @@ public abstract class Interactable : MonoBehaviour
     protected void Start() 
     {
         player = GameObject.Find("Player").GetComponent<Player>();
-        keyboardKey = FindObject(player.gameObject, "K");
+        keyboardKey = player.gameObject.transform.Find("K").gameObject;
         playerCanInteract = false;
     }
 

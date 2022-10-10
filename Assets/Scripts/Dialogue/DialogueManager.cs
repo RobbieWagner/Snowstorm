@@ -24,6 +24,9 @@ public class DialogueManager : MonoBehaviour
 
     int currentSentence;
 
+    [SerializeField]
+    private Image blinkIcon;
+
     //List<string> lastingImpacts;
 
     [SerializeField]
@@ -34,9 +37,16 @@ public class DialogueManager : MonoBehaviour
     bool coldMeterWasDepleting;
 
     private bool canMoveOn;
+    private bool waitingForPlayerToContinue;
+
+    int nextSentence;
+
+    bool isPressingButton;
 
     void Start()
     {
+        blinkIcon.enabled = false;
+
         buttons = new GameObject[1];
         buttonsText = new TextMeshProUGUI[1];
 
@@ -45,6 +55,11 @@ public class DialogueManager : MonoBehaviour
         playerM = player.GetComponent<Movement>();
 
         canMoveOn = false;
+        waitingForPlayerToContinue = false;
+
+        nextSentence = 0;
+        
+        isPressingButton = false;
     }
 
     public void StartDialogue(DialogueInteractable.Dialogue dialogue)
@@ -53,6 +68,8 @@ public class DialogueManager : MonoBehaviour
         coldMeterWasDepleting = gameColdMeter.depleting;
         gameColdMeter.depleting = false;
         playerM.canMove = false;
+
+        textBoxC.enabled = true;
         
         sentences.Clear();
         foreach(GameObject button in buttons) if(button != null) Destroy(button);
@@ -80,6 +97,14 @@ public class DialogueManager : MonoBehaviour
         }
 
         DialogueInteractable.Sentence sentence = sentences[sentenceID];
+
+        if(sentence.weakChoice.Length == 1)
+        {
+            Debug.Log(nextSentence);
+            nextSentence = sentence.weakChoice[0].nextTextID;
+            Debug.Log(nextSentence);
+        }
+
         nameText.text = sentence.speaker;
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
@@ -95,13 +120,17 @@ public class DialogueManager : MonoBehaviour
         {
             buttons[i] = Instantiate(weakChoiceButton) as GameObject;
             buttons[i].transform.SetParent(textBox.transform, false);
-            buttons[i].transform.position = new Vector3(Screen.width, 20*i, 0);
+            buttons[i].transform.position = new Vector3(buttons[i].transform.position.x, buttons[i].transform.position.y + 30 * i, buttons[i].transform.position.z);
             Button button = buttons[i].GetComponent<Button>();
             buttonsText[i] = buttons[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>();
             buttonsText[i].text = weakChoice[i].choiceText;
 
             int weakChoiceID = i;
-            if(weakChoice[weakChoiceID].nextTextID != 0) button.onClick.AddListener(delegate{DisplayNextSentence(weakChoice[weakChoiceID].nextTextID);});
+            if(weakChoice[weakChoiceID].nextTextID != 0) 
+            {
+                button.onClick.AddListener(delegate{DisplayNextSentence(weakChoice[weakChoiceID].nextTextID);});
+                EventSystem.current.SetSelectedGameObject(button.gameObject);
+            }
             // else if(sentences[currentSentence].gameImpact.Length > 0)
             // {
             //     foreach(Impact impact in sentences[currentSentence].gameImpact)
@@ -153,6 +182,21 @@ public class DialogueManager : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void OnGUI() 
+    {
+        if((Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) && canMoveOn && waitingForPlayerToContinue && !isPressingButton)
+        {
+            isPressingButton = true;
+            if(nextSentence < sentences.Count)
+            DisplayNextSentence(nextSentence);
+
+            else EndDialogue();
+        }    
+
+        if((Input.GetKeyUp(KeyCode.K) || Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.Space)) && canMoveOn && waitingForPlayerToContinue)
+        isPressingButton = false;
+    }
+
     IEnumerator TypeSentence(DialogueInteractable.Sentence sentence)
     {
         dialogueText.text = "";
@@ -162,10 +206,30 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(.025f);
         }
 
+        if(sentence.weakChoice != null && sentence.weakChoice.Length > 1)
         GrantWeakChoice(sentence.weakChoice.Length, sentence.weakChoice);
+        
 
         canMoveOn = true;
 
+        if(canMoveOn && (sentence.weakChoice == null || sentence.weakChoice.Length <= 1))
+        StartCoroutine(BlinkIcon());
+
         StopCoroutine(TypeSentence(sentence));
+    }
+
+    IEnumerator BlinkIcon()
+    {
+        waitingForPlayerToContinue = true;
+        while(waitingForPlayerToContinue) 
+        {
+            blinkIcon.enabled = true;
+            yield return new WaitForSeconds(.5f);
+            blinkIcon.enabled = false;
+            yield return new WaitForSeconds(.3f);
+        }
+        waitingForPlayerToContinue = false;
+
+        StopCoroutine(BlinkIcon());
     }
 }
