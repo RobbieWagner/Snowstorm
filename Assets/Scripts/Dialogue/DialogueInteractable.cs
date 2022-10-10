@@ -77,4 +77,14 @@ public class DialogueInteractable : Interactable
     {
         dialogueM.StartDialogue(dialogue);
     }
+
+    protected override void Update()
+    {
+        base.Update();
+
+        if(isInteracting && !dialogueM.textBoxC.enabled)
+        {
+            isInteracting = false;
+        }
+    }
 }

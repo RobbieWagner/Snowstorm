@@ -83,7 +83,7 @@ public class RoomController : Interactable
         }
     }
 
-    protected override void OnGUI()
+    protected override void Update()
     {
         if(isAtDoor && canEnter && Input.GetKeyDown(KeyCode.K) && !isUsingDoor)
         {

@@ -8,14 +8,19 @@ public abstract class Interactable : MonoBehaviour
     protected GameObject keyboardKey;
     protected Player player;
     protected bool playerCanInteract;
+    protected bool isInteracting;
+    protected bool runningCooldown;
 
     protected void Start() 
     {
         player = GameObject.Find("Player").GetComponent<Player>();
         keyboardKey = player.gameObject.transform.Find("K").gameObject;
         playerCanInteract = false;
+        isInteracting = false;
+        runningCooldown = false;
     }
 
+    //Lets player interact when inside of trigger
     protected virtual void OnTriggerEnter(Collider collision)
     {   
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player")) 
@@ -25,6 +30,7 @@ public abstract class Interactable : MonoBehaviour
         }
     }
 
+    //prevents player interaction outside of trigger
     protected virtual void OnTriggerExit(Collider collision)
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
@@ -34,10 +40,21 @@ public abstract class Interactable : MonoBehaviour
         }
     }
 
-    protected virtual void OnGUI()
+    //checks for interaction
+    protected virtual void Update()
     {
         if(playerCanInteract && Input.GetKeyDown(KeyCode.K))
-        Interact();
+        {
+            Debug.Log("interacting");
+            playerCanInteract = false;
+            isInteracting = true;
+            Interact();
+        }
+
+        if(isInteracting && !runningCooldown)
+        {
+            StartCoroutine(CoolDownInteraction());
+        }
     }
 
     //Find a child object of a parent
@@ -52,6 +69,25 @@ public abstract class Interactable : MonoBehaviour
         return null;
     }
 
-    protected abstract void Interact();
+    //Interact with the object
+    protected virtual void Interact()
+    {
+
+    }
+
+    //prevents player from interacting again immediately
+    protected virtual IEnumerator CoolDownInteraction()
+    {
+        runningCooldown = true;
+
+        while(isInteracting) yield return null;
+
+        yield return new WaitForSeconds(.4f);
+        playerCanInteract = true;
+
+        runningCooldown = false;
+
+        StopCoroutine(CoolDownInteraction());
+    }
 }
 

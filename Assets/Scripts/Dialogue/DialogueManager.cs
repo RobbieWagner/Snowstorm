@@ -43,6 +43,8 @@ public class DialogueManager : MonoBehaviour
 
     bool isPressingButton;
 
+    bool dialogueRunning;
+
     void Start()
     {
         blinkIcon.enabled = false;
@@ -60,31 +62,52 @@ public class DialogueManager : MonoBehaviour
         nextSentence = 0;
         
         isPressingButton = false;
+
+        dialogueRunning = false;
+    }
+
+    private void Update() 
+    {
+        if((Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) && canMoveOn && waitingForPlayerToContinue && !isPressingButton)
+        {
+            isPressingButton = true;
+            if(nextSentence < sentences.Count)
+            DisplayNextSentence(nextSentence);
+
+            else EndDialogue();
+        }    
+
+        if((Input.GetKeyUp(KeyCode.K) || Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.Space)) && canMoveOn && waitingForPlayerToContinue)
+        isPressingButton = false;
     }
 
     public void StartDialogue(DialogueInteractable.Dialogue dialogue)
     {
-        sentences = new List<DialogueInteractable.Sentence>();
-        coldMeterWasDepleting = gameColdMeter.depleting;
-        gameColdMeter.depleting = false;
-        playerM.canMove = false;
-
-        textBoxC.enabled = true;
-        
-        sentences.Clear();
-        foreach(GameObject button in buttons) if(button != null) Destroy(button);
-
-        foreach(DialogueInteractable.Sentence sentence in dialogue.sentences)
+        if(!dialogueRunning)
         {
-            sentences.Add(sentence);
-        }
+            dialogueRunning = true;
+        
+            sentences = new List<DialogueInteractable.Sentence>();
+            coldMeterWasDepleting = gameColdMeter.depleting;
+            gameColdMeter.depleting = false;
+            playerM.canMove = false;
 
-        DisplayNextSentence(0);
+            textBoxC.enabled = true;
+            
+            sentences.Clear();
+            foreach(GameObject button in buttons) if(button != null) Destroy(button);
+
+            foreach(DialogueInteractable.Sentence sentence in dialogue.sentences)
+            {
+                sentences.Add(sentence);
+            }
+
+            DisplayNextSentence(0);
+        }
     }
 
     public void DisplayNextSentence(int sentenceID)
     {
-
         currentSentence = sentenceID;
 
         foreach(GameObject button in buttons) if(button != null) Destroy(button);
@@ -100,9 +123,7 @@ public class DialogueManager : MonoBehaviour
 
         if(sentence.weakChoice.Length == 1)
         {
-            Debug.Log(nextSentence);
             nextSentence = sentence.weakChoice[0].nextTextID;
-            Debug.Log(nextSentence);
         }
 
         nameText.text = sentence.speaker;
@@ -179,22 +200,8 @@ public class DialogueManager : MonoBehaviour
     {
         if(coldMeterWasDepleting) gameColdMeter.depleting = true;
         playerM.canMove = true;
-        Destroy(gameObject);
-    }
-
-    private void OnGUI() 
-    {
-        if((Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) && canMoveOn && waitingForPlayerToContinue && !isPressingButton)
-        {
-            isPressingButton = true;
-            if(nextSentence < sentences.Count)
-            DisplayNextSentence(nextSentence);
-
-            else EndDialogue();
-        }    
-
-        if((Input.GetKeyUp(KeyCode.K) || Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.Space)) && canMoveOn && waitingForPlayerToContinue)
-        isPressingButton = false;
+        dialogueRunning = false;
+        textBoxC.enabled = false;
     }
 
     IEnumerator TypeSentence(DialogueInteractable.Sentence sentence)
