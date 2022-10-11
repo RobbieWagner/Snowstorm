@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class GameMenu : MonoBehaviour
 {
@@ -29,6 +30,9 @@ public class GameMenu : MonoBehaviour
     [SerializeField]
     private AudioSource scribblingSound; 
 
+    [SerializeField]
+    private GameObject journalButton;
+
     void Start()
     {
         menuOpen = false;
@@ -52,6 +56,8 @@ public class GameMenu : MonoBehaviour
                 gameMenu.enabled = true;
                 menuOpen = true;
                 playerMovement.canMove = false;
+                EventSystem.current.SetSelectedGameObject(journalButton);
+                player.canInteractWithObjects = false;
             }
             else if(menuOpen && gameMenu.enabled && !menuChanging && canLeaveMenu) 
             {
@@ -60,6 +66,8 @@ public class GameMenu : MonoBehaviour
                 gameMenu.enabled = false;
                 menuOpen = false;
                 playerMovement.canMove = true;
+                EventSystem.current.SetSelectedGameObject(null);
+                player.canInteractWithObjects = true;
             }
             else
             {

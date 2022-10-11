@@ -6,7 +6,7 @@
             {"textID":0, "text":"Hi there!", "weakChoice":[{"choiceText":">","nextTextID":1}],"speaker":"???"},
             {"textID":1, "text":"Would you like to listen to my drumming", "weakChoice":[{"choiceText":"sure","nextTextID":5},{"choiceText":"Where am I?", "nextTextID": 2}],"speaker":"???"},
             {"textID":2, "text":"Why, you're here, of course!", "weakChoice":[{"choiceText":">","nextTextID":3}],"speaker":"???"},
-            {"textID":3, "text":"Listening to me drum on this log!", "weakChoice":[{"choiceText":"Nearest Town?","nextTextID":4}],"speaker":"???"},
+            {"textID":3, "text":"Listening to me drum on this log!", "weakChoice":[{"choiceText":"Nearest Town?","nextTextID":4},{"choiceText":"uh...","nextTextID":5}],"speaker":"???"},
             {"textID":4, "text":"I dunno. Probably nearby.", "weakChoice":[{"choiceText":"but-","nextTextID":5}],"speaker":"???"},
             {"textID":5, "text":"Bum ba dum de dum", "weakChoice":[{"choiceText":">","nextTextID":6}],"speaker":"???"}
         ]

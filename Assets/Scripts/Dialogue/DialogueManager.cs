@@ -45,6 +45,8 @@ public class DialogueManager : MonoBehaviour
 
     bool dialogueRunning;
 
+    Button currentButton;
+
     void Start()
     {
         blinkIcon.enabled = false;
@@ -71,13 +73,14 @@ public class DialogueManager : MonoBehaviour
         if((Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) && canMoveOn && waitingForPlayerToContinue && !isPressingButton)
         {
             isPressingButton = true;
+            waitingForPlayerToContinue = false;
             if(nextSentence < sentences.Count)
             DisplayNextSentence(nextSentence);
 
             else EndDialogue();
         }    
 
-        if((Input.GetKeyUp(KeyCode.K) || Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.Space)) && canMoveOn && waitingForPlayerToContinue)
+        if((Input.GetKeyUp(KeyCode.K) || Input.GetKeyUp(KeyCode.Return) || Input.GetKeyUp(KeyCode.Space)) && canMoveOn)
         isPressingButton = false;
     }
 
@@ -150,7 +153,6 @@ public class DialogueManager : MonoBehaviour
             if(weakChoice[weakChoiceID].nextTextID != 0) 
             {
                 button.onClick.AddListener(delegate{DisplayNextSentence(weakChoice[weakChoiceID].nextTextID);});
-                EventSystem.current.SetSelectedGameObject(button.gameObject);
             }
             // else if(sentences[currentSentence].gameImpact.Length > 0)
             // {

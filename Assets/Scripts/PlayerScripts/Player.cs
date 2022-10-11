@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public bool hasSeenInteractableTutorial;
 
+    [HideInInspector]
+    public bool canInteractWithObjects;
+
     [SerializeField]
     GameObject playerGraphic;
 

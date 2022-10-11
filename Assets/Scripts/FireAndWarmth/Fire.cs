@@ -82,7 +82,7 @@ public class Fire : Interactable
     // Press J to light a fire
     protected override void Update()
     {
-        if(Input.GetKeyDown(KeyCode.J) && playerMovement.canMove && canLight && !fireLit && matchsticks.matchsticksCount > 0)
+        if(Input.GetKeyDown(KeyCode.J) && playerMovement.canMove && canLight && !fireLit && matchsticks.matchsticksCount > 0 && playerCanInteract && player.canInteractWithObjects)
         {
             keyboardKey.SetActive(false);
             LightFire();
