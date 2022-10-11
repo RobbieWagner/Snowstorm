@@ -616,7 +616,7 @@ MonoBehaviour:
   depleting: 0
   replenishing: 0
   depletionRate: 1
-  replenishmentRate: 3
+  replenishmentRate: 30
 --- !u!114 &6395317043812783100
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5913,6 +5913,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6758757092287709054, guid: 5b37cb186c2df7547b28c7b189e2ae20, type: 3}
+      propertyPath: tileOptions.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6758757092287709054, guid: 5b37cb186c2df7547b28c7b189e2ae20, type: 3}
+      propertyPath: tileOptions.Array.data[10]
+      value: 
+      objectReference: {fileID: 67236344231706211, guid: 5c1647102e617784d8af2c10e0a02da9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b37cb186c2df7547b28c7b189e2ae20, type: 3}
 --- !u!1001 &6190736136404945495
@@ -6020,7 +6028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6190736136100740823, guid: f4ae16366ba9d44499437afa5727ea84, type: 3}
       propertyPath: meterMax
-      value: 200
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 6190736136100740823, guid: f4ae16366ba9d44499437afa5727ea84, type: 3}
       propertyPath: sceneChanger
@@ -6034,5 +6042,9 @@ PrefabInstance:
       propertyPath: playerMovement
       value: 
       objectReference: {fileID: 7386638}
+    - target: {fileID: 6190736136100740823, guid: f4ae16366ba9d44499437afa5727ea84, type: 3}
+      propertyPath: currentMeterReading
+      value: 2000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4ae16366ba9d44499437afa5727ea84, type: 3}

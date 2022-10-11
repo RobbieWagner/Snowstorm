@@ -1,11 +1,11 @@
 {
-    "Dialogue":
+    "dialogue":
     {
         "dialogueID" : 0,
         "sentences" : [
             {"textID":0, "text":"Howdy", "weakChoice":[{"choiceText":">","nextTextID":1}],"speaker":"???"},
             {"textID":1, "text":"Far from home. I reckon", "weakChoice":[{"choiceText":">","nextTextID":2}],"speaker":"???"},
-            {"textID":2, "text":"Yeah. Don't get too many folk out here", "weakChoice":[{"choiceText":">","nextTextID":3}],"speaker":"???"},
+            {"textID":2, "text":"Yeah. Don't get too many folk out here", "weakChoice":[{"choiceText":"What are you doing?","nextTextID":3}],"speaker":"???"},
             {"textID":3, "text":"Oh me? Nah I ain't doin much", "weakChoice":[{"choiceText":">","nextTextID":4}],"speaker":"???"},
             {"textID":4, "text":"I used to hunt out here.", "weakChoice":[{"choiceText":">","nextTextID":5}],"speaker":"???"},
             {"textID":5, "text":"Feels like ages since I've seen any animals out here though.", "weakChoice":[{"choiceText":">","nextTextID":6}],"speaker":"???"},
