@@ -17,6 +17,12 @@ public class TileList : MonoBehaviour
 
     private Player player;
 
+    [SerializeField]
+    public GameObject borderTile;
+
+    [SerializeField]
+    public int tileLimit;
+
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();

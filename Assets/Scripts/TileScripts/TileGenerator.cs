@@ -90,30 +90,39 @@ public class TileGenerator : MonoBehaviour
         for(int i = 0; i < 6; i++)
         {
             int randomNumber = rnd.Next(1000);
-            //generate mega tile
-            if(!tilesBlockingMegaGeneration[i] && !megaTileSpawned && randomNumber < megaTileSpawnChance)
+
+            if(levelsTiles.tileLimit > player.tilesGenerated)
             {
-                direction = TileDirection(i) * 2;
+                //generate mega tile
+                if(!tilesBlockingMegaGeneration[i] && !megaTileSpawned && randomNumber < megaTileSpawnChance)
+                {
+                    direction = TileDirection(i) * 2;
 
-                List<int> tileSpawns = levelsTiles.size2TileSpawns;
-                List<GameObject> tiles = levelsTiles.size2TileOptions;
+                    List<int> tileSpawns = levelsTiles.size2TileSpawns;
+                    List<GameObject> tiles = levelsTiles.size2TileOptions;
 
-                GenerateTile(tiles, tileSpawns, direction);
+                    GenerateTile(tiles, tileSpawns, direction);
 
-                megaTileSpawned = true;
-                player.tilesGenerated += 6;
-                
+                    megaTileSpawned = true;
+                    player.tilesGenerated += 6;
+                    
+                }
+                //generate regular tile
+                else if(!tilesGenerated[i])
+                {
+                    direction = TileDirection(i);
+
+                    List<int> tileSpawns = levelsTiles.tileSpawns;
+                    List<GameObject> tiles = levelsTiles.tileOptions;
+
+                    GenerateTile(tiles, tileSpawns, direction);
+
+                }
             }
-            //generate regular tile
             else if(!tilesGenerated[i])
             {
                 direction = TileDirection(i);
-
-                List<int> tileSpawns = levelsTiles.tileSpawns;
-                List<GameObject> tiles = levelsTiles.tileOptions;
-
-                GenerateTile(tiles, tileSpawns, direction);
-
+                Instantiate(levelsTiles.borderTile, tileT.position + direction, Quaternion.identity);
             }
         }
         surroundingTilesGenerated = true;

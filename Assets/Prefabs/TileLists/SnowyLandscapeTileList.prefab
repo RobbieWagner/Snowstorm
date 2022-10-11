@@ -61,3 +61,5 @@ MonoBehaviour:
   - {fileID: 1526344459458245060, guid: 6631e4bb5500cf2448c136fd56099fe8, type: 3}
   size2TileSpawns: 
   chanceOfMegaTile: 10
+  borderTile: {fileID: 3150695108251624545, guid: f667645e1c092474fa59c20a243956a5, type: 3}
+  tileLimit: 1100
