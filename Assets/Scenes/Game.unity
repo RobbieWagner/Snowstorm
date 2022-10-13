@@ -5476,6 +5476,10 @@ PrefabInstance:
       propertyPath: coldMeter
       value: 
       objectReference: {fileID: 383923328}
+    - target: {fileID: 7335705189500621134, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
+      propertyPath: depletionRate
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8534359205724213988, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
       propertyPath: m_Layer
       value: 6

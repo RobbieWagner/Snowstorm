@@ -26,6 +26,7 @@ public abstract class Interactable : MonoBehaviour
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player")) 
         {
             playerCanInteract = true;
+            player.canInteractWithObjects = true;
             keyboardKey.SetActive(true);
         }
     }
@@ -36,6 +37,7 @@ public abstract class Interactable : MonoBehaviour
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         { 
             playerCanInteract = false;
+            player.canInteractWithObjects = false;
             keyboardKey.SetActive(false);
         }
     }
