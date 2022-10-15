@@ -6,8 +6,8 @@ public class Player : MonoBehaviour
 {
     // Class keeps track of variables called by multiple classes
     
-    [HideInInspector]
-    public bool reading;
+    //[HideInInspector]
+    //public bool reading;
 
     [HideInInspector]
     public bool hasSeenFireLightingTutorial;
@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         tilesGenerated = 0;
-        reading = false;
+        
 
         hasSeenFireLightingTutorial = false;
         hasSeenWarmthTutorial = false;

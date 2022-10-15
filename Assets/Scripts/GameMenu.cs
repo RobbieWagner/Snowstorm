@@ -19,6 +19,8 @@ public class GameMenu : MonoBehaviour
     private Movement playerMovement;
     private Player player;
 
+    DialogueManager dialogueM;
+
     
     [SerializeField]
     private GameObject[] notifIcons;
@@ -42,6 +44,8 @@ public class GameMenu : MonoBehaviour
         player = playerMovement.gameObject.GetComponent<Player>();
 
         canLeaveMenu = true;
+
+        dialogueM = GameObject.Find("TextBoxCanvas").GetComponent<DialogueManager>();
     }
 
     //For opening and closing the in game menu
@@ -49,7 +53,7 @@ public class GameMenu : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(!menuOpen && !menuChanging)
+            if(!menuOpen && !menuChanging && !dialogueM.dialogueRunning)
             { 
                 Time.timeScale = 0f;
                 menuChanging = true;

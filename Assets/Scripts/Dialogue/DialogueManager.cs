@@ -43,7 +43,8 @@ public class DialogueManager : MonoBehaviour
 
     bool isPressingButton;
 
-    bool dialogueRunning;
+    [HideInInspector]
+    public bool dialogueRunning;
 
     Button currentButton;
 
