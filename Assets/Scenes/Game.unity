@@ -968,6 +968,7 @@ MonoBehaviour:
   blinkIcon: {fileID: 1458359241}
   player: {fileID: 1974045581}
   gameColdMeter: {fileID: 383923328}
+  dialogueRunning: 0
 --- !u!1 &590703668
 GameObject:
   m_ObjectHideFlags: 0
@@ -5918,22 +5919,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6758757092287709054, guid: 5b37cb186c2df7547b28c7b189e2ae20, type: 3}
-      propertyPath: tileOptions.Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6758757092287709054, guid: 5b37cb186c2df7547b28c7b189e2ae20, type: 3}
-      propertyPath: tileOptions.Array.data[10]
-      value: 
-      objectReference: {fileID: 67236344231706211, guid: 5c1647102e617784d8af2c10e0a02da9, type: 3}
-    - target: {fileID: 6758757092287709054, guid: 5b37cb186c2df7547b28c7b189e2ae20, type: 3}
-      propertyPath: tileOptions.Array.data[11]
-      value: 
-      objectReference: {fileID: 67236344231706211, guid: 78cfb6b37e95b9a42b9cad542a520220, type: 3}
-    - target: {fileID: 6758757092287709054, guid: 5b37cb186c2df7547b28c7b189e2ae20, type: 3}
-      propertyPath: size2TileOptions.Array.data[0]
-      value: 
-      objectReference: {fileID: 1526344459458245060, guid: 5ffa5268dc74bc041a87c3f30f7cdec2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b37cb186c2df7547b28c7b189e2ae20, type: 3}
 --- !u!1001 &6190736136404945495

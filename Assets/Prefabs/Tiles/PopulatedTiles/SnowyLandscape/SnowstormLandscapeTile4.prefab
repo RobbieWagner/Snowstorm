@@ -47,7 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2754cfb6d277a9e44ba3d3379551dadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnChances: 10
+  spawnChances: 1
+  onlySpawnsOnce: 0
+  canSpawn: 1
+  tileRequirementsForSpawn: 0
+  placedIntoArray: 1
 --- !u!1001 &1385691043620881928
 PrefabInstance:
   m_ObjectHideFlags: 0

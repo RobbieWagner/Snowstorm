@@ -205,6 +205,7 @@ public class DialogueManager : MonoBehaviour
         playerM.canMove = true;
         dialogueRunning = false;
         textBoxC.enabled = false;
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     IEnumerator TypeSentence(DialogueInteractable.Sentence sentence)
@@ -216,7 +217,7 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(.025f);
         }
 
-        if(sentence.weakChoice != null && sentence.weakChoice.Length > 1)
+        if(sentence.weakChoice != null && sentence.weakChoice.Length > 0)
         GrantWeakChoice(sentence.weakChoice.Length, sentence.weakChoice);
         
 

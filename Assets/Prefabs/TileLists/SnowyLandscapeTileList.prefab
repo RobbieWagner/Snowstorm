@@ -54,12 +54,14 @@ MonoBehaviour:
   - {fileID: 67236344231706211, guid: e902c46528424724d94cfc21bf1a5d70, type: 3}
   - {fileID: 3150695108251624545, guid: 73ce75ff03fd0cb42a3236afa038d6cc, type: 3}
   - {fileID: 67236344231706211, guid: e1fac44ead410044eaee9c35c7a40ded, type: 3}
+  - {fileID: 67236344231706211, guid: 5c1647102e617784d8af2c10e0a02da9, type: 3}
+  - {fileID: 67236344231706211, guid: 78cfb6b37e95b9a42b9cad542a520220, type: 3}
   tileSpawns: 
   size2TileOptions:
-  - {fileID: 1526344459458245060, guid: ff072faca13a935499f0795620b3e864, type: 3}
+  - {fileID: 1526344459458245060, guid: 5ffa5268dc74bc041a87c3f30f7cdec2, type: 3}
   - {fileID: 5957318111964017104, guid: a753404ee7de2ba4c8f7205e0276f2ca, type: 3}
   - {fileID: 1526344459458245060, guid: 6631e4bb5500cf2448c136fd56099fe8, type: 3}
   size2TileSpawns: 
-  chanceOfMegaTile: 10
+  chanceOfMegaTile: 100
   borderTile: {fileID: 3150695108251624545, guid: f667645e1c092474fa59c20a243956a5, type: 3}
   tileLimit: 1100

@@ -1,0 +1,9 @@
+{
+    "dialogue":
+        {
+            "dialogueID" : 0,
+            "sentences" : [
+                {"textID":0, "text":"Victor Song", "weakChoice":[{"choiceText":">","nextTextID":1}], "speaker":""}
+            ]
+        }
+}

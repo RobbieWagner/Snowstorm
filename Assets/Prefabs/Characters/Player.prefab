@@ -629,16 +629,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbf0ec51f8bdd140a6f0767199bcc50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reading: 0
   hasSeenFireLightingTutorial: 0
   hasSeenWarmthTutorial: 0
   hasSeenInteractableTutorial: 0
+  canInteractWithObjects: 0
   playerGraphic: {fileID: 967403433018646216}
   tilesGenerated: 0
   playerIsInside: 0
   playerHasEneteredCabin: 0
   playerhasEnteredTown: 0
   k: {fileID: 2781806073861799696}
+  j: {fileID: 2239113828692444630}
 --- !u!114 &576953277147204961
 MonoBehaviour:
   m_ObjectHideFlags: 0

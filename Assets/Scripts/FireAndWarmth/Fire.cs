@@ -9,6 +9,8 @@ public class Fire : Interactable
     public bool canLight;
     int LIGHT_TIME;
 
+    GameObject playerGO;
+    Player player;
     Movement playerMovement;
     DetectWarmth playerWarmthDetection;
 
@@ -32,13 +34,14 @@ public class Fire : Interactable
     {
         base.Start();
 
-        keyboardKey = GameObject.Find("J");
         fireLit = false;
         canLight = false;
         LIGHT_TIME = 60;
 
-        playerMovement = GameObject.Find("Player").GetComponent<Movement>();
-        playerWarmthDetection = GameObject.Find("Player").GetComponent<DetectWarmth>();
+        playerGO = GameObject.Find("Player");
+        playerMovement = playerGO.GetComponent<Movement>();
+        playerWarmthDetection = playerGO.GetComponent<DetectWarmth>();
+        player = playerGO.GetComponent<Player>();
         matchsticks = GameObject.Find("GameMatchsticks").GetComponent<GameMatchsticks>();
     }
 
@@ -50,8 +53,9 @@ public class Fire : Interactable
             //display keyhint if fire is not lit
             if(!fireLit)
             {
-                keyboardKey = FindObject(player.gameObject, "J");
-                keyboardKey.SetActive(true);
+                player.j.SetActive(true);
+                playerCanInteract = true;
+                player.canInteractWithObjects = true;
             }
 
             canLight = true;
@@ -68,8 +72,9 @@ public class Fire : Interactable
     {
         if(collision.gameObject.layer == LayerMask.NameToLayer("Player")) 
         {
-            keyboardKey.SetActive(false);
-            keyboardKey = FindObject(player.gameObject, "K");
+            player.j.SetActive(false);
+            playerCanInteract = false;
+            player.canInteractWithObjects = false;
             
             canLight = false;
             if(!player.hasSeenWarmthTutorial && fireLit) StartCoroutine(TimeTutorialDisplay(warmthTutorial));

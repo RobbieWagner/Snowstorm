@@ -34,7 +34,9 @@ public class Player : MonoBehaviour
     public bool playerhasEnteredTown;
 
     [SerializeField]
-    private GameObject k;
+    public GameObject k;
+    [SerializeField]
+    public GameObject j;
 
     void Start()
     {

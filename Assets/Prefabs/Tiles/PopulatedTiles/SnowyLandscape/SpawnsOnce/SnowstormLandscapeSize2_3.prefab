@@ -10,10 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4921669958478303728}
   - component: {fileID: 3232836710646902176}
-  - component: {fileID: 163616197128533826}
   - component: {fileID: 7218712136122019674}
-  - component: {fileID: 4649306311029509103}
-  - component: {fileID: 2099490092164623337}
   m_Layer: 0
   m_Name: SnowstormLandscapeSize2_3
   m_TagString: Untagged
@@ -37,6 +34,7 @@ Transform:
   - {fileID: 6509115968800101074}
   - {fileID: 3486037200672970169}
   - {fileID: 135742231967546554}
+  - {fileID: 9114840562895775654}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52,32 +50,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2754cfb6d277a9e44ba3d3379551dadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnChances: 1
+  spawnChances: 100
   onlySpawnsOnce: 1
   canSpawn: 1
-  tileRequirementsForSpawn: 450
+  tileRequirementsForSpawn: 400
   placedIntoArray: 1
---- !u!114 &163616197128533826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526344459458245060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b25696021bdf991459009b68cbd5cba3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canEnter: 0
-  interior: {fileID: 5878275704390137087}
-  togglesPlayerHasEnteredLogCabin: 0
-  togglesPlayerHasEnteredTown: 1
-  enterRoomT: {fileID: 2450780164763500490}
-  exitRoomT: {fileID: 6509115968800101074}
-  roomWarms: 0
-  doorKnock: {fileID: 0}
-  changesFootstepSounds: 0
 --- !u!54 &7218712136122019674
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -94,32 +71,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!65 &4649306311029509103
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526344459458245060}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.509705, y: 3.6452866, z: 1.5868721}
-  m_Center: {x: 0.032146692, y: 1.3226428, z: -24.688448}
---- !u!65 &2099490092164623337
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1526344459458245060}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 7.572674, y: 3.9262276, z: 3.5877018}
-  m_Center: {x: 0.5962434, y: -17.602503, z: -28.223904}
 --- !u!1 &4223008483649083167
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +115,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.4584246, y: 2.515798, z: 2.5216389}
   m_Center: {x: -0.0020303726, y: 0.7578993, z: 1.2009344}
+--- !u!1 &6689098490657154956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9114840562895775654}
+  - component: {fileID: 940511748225544121}
+  - component: {fileID: 6064353559142314813}
+  - component: {fileID: 4122291244921285098}
+  m_Layer: 0
+  m_Name: RoomController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9114840562895775654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6689098490657154956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4921669958478303728}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &940511748225544121
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6689098490657154956}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.509705, y: 2.3245091, z: 3.1560135}
+  m_Center: {x: 0, y: 0.6603887, z: 0.7845707}
+--- !u!65 &6064353559142314813
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6689098490657154956}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.104734, y: 3.9262276, z: 3.8500862}
+  m_Center: {x: 0.2660308, y: -17.602503, z: -3.608858}
+--- !u!114 &4122291244921285098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6689098490657154956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25696021bdf991459009b68cbd5cba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canEnter: 0
+  interior: {fileID: 5878275704390137087}
+  togglesPlayerHasEnteredLogCabin: 0
+  togglesPlayerHasEnteredTown: 1
+  enterRoomT: {fileID: 2450780164763500490}
+  exitRoomT: {fileID: 6509115968800101074}
+  roomWarms: 0
+  doorKnock: {fileID: 0}
+  changesFootstepSounds: 0
 --- !u!1001 &1964877049701936257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -378,7 +409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8440074610955040491, guid: 3d029065b9d258f4c8f62229ec47e1d9, type: 3}
       propertyPath: m_Name
-      value: Town
+      value: Cemetary
       objectReference: {fileID: 0}
     - target: {fileID: 8440074610955040491, guid: 3d029065b9d258f4c8f62229ec47e1d9, type: 3}
       propertyPath: m_IsActive
@@ -887,6 +918,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
+--- !u!4 &8298145417059893227 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7219076460700332019, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
+  m_PrefabInstance: {fileID: 7563900575514980326}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4672998476975817947 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2891746525080496957, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
+  m_PrefabInstance: {fileID: 7563900575514980326}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5713814902908530693 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -6362509722343219229, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
+  m_PrefabInstance: {fileID: 7563900575514980326}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4544987968302816516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6335250783087129314, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
+  m_PrefabInstance: {fileID: 7563900575514980326}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9204944740708788507 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1677264337397171965, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
+  m_PrefabInstance: {fileID: 7563900575514980326}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &29429040848938679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1688617927700330159, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
+  m_PrefabInstance: {fileID: 7563900575514980326}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2335010295930564918 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5233112405309087440, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
+  m_PrefabInstance: {fileID: 7563900575514980326}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7939247128164586847 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 492440804577196729, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
+  m_PrefabInstance: {fileID: 7563900575514980326}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7221863600094991031 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
@@ -897,9 +968,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
   m_PrefabInstance: {fileID: 7563900575514980326}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2335010295930564918 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5233112405309087440, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
+--- !u!4 &1515100049491119065 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9078949020938347583, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
   m_PrefabInstance: {fileID: 7563900575514980326}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &613157289519823127 stripped
@@ -920,46 +991,6 @@ Transform:
 --- !u!1 &1818402656070067628 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1025663018108745142, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
-  m_PrefabInstance: {fileID: 7563900575514980326}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &29429040848938679 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -1688617927700330159, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
-  m_PrefabInstance: {fileID: 7563900575514980326}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1515100049491119065 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9078949020938347583, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
-  m_PrefabInstance: {fileID: 7563900575514980326}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7939247128164586847 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 492440804577196729, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
-  m_PrefabInstance: {fileID: 7563900575514980326}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4544987968302816516 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6335250783087129314, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
-  m_PrefabInstance: {fileID: 7563900575514980326}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &5713814902908530693 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -6362509722343219229, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
-  m_PrefabInstance: {fileID: 7563900575514980326}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4672998476975817947 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2891746525080496957, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
-  m_PrefabInstance: {fileID: 7563900575514980326}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &9204944740708788507 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1677264337397171965, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
-  m_PrefabInstance: {fileID: 7563900575514980326}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &8298145417059893227 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -7219076460700332019, guid: d2564f13a827f0e4b81eee1c9e37e32b, type: 3}
   m_PrefabInstance: {fileID: 7563900575514980326}
   m_PrefabAsset: {fileID: 0}
 --- !u!54 &6257089037945965010
@@ -1195,7 +1226,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1730223835956463132, guid: 9f5597d1d8fb3e74e88a7e5f19557b6e, type: 3}
       propertyPath: m_Name
-      value: TownDisplay
+      value: DisplayCemetary
       objectReference: {fileID: 0}
     - target: {fileID: 7668424986336247604, guid: 9f5597d1d8fb3e74e88a7e5f19557b6e, type: 3}
       propertyPath: m_RootOrder

@@ -1,0 +1,9 @@
+{
+    "dialogue":
+        {
+            "dialogueID" : 0,
+            "sentences" : [
+                {"textID":0, "text":"Somaria Elias", "weakChoice":[{"choiceText":">","nextTextID":1}], "speaker":""}
+            ]
+        }
+}
