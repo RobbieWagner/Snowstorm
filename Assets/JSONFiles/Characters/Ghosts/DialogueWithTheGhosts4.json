@@ -1,0 +1,27 @@
+{
+    "dialogue":
+    {
+        "dialogueID" : 0,
+        "sentences" : [
+            {"textID":0, "text":"We have a situation going on, and would really appreciate some help!", "weakChoice":[{"choiceText":">","nextTextID":1}],"speaker":"Chris"},
+            {"textID":1, "text":"If you aren't already aware, this place has a few hooligans running around", "weakChoice":[{"choiceText":">","nextTextID":2}],"speaker":"Chris"},
+            {"textID":2, "text":"They've tried to attack us, they've burned buildings down...", "weakChoice":[{"choiceText":">","nextTextID":3}],"speaker":"Chris"},
+            {"textID":3, "text":"Tell them about the rock, Chris!", "weakChoice":[{"choiceText":">","nextTextID":4}],"speaker":"Wade"},
+            {"textID":4, "text":"Oh! They also stole a rock from Wade.", "weakChoice":[{"choiceText":">","nextTextID":5}],"speaker":"Chris"},
+            {"textID":5, "text":"Not just any rock!", "weakChoice":[{"choiceText":">","nextTextID":6}],"speaker":"Wade"},
+            {"textID":6, "text":"It was my favorite rock...", "weakChoice":[{"choiceText":">","nextTextID":7}],"speaker":"Wade"},
+            {"textID":7, "text":"god I loved that rock.", "weakChoice":[{"choiceText":">","nextTextID":8}],"speaker":"Wade"},
+            {"textID":8, "text":"Anyway...", "weakChoice":[{"choiceText":">","nextTextID":9}],"speaker":"Chris"},
+            {"textID":9, "text":"We're getting really sick of these people, and were hoping you'd kick them out for us.", "weakChoice":[{"choiceText":">","nextTextID":10}],"speaker":"Chris"},
+            {"textID":10, "text":"We're getting really sick of these people, and were hoping you'd kick them out for us.", "weakChoice":[{"choiceText":"Sure!","nextTextID":11},{"choiceText":"Absolutely n-","nextTextID":11}],"speaker":"Chris"},
+            {"textID":11, "text":"You hear that, Chris?", "weakChoice":[{"choiceText":">","nextTextID":12}],"speaker":"Wade"},
+            {"textID":12, "text":"They said they'd help!", "weakChoice":[{"choiceText":">","nextTextID":13}],"speaker":"Wade"},
+            {"textID":13, "text":"I heard, Wade.", "weakChoice":[{"choiceText":">","nextTextID":14}],"speaker":"Chris"},
+            {"textID":14, "text":"Thank you so much for helping us with our problem, stranger!", "weakChoice":[{"choiceText":">","nextTextID":15}],"speaker":"Chris"},
+            {"textID":15, "text":"They're called the \"tower boys\", those animals...", "weakChoice":[{"choiceText":">","nextTextID":16}],"speaker":"Chris"},
+            {"textID":16, "text":"They operate in some wooden tower nearby.", "weakChoice":[{"choiceText":">","nextTextID":17}],"speaker":"Chris"},
+            {"textID":17, "text":"you can't miss it!", "weakChoice":[{"choiceText":">","nextTextID":18}],"speaker":"Chris"}
+        ],
+        "interDialogueAction": "MoveChrisForward"
+    }
+}

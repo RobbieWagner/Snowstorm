@@ -20,6 +20,7 @@ public class DialogueInteractable : Interactable
     {
         public int dialogueID;
         public Sentence[] sentences;
+        public string interDialogueAction;
     }
 
     //Sentence class holds properties for the person speaking, text, and choices

@@ -53,7 +53,7 @@ MonoBehaviour:
   spawnChances: 100
   onlySpawnsOnce: 1
   canSpawn: 1
-  tileRequirementsForSpawn: 350
+  tileRequirementsForSpawn: 0
   placedIntoArray: 1
 --- !u!54 &7218712136122019674
 Rigidbody:

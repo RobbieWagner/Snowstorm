@@ -16,6 +16,7 @@
             {"textID":10, "text":"Dude!", "weakChoice":[{"choiceText":">","nextTextID":11}],"speaker":"Large Ghost"},
             {"textID":11, "text":"Their coat wasn't pink. It wasn't a coat at all because you saw nothing.", "weakChoice":[{"choiceText":">","nextTextID":12}],"speaker":"Large Ghost"},
             {"textID":12, "text":"Now just drop it.", "weakChoice":[{"choiceText":">","nextTextID":13}],"speaker":"Large Ghost"}
-        ]
+        ],
+        "interDialogueAction":"FlipGhostAround"
     }
 }

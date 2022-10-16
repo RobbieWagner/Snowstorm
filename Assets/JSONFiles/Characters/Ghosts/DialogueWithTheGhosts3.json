@@ -1,0 +1,16 @@
+{
+    "dialogue":
+    {
+        "dialogueID" : 0,
+        "sentences" : [
+            {"textID":0, "text":"Wait...", "weakChoice":[{"choiceText":">","nextTextID":1}],"speaker":"Wade"},
+            {"textID":1, "text":"CHRIS!!!!", "weakChoice":[{"choiceText":">","nextTextID":2}],"speaker":"Wade"},
+            {"textID":2, "text":"I'm right here little man", "weakChoice":[{"choiceText":">","nextTextID":3}],"speaker":"Chris"},
+            {"textID":3, "text":"Maybe this guy can help us!", "weakChoice":[{"choiceText":">","nextTextID":4}],"speaker":"Wade"},
+            {"textID":4, "text":"Oh", "weakChoice":[{"choiceText":">","nextTextID":5}],"speaker":"Chris"},
+            {"textID":5, "text":"You're right!", "weakChoice":[{"choiceText":">","nextTextID":6}],"speaker":"Chris"},
+            {"textID":6, "text":"Hey you! Stranger", "weakChoice":[{"choiceText":">","nextTextID":7}],"speaker":"Chris"}
+        ],
+        "interDialogueAction": "MoveChrisForward"
+    }
+}

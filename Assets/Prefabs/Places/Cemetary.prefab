@@ -560,7 +560,7 @@ GameObject:
   - component: {fileID: 6235329300940753282}
   - component: {fileID: 8112882650222883062}
   m_Layer: 0
-  m_Name: SmallGhost
+  m_Name: Wade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -680,6 +680,7 @@ MonoBehaviour:
   dialogue:
     dialogueID: 0
     sentences: []
+    interDialogueAction: 
 --- !u!136 &8112882650222883062
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -785,12 +786,16 @@ MonoBehaviour:
   textJSON:
   - {fileID: 4900000, guid: 56332b1845b7ea24f95106176285a378, type: 3}
   - {fileID: 4900000, guid: 40d440a7a3247554f8193c6cee95d50c, type: 3}
+  - {fileID: 4900000, guid: 5a4657e6936e4df4ea71ecfe9b84d314, type: 3}
+  - {fileID: 4900000, guid: 93417bf1b718ab048944d0cd00cf605b, type: 3}
   dialogues: []
   dialogueOnStart: 0
   triggers:
   - {fileID: 8900468524625045637}
   - {fileID: 156668842937352709}
   - {fileID: 163021726906689441}
+  speakerAnimators:
+  - {fileID: 4468316924696228639}
 --- !u!1 &3226818979161011075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1988,7 +1993,7 @@ GameObject:
   - component: {fileID: 9032802668806665607}
   - component: {fileID: 8627342364230755581}
   m_Layer: 0
-  m_Name: LargeGhost
+  m_Name: Chris
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

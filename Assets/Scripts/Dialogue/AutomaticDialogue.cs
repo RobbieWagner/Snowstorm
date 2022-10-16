@@ -22,6 +22,9 @@ public class AutomaticDialogue : Interactable
     [SerializeField]
     private Collider[] triggers;
 
+    [SerializeField]
+    private Animator[] speakerAnimators;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,7 +71,6 @@ public class AutomaticDialogue : Interactable
     {
         foreach(DialogueInteractable.Dialogue dialogue in dialogues)
         {
-            Debug.Log("New Dialogue Started");
             dialogueM.StartDialogue(dialogue);
             yield return new WaitForSeconds(.25f);
             while(player.isReadingDialogue)
@@ -76,6 +78,12 @@ public class AutomaticDialogue : Interactable
                 yield return null;
             }
             yield return new WaitForSeconds(.5f);
+
+            if(dialogue.interDialogueAction != null && dialogue.interDialogueAction.Equals("FlipGhostAround"))
+            {
+                speakerAnimators[0].SetBool("FacingForward", true);
+                yield return new WaitForSeconds(.75f);
+            }
         }
 
         StopCoroutine(ReadDialogueList());

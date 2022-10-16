@@ -113,8 +113,6 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence(int sentenceID)
     {
-        Debug.Log("displaying next sentence");
-
         currentSentence = sentenceID;
 
         if(sentenceID >= sentences.Count)
