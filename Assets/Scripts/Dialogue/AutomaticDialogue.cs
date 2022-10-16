@@ -19,6 +19,9 @@ public class AutomaticDialogue : Interactable
     [SerializeField]
     private bool dialogueOnStart;
 
+    [SerializeField]
+    private Collider[] triggers;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +46,10 @@ public class AutomaticDialogue : Interactable
         {
             hasInteracted = true;
             Interact();
+            foreach(Collider collider in triggers)
+            {
+                collider.enabled = false;
+            }
         }
     }
 
@@ -61,6 +68,7 @@ public class AutomaticDialogue : Interactable
     {
         foreach(DialogueInteractable.Dialogue dialogue in dialogues)
         {
+            Debug.Log("New Dialogue Started");
             dialogueM.StartDialogue(dialogue);
             yield return new WaitForSeconds(.25f);
             while(player.isReadingDialogue)

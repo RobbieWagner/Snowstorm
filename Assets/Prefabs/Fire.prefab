@@ -735,10 +735,10 @@ GameObject:
   m_Component:
   - component: {fileID: 443750862857780012}
   - component: {fileID: 8200427089695705637}
-  - component: {fileID: 2150416261012317763}
   - component: {fileID: 1020338687711058357}
   - component: {fileID: 6665909796049291707}
   - component: {fileID: 4334075985633936023}
+  - component: {fileID: 6657885206130114571}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -783,19 +783,6 @@ MonoBehaviour:
   burntFirewood: {fileID: 916537607436967498}
   fireLightingTutorial: {fileID: 7621829756178101423}
   warmthTutorial: {fileID: 8852550181056570847}
---- !u!65 &2150416261012317763
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8157790743914748054}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 3, z: 1}
-  m_Center: {x: 0, y: 2.5, z: -0.5}
 --- !u!54 &1020338687711058357
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -837,6 +824,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f7a72e0562ca54dbd6d6df284e370d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &6657885206130114571
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8157790743914748054}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.5483398
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7741699, z: 0}
 --- !u!1 &9184761390245055413
 GameObject:
   m_ObjectHideFlags: 0

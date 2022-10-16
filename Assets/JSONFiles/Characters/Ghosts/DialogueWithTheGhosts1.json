@@ -7,14 +7,14 @@
             {"textID":1, "text":"Dude, how many times do I gotta tell you?", "weakChoice":[{"choiceText":">","nextTextID":2}],"speaker":"Large Ghost"},
             {"textID":2, "text":"Nobody is out there anymore. Not since the tower boys drove them away", "weakChoice":[{"choiceText":">","nextTextID":3}],"speaker":"Large Ghost"},
             {"textID":3, "text":"Maybe it was one of them, then!", "weakChoice":[{"choiceText":">","nextTextID":4}],"speaker":"Small Ghost"},
-            {"textID":4, "text":"I seriously doubt that man. You literally think everything is a person", "weakChoice":[{"choiceText":">","nextTextID":5}],"speaker":"Small Ghost"},
+            {"textID":4, "text":"I seriously doubt that man. You literally think everything is a person", "weakChoice":[{"choiceText":">","nextTextID":5}],"speaker":"Large Ghost"},
             {"textID":5, "text":"First its some gray guy you said was playing music", "weakChoice":[{"choiceText":">","nextTextID":6}],"speaker":"Large Ghost"},
-            {"textID":6, "text":"Now its a guy in an orange coat", "weakChoice":[{"choiceText":">","nextTextID":7}],"speaker":"Large Ghost"},
+            {"textID":6, "text":"Now its a guy in an orange coat-", "weakChoice":[{"choiceText":">","nextTextID":7}],"speaker":"Large Ghost"},
             {"textID":7, "text":"Pink...", "weakChoice":[{"choiceText":">","nextTextID":8}],"speaker":"Small Ghost"},
             {"textID":8, "text":"What?", "weakChoice":[{"choiceText":">","nextTextID":9}],"speaker":"Large Ghost"},
             {"textID":9, "text":"Well I guess it was kind of an off pink, but still pink", "weakChoice":[{"choiceText":">","nextTextID":10}],"speaker":"Small Ghost"},
             {"textID":10, "text":"Dude!", "weakChoice":[{"choiceText":">","nextTextID":11}],"speaker":"Large Ghost"},
-            {"textID":11, "text":"Their coat wasn't pink. It wasn't a voat at all because you saw nothing.", "weakChoice":[{"choiceText":">","nextTextID":12}],"speaker":"Large Ghost"},
+            {"textID":11, "text":"Their coat wasn't pink. It wasn't a coat at all because you saw nothing.", "weakChoice":[{"choiceText":">","nextTextID":12}],"speaker":"Large Ghost"},
             {"textID":12, "text":"Now just drop it.", "weakChoice":[{"choiceText":">","nextTextID":13}],"speaker":"Large Ghost"}
         ]
     }

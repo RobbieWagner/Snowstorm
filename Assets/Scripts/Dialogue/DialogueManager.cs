@@ -71,7 +71,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update() 
     {
-        if((Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space)) && canMoveOn && waitingForPlayerToContinue && !isPressingButton)
+        if(Input.GetKeyDown(KeyCode.K) && canMoveOn && waitingForPlayerToContinue && !isPressingButton)
         {
             isPressingButton = true;
             waitingForPlayerToContinue = false;
@@ -113,28 +113,29 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence(int sentenceID)
     {
+        Debug.Log("displaying next sentence");
+
         currentSentence = sentenceID;
 
-        foreach(GameObject button in buttons) if(button != null) Destroy(button);
         if(sentenceID >= sentences.Count)
         {
-            dialogueText.text = "";
-            //GrantStrongChoice(dialogueToDisplay.strongChoice.Length, 
-                                //dialogueToDisplay.strongChoice);
-            return;
+            EndDialogue();
         }
-
-        DialogueInteractable.Sentence sentence = sentences[sentenceID];
-
-        if(sentence.weakChoice.Length == 1)
+        else
         {
-            nextSentence = sentence.weakChoice[0].nextTextID;
-        }
+            foreach(GameObject button in buttons) if(button != null) Destroy(button);
 
-        nameText.text = sentence.speaker;
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
-        
+            DialogueInteractable.Sentence sentence = sentences[sentenceID];
+
+            if(sentence.weakChoice.Length == 1)
+            {
+                nextSentence = sentence.weakChoice[0].nextTextID;
+            }
+
+            nameText.text = sentence.speaker;
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(sentence));
+        }
     }
 
     public void GrantWeakChoice(int numberOfChoices, DialogueInteractable.WeakChoice[] weakChoice)

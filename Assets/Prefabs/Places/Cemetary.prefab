@@ -752,10 +752,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 6.776932
+  m_Radius: 3.9229412
   m_Height: 20.743929
   m_Direction: 1
-  m_Center: {x: 10.550001, y: 0, z: 3.089388}
+  m_Center: {x: 13.403992, y: 0, z: 3.089388}
 --- !u!136 &163021726906689441
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -766,10 +766,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 6.776932
+  m_Radius: 4.3307705
   m_Height: 20.743929
   m_Direction: 1
-  m_Center: {x: -10.55, y: 0, z: 3.089388}
+  m_Center: {x: -12.9961605, y: 0, z: 3.089388}
 --- !u!114 &5364132554393807618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -787,6 +787,10 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 40d440a7a3247554f8193c6cee95d50c, type: 3}
   dialogues: []
   dialogueOnStart: 0
+  triggers:
+  - {fileID: 8900468524625045637}
+  - {fileID: 156668842937352709}
+  - {fileID: 163021726906689441}
 --- !u!1 &3226818979161011075
 GameObject:
   m_ObjectHideFlags: 0

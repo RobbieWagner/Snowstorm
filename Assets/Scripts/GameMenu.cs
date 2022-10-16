@@ -35,6 +35,9 @@ public class GameMenu : MonoBehaviour
     [SerializeField]
     private GameObject journalButton;
 
+    [SerializeField]
+    private Button[] buttons;
+
     void Start()
     {
         menuOpen = false;
@@ -46,6 +49,11 @@ public class GameMenu : MonoBehaviour
         canLeaveMenu = true;
 
         dialogueM = GameObject.Find("TextBoxCanvas").GetComponent<DialogueManager>();
+
+        foreach(Button button in buttons)
+        {
+            button.enabled = false;
+        }
     }
 
     //For opening and closing the in game menu
@@ -55,6 +63,11 @@ public class GameMenu : MonoBehaviour
         {
             if(!menuOpen && !menuChanging && !dialogueM.dialogueRunning)
             { 
+                foreach(Button button in buttons)
+                {
+                    button.enabled = true;
+                }
+
                 Time.timeScale = 0f;
                 menuChanging = true;
                 gameMenu.enabled = true;
@@ -65,6 +78,11 @@ public class GameMenu : MonoBehaviour
             }
             else if(menuOpen && gameMenu.enabled && !menuChanging && canLeaveMenu) 
             {
+                foreach(Button button in buttons)
+                {
+                    button.enabled = false;
+                }
+
                 Time.timeScale = 1.0f;
                 menuChanging = true;
                 gameMenu.enabled = false;
