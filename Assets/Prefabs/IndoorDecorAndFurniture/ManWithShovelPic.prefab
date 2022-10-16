@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2284192689254781355}
   - component: {fileID: 5797704487779377338}
+  - component: {fileID: 467470333762365554}
+  - component: {fileID: 3025219402403271447}
   m_Layer: 0
   m_Name: ManWithShovelPic
   m_TagString: Untagged
@@ -82,3 +84,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!136 &467470333762365554
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8379390802788470298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.87712425
+  m_Height: 4.5884876
+  m_Direction: 1
+  m_Center: {x: 0.0000006073716, y: -0.60674775, z: -0.37712222}
+--- !u!114 &3025219402403271447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8379390802788470298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18574b962a1c5040a9daf5462867594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textJSON: {fileID: 4900000, guid: 180cbbc04058fd8459f5398f6169a3a8, type: 3}
+  dialogue:
+    dialogueID: 0
+    sentences: []

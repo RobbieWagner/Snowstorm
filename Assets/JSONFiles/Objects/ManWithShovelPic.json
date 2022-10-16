@@ -1,0 +1,10 @@
+{
+    "dialogue":
+        {
+            "dialogueID" : 0,
+            "sentences" : [
+                {"textID":0, "text":"A picture of a person holding a shovel.", "weakChoice":[{"choiceText":">","nextTextID":1}], "speaker":""},
+                {"textID":1, "text":"Is this the owner of the cabin? Why is their face not in the frame?", "weakChoice":[{"choiceText":">","nextTextID":2}], "speaker":""}
+            ]
+        }
+}

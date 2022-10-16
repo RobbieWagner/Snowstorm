@@ -1,0 +1,11 @@
+{
+    "dialogue":
+        {
+            "dialogueID" : 0,
+            "sentences" : [
+                {"textID":0, "text":"There's an omninous sense coming from this tower", "weakChoice":[{"choiceText":">","nextTextID":1}], "speaker":""},
+                {"textID":1, "text":"It appears to be abandoned, but there's a sense coming from it", "weakChoice":[{"choiceText":">","nextTextID":2}], "speaker":""},
+                {"textID":2, "text":"Almost as if the tower itself is alive", "weakChoice":[{"choiceText":">","nextTextID":3}], "speaker":""}
+            ]
+        }
+}
