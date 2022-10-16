@@ -1,0 +1,20 @@
+{
+    "dialogue":
+    {
+        "dialogueID" : 0,
+        "sentences" : [
+            {"textID":0, "text":"Nobody out there... huh?", "weakChoice":[{"choiceText":">","nextTextID":1}],"speaker":"Small Ghost"},
+            {"textID":1, "text":"Shut up...", "weakChoice":[{"choiceText":">","nextTextID":2}],"speaker":"Large Ghost"},
+            {"textID":2, "text":"Hey stranger! How's it going?", "weakChoice":[{"choiceText":"Good! How are you?","nextTextID":3}, {"choiceText":"Where am I?","nextTextID":7}, {"choiceText":"Who are you?","nextTextID":7}],"speaker":"Small Ghost"},
+            {"textID":3, "text":"Look, dude! The stranger's friendly!", "weakChoice":[{"choiceText":">","nextTextID":4}],"speaker":"Small Ghost"},
+            {"textID":4, "text":"I haven't been asked how I was in such a long time.", "weakChoice":[{"choiceText":">","nextTextID":5}],"speaker":"Small Ghost"},
+            {"textID":5, "text":"Yeah. There's no way they're a tower boy. We haven't been shot at.", "weakChoice":[{"choiceText":">","nextTextID":6}],"speaker":"Large Ghost"},
+            {"textID":6, "text":"Well then, non-tower boy...", "weakChoice":[{"choiceText":">","nextTextID":8}],"speaker":"Small Ghost"},
+            {"textID":7, "text":"Well...", "weakChoice":[{"choiceText":">","nextTextID":8}],"speaker":"Small Ghost"},
+            {"textID":8, "text":"My name is Wade, and this is my friend Chris!", "weakChoice":[{"choiceText":">","nextTextID":9}],"speaker":"Wade"},
+            {"textID":9, "text":"Sup dude.", "weakChoice":[{"choiceText":">","nextTextID":10}],"speaker":"Chris"},
+            {"textID":10, "text":"Welcome to our humble abode!", "weakChoice":[{"choiceText":">","nextTextID":11}],"speaker":"Wade"},
+            {"textID":11, "text":"Feel free to make yourself at home!", "weakChoice":[{"choiceText":">","nextTextID":12}],"speaker":"Wade"}
+        ]
+    }
+}

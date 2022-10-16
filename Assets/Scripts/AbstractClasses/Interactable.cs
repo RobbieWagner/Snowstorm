@@ -47,8 +47,6 @@ public abstract class Interactable : MonoBehaviour
     {
         if(player.canInteractWithObjects && playerCanInteract && Input.GetKeyDown(KeyCode.K))
         {
-            playerCanInteract = false;
-            isInteracting = true;
             Interact();
         }
 
@@ -73,7 +71,8 @@ public abstract class Interactable : MonoBehaviour
     //Interact with the object
     protected virtual void Interact()
     {
-
+        playerCanInteract = false;
+        isInteracting = true;
     }
 
     //prevents player from interacting again immediately

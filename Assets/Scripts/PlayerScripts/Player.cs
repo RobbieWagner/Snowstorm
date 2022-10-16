@@ -38,6 +38,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     public GameObject j;
 
+    [HideInInspector]
+    public bool isReadingDialogue;
+
     void Start()
     {
         tilesGenerated = 0;
@@ -53,5 +56,7 @@ public class Player : MonoBehaviour
         playerhasEnteredTown = false;
 
         k.SetActive(false);
+
+        isReadingDialogue = false;
     }
 }

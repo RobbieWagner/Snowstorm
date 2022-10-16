@@ -90,6 +90,7 @@ public class DialogueManager : MonoBehaviour
         if(!dialogueRunning)
         {
             dialogueRunning = true;
+            player.isReadingDialogue = true;
         
             sentences = new List<DialogueInteractable.Sentence>();
             coldMeterWasDepleting = gameColdMeter.depleting;
@@ -206,6 +207,7 @@ public class DialogueManager : MonoBehaviour
         dialogueRunning = false;
         textBoxC.enabled = false;
         EventSystem.current.SetSelectedGameObject(null);
+        player.isReadingDialogue = false;
     }
 
     IEnumerator TypeSentence(DialogueInteractable.Sentence sentence)
