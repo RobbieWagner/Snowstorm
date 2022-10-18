@@ -1,0 +1,10 @@
+{
+    "dialogue":
+        {
+            "dialogueID" : 0,
+            "sentences" : [
+                {"textID":0, "text":"With minimal effort, you are able to open the chest", "weakChoice":[{"choiceText":">","nextTextID":1}], "speaker":""},
+                {"textID":1, "text":"You find some matchsticks inside", "weakChoice":[{"choiceText":">","nextTextID":2}], "speaker":""}
+            ]
+        }
+}

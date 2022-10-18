@@ -4393,6 +4393,14 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6918398209089668056, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
+      propertyPath: matchsticksIcon
+      value: 
+      objectReference: {fileID: 95086068}
+    - target: {fileID: 6918398209089668056, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
+      propertyPath: matchsticksText
+      value: 
+      objectReference: {fileID: 2081368886}
     - target: {fileID: 7335705189500621134, guid: 7281a4bb36f235b459f3d39affd9ff20, type: 3}
       propertyPath: coldMeter
       value: 
