@@ -1,0 +1,10 @@
+{
+    "dialogue":
+    {
+        "dialogueID" : 0,
+        "sentences" : [
+            {"textID":0, "text":"What are you doing talking to me, silly?", "weakChoice":[{"choiceText":">","nextTextID":1}],"speaker":"Wade"},
+            {"textID":1, "text":"You gotta take care of the tower boys!", "weakChoice":[{"choiceText":">","nextTextID":2}],"speaker":"Wade"}
+        ]
+    }
+}

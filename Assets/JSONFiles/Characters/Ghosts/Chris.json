@@ -1,0 +1,12 @@
+{
+    "dialogue":
+    {
+        "dialogueID" : 0,
+        "sentences" : [
+            {"textID":0, "text":"Thank you so much for helping us with our problem, stranger!", "weakChoice":[{"choiceText":">","nextTextID":1}],"speaker":"Chris"},
+            {"textID":1, "text":"They're called the \"tower boys\", those animals...", "weakChoice":[{"choiceText":">","nextTextID":2}],"speaker":"Chris"},
+            {"textID":2, "text":"They operate in some wooden tower nearby.", "weakChoice":[{"choiceText":">","nextTextID":3}],"speaker":"Chris"},
+            {"textID":3, "text":"you can't miss it!", "weakChoice":[{"choiceText":">","nextTextID":4}],"speaker":"Chris"}
+        ]
+    }
+}

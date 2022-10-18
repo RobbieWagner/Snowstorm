@@ -840,7 +840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18574b962a1c5040a9daf5462867594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textJSON: {fileID: 0}
+  textJSON: {fileID: 4900000, guid: 51eb010aa154ef34ba55b13a087c9aae, type: 3}
   dialogue:
     dialogueID: 0
     sentences: []
@@ -1115,7 +1115,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 56332b1845b7ea24f95106176285a378, type: 3}
   - {fileID: 4900000, guid: 40d440a7a3247554f8193c6cee95d50c, type: 3}
   - {fileID: 4900000, guid: 5a4657e6936e4df4ea71ecfe9b84d314, type: 3}
-  - {fileID: 4900000, guid: 93417bf1b718ab048944d0cd00cf605b, type: 3}
+  - {fileID: 4900000, guid: 824d25620ebd5dd46ae42edb72cccf72, type: 3}
   dialogues: []
   dialogueOnStart: 0
   triggers:
@@ -2648,6 +2648,7 @@ GameObject:
   - component: {fileID: 392459873789233692}
   - component: {fileID: 9032802668806665607}
   - component: {fileID: 8627342364230755581}
+  - component: {fileID: 4099742213093443492}
   m_Layer: 0
   m_Name: Chris
   m_TagString: Untagged
@@ -2767,6 +2768,23 @@ CapsuleCollider:
   m_Height: 4.8392735
   m_Direction: 1
   m_Center: {x: 0, y: 1.743146, z: 0.018550873}
+--- !u!114 &4099742213093443492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6726123810187346044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18574b962a1c5040a9daf5462867594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textJSON: {fileID: 4900000, guid: 93417bf1b718ab048944d0cd00cf605b, type: 3}
+  dialogue:
+    dialogueID: 0
+    sentences: []
+    interDialogueAction: 
 --- !u!1 &6771826394470335144
 GameObject:
   m_ObjectHideFlags: 0
