@@ -65,3 +65,4 @@ MonoBehaviour:
   chanceOfMegaTile: 100
   borderTile: {fileID: 3150695108251624545, guid: f667645e1c092474fa59c20a243956a5, type: 3}
   tileLimit: 1100
+  tileType: SnowstormLandscape

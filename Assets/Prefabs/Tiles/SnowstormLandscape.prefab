@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3124466302963309002}
+  - component: {fileID: 2972916037736477253}
   m_Layer: 3
   m_Name: SnowstormLandscape
   m_TagString: Untagged
@@ -33,6 +34,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2972916037736477253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2312463310433158000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9af5dba2603714947b547ec30dd04b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileG: {fileID: 1879756862820426391}
 --- !u!1001 &594105349582900439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -223,3 +237,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4187079215513244930, guid: 953fbd89e0785dd438ee9500891d85f0, type: 3}
   m_PrefabInstance: {fileID: 4920044844900519101}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1879756862820426391 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6796422564622773802, guid: 953fbd89e0785dd438ee9500891d85f0, type: 3}
+  m_PrefabInstance: {fileID: 4920044844900519101}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a2ed24c03520c40bf51016741582e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -23,6 +23,9 @@ public class TileList : MonoBehaviour
     [SerializeField]
     public int tileLimit;
 
+    [SerializeField]
+    public string tileType;
+
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();

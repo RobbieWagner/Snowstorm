@@ -11,24 +11,31 @@ public class TileGenerator : MonoBehaviour
     private TileList levelsTiles;
     private RND random;
     private System.Random rnd;
-    private bool surroundingTilesGenerated;
+    private bool surroundingTileGenerated;
 
     private LayerMask playerLayer;
     private LayerMask groundLayer;
 
-    private bool[] tilesGenerated; 
+    private bool finishedGeneration;
+    private List<GameObject> instantiatedGO;
+    private bool[] isTileGenerated; 
     private bool[] tilesBlockingMegaGeneration;
 
     private int megaTileSpawnChance;
 
     private Player player;
 
+    [SerializeField]
+    public bool recurseGeneration = true;
+
+    bool started = false;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
 
-        surroundingTilesGenerated = false;
+        surroundingTileGenerated = false;
 
         random = GameObject.Find("Random").GetComponent<RND>();
         rnd = random.rnd;
@@ -36,8 +43,10 @@ public class TileGenerator : MonoBehaviour
         playerLayer = LayerMask.NameToLayer("Player");
         groundLayer = LayerMask.NameToLayer("Ground");
 
-        tilesGenerated = new bool[] {false, false, false, false, false, false};
+        instantiatedGO = new List<GameObject>();
+        isTileGenerated = new bool[] {false, false, false, false, false, false};
         tilesBlockingMegaGeneration = new bool[] {false, false, false, false, false, false};
+        finishedGeneration = false;
 
         levelsTiles = GameObject.Find("TileList").GetComponent<TileList>();
         megaTileSpawnChance = levelsTiles.chanceOfMegaTile;
@@ -48,7 +57,7 @@ public class TileGenerator : MonoBehaviour
         //When player steps on a tile, generate next tiles
         if(collision.gameObject.layer == playerLayer)
         {
-            if(!surroundingTilesGenerated)
+            if(!surroundingTileGenerated)
             {
                 CheckForSurroundingTiles();
                 RunTileGenerator();
@@ -56,17 +65,31 @@ public class TileGenerator : MonoBehaviour
         }
     }
 
+    public void RecurseGeneration()
+    {
+        if(!finishedGeneration && !surroundingTileGenerated)
+        {
+            if(!started)
+            {
+                started = true;
+                Start();
+            }
+            CheckForSurroundingTiles();
+            RunTileGenerator();
+        }
+    }
+
     void CheckForSurroundingTiles()
     {
         // Linecasts from tile out to empty space, checking if tiles were already generated
         Vector3 direction;
-        for(int i = 0; i < tilesGenerated.Length; i++)
+        for(int i = 0; i < isTileGenerated.Length; i++)
         {
             direction = TileDirection(i);
 
             if(Physics.Linecast(tileT.position + direction + new Vector3(0, -1, 0), tileT.position + direction + new Vector3(0, 1, 0)))//, groundLayer))
             {
-                tilesGenerated[i] = true;
+                isTileGenerated[i] = true;
             }
 
             Vector3 centerOfMegaTile = tileT.position + (direction * 2);
@@ -108,7 +131,7 @@ public class TileGenerator : MonoBehaviour
                     
                 }
                 //generate regular tile
-                else if(!tilesGenerated[i])
+                else if(!isTileGenerated[i])
                 {
                     direction = TileDirection(i);
 
@@ -119,14 +142,33 @@ public class TileGenerator : MonoBehaviour
 
                 }
             }
-            else if(!tilesGenerated[i])
+            else if(!isTileGenerated[i])
             {
                 direction = TileDirection(i);
                 Instantiate(levelsTiles.borderTile, tileT.position + direction, Quaternion.identity);
             }
         }
-        surroundingTilesGenerated = true;
+        surroundingTileGenerated = true;
         levelsTiles.CheckForTileAdditions();
+
+        finishedGeneration = true;
+
+        if(recurseGeneration)
+        {
+            for(int i = 0; i < instantiatedGO.Count; i++)
+            {
+                Transform tileType = instantiatedGO[i].transform.Find(levelsTiles.tileType);
+                if(tileType != null)
+                {
+                    TileGenerator tg = tileType.Find("TriggerGeneration").GetComponent<TileGenerator>();
+                    if(tg != null)
+                    {
+                        tg.RecurseGeneration();
+                    }
+                }
+            }
+        }
+
         Destroy(gameObject);
     }
 
@@ -145,7 +187,7 @@ public class TileGenerator : MonoBehaviour
         if(goSpawnChance.onlySpawnsOnce) goSpawnChance.canSpawn = false;
         
         //generate the tile
-        Instantiate(tiles[tileToUse], tileT.position + direction, Quaternion.identity);
+        instantiatedGO.Add(Instantiate(tiles[tileToUse], tileT.position + direction, Quaternion.identity) as GameObject);
         
         player.tilesGenerated++;
     }
