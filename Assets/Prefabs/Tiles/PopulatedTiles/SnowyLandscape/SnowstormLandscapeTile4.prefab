@@ -50,7 +50,7 @@ MonoBehaviour:
   spawnChances: 1
   onlySpawnsOnce: 0
   canSpawn: 1
-  tileRequirementsForSpawn: 0
+  tileRequirementsForSpawn: 15
   placedIntoArray: 1
 --- !u!1001 &1385691043620881928
 PrefabInstance:
