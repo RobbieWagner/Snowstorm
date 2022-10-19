@@ -11,10 +11,13 @@ public class TileGenerator : MonoBehaviour
     private TileList levelsTiles;
     private RND random;
     private System.Random rnd;
-    private bool surroundingTileGenerated;
+    private bool surroundingTilesGenerated;
 
     private LayerMask playerLayer;
     private LayerMask groundLayer;
+
+    [SerializeField]
+    private bool runOnStart = false;
 
     private bool finishedGeneration;
     private List<GameObject> instantiatedGO;
@@ -35,7 +38,7 @@ public class TileGenerator : MonoBehaviour
     {
         player = GameObject.Find("Player").GetComponent<Player>();
 
-        surroundingTileGenerated = false;
+        surroundingTilesGenerated = false;
 
         random = GameObject.Find("Random").GetComponent<RND>();
         rnd = random.rnd;
@@ -50,6 +53,13 @@ public class TileGenerator : MonoBehaviour
 
         levelsTiles = GameObject.Find("TileList").GetComponent<TileList>();
         megaTileSpawnChance = levelsTiles.chanceOfMegaTile;
+
+        started = true;
+
+        if(runOnStart)
+        {
+            RecurseGeneration();
+        }
     }
 
     void OnTriggerEnter(Collider collision)
@@ -57,7 +67,7 @@ public class TileGenerator : MonoBehaviour
         //When player steps on a tile, generate next tiles
         if(collision.gameObject.layer == playerLayer)
         {
-            if(!surroundingTileGenerated)
+            if(!surroundingTilesGenerated)
             {
                 CheckForSurroundingTiles();
                 RunTileGenerator();
@@ -67,7 +77,7 @@ public class TileGenerator : MonoBehaviour
 
     public void RecurseGeneration()
     {
-        if(!finishedGeneration && !surroundingTileGenerated)
+        if(!finishedGeneration && !surroundingTilesGenerated)
         {
             if(!started)
             {
@@ -148,7 +158,7 @@ public class TileGenerator : MonoBehaviour
                 Instantiate(levelsTiles.borderTile, tileT.position + direction, Quaternion.identity);
             }
         }
-        surroundingTileGenerated = true;
+        surroundingTilesGenerated = true;
         levelsTiles.CheckForTileAdditions();
 
         finishedGeneration = true;
