@@ -19,10 +19,15 @@ public class SceneChanger : MonoBehaviour
     [SerializeField]
     private bool changeSceneOnStart;
 
+    [SerializeField]
+    Canvas loadingScreen;
+
     private void Start() 
     {
         if(changeSceneOnStart)
         StartCoroutine(TransitionScene(sceneName));
+
+        loadingScreen.enabled = false;
     }
 
     public void ChangeScene()
@@ -68,6 +73,7 @@ public class SceneChanger : MonoBehaviour
             uiImage.color = new Color(uiImage.color.r, uiImage.color.g, uiImage.color.b, uiImage.color.a + .1f);
             yield return new WaitForSeconds(.25f);
         }
+        loadingScreen.enabled = true;
         ChangeScene(scene);
         StopCoroutine(TransitionScene(scene));
     }

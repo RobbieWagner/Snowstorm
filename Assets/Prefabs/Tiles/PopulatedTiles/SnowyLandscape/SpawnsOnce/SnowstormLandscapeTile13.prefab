@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnChances: 100
   onlySpawnsOnce: 1
-  canSpawn: 1
+  canSpawn: 0
   tileRequirementsForSpawn: 550
   placedIntoArray: 0
 --- !u!1001 &1637460000686643923
@@ -168,6 +168,7 @@ MonoBehaviour:
   dialogue:
     dialogueID: 0
     sentences: []
+    interDialogueAction: 
 --- !u!1001 &6087977131479376221
 PrefabInstance:
   m_ObjectHideFlags: 0

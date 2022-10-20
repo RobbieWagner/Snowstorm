@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnChances: 1
   onlySpawnsOnce: 1
-  canSpawn: 1
+  canSpawn: 0
   tileRequirementsForSpawn: 250
   placedIntoArray: 1
 --- !u!1001 &2102835741944835204
@@ -235,7 +235,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2972916037736477253, guid: fcc1b18fc1148854a95cf5bf32669ca5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fcc1b18fc1148854a95cf5bf32669ca5, type: 3}
 --- !u!4 &9160466221245266071 stripped
 Transform:
