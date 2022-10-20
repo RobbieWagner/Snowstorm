@@ -93,6 +93,7 @@ public class TileGenerator : MonoBehaviour
     {
         // Linecasts from tile out to empty space, checking if tiles were already generated
         Vector3 direction;
+        if(isTileGenerated != null)
         for(int i = 0; i < isTileGenerated.Length; i++)
         {
             direction = TileDirection(i);

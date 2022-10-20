@@ -49,6 +49,7 @@ public class Movement : MonoBehaviour
 
     [SerializeField]
     private Animator playerAnimator;
+    bool animatorIdle;
 
     public AudioSource[] footstepSounds;
     [HideInInspector]
@@ -97,6 +98,14 @@ public class Movement : MonoBehaviour
         if(!isGrounded) velocity.y += gravity * Time.deltaTime;
         characterBody.Move(velocity * Time.deltaTime);
 
+        if(!animatorIdle && !canMove)
+        {
+            playerAnimator.SetBool("WalkingLeft", false);
+            playerAnimator.SetBool("WalkingRight", false);
+            playerAnimator.SetBool("WalkingForward", false);
+            playerAnimator.SetBool("WalkingBack", false);
+        }
+
     }
 
     // Handles running
@@ -129,14 +138,17 @@ public class Movement : MonoBehaviour
             && isMoving) 
             PlayMovementSounds();
 
-        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) playerAnimator.SetBool("WalkingBack", true);
-        if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) playerAnimator.SetBool("WalkingLeft", true);
-        if(Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) playerAnimator.SetBool("WalkingForward", true);
-        if(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) playerAnimator.SetBool("WalkingRight", true);
-        if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)) playerAnimator.SetBool("WalkingBack", false);
-        if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow)) playerAnimator.SetBool("WalkingLeft", false);
-        if(Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow)) playerAnimator.SetBool("WalkingForward", false);
-        if(Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow)) playerAnimator.SetBool("WalkingRight", false);
+        if(canMove)
+        {
+            if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) playerAnimator.SetBool("WalkingBack", true);
+            if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) playerAnimator.SetBool("WalkingLeft", true);
+            if(Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) playerAnimator.SetBool("WalkingForward", true);
+            if(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) playerAnimator.SetBool("WalkingRight", true);
+            if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow)) playerAnimator.SetBool("WalkingBack", false);
+            if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow)) playerAnimator.SetBool("WalkingLeft", false);
+            if(Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow)) playerAnimator.SetBool("WalkingForward", false);
+            if(Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow)) playerAnimator.SetBool("WalkingRight", false);
+        }
 
         if((Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D) 
             || Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)))

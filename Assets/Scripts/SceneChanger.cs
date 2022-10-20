@@ -27,7 +27,7 @@ public class SceneChanger : MonoBehaviour
         if(changeSceneOnStart)
         StartCoroutine(TransitionScene(sceneName));
 
-        loadingScreen.enabled = false;
+        if(loadingScreen != null)loadingScreen.enabled = false;
     }
 
     public void ChangeScene()
