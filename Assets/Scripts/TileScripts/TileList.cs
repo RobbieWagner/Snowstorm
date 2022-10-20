@@ -12,6 +12,9 @@ public class TileList : MonoBehaviour
     public List<GameObject> size2TileOptions;
     [HideInInspector]
     public List<int> size2TileSpawns;
+
+    //[HideInInspector]
+    public List<GameObject> generatedTilesList;
     
     public int chanceOfMegaTile;
 

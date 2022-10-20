@@ -128,7 +128,7 @@ public class TileGenerator : MonoBehaviour
                 random = GameObject.Find("Random").GetComponent<RND>();
                 rnd = random.rnd;
             }
-            
+
             int randomNumber = rnd.Next(1000);
 
             if(levelsTiles.tileLimit > player.tilesGenerated)
@@ -162,7 +162,7 @@ public class TileGenerator : MonoBehaviour
             else if(!isTileGenerated[i])
             {
                 direction = TileDirection(i);
-                Instantiate(levelsTiles.borderTile, tileT.position + direction, Quaternion.identity);
+                levelsTiles.generatedTilesList.Add(Instantiate(levelsTiles.borderTile, tileT.position + direction, Quaternion.identity));
             }
         }
         surroundingTilesGenerated = true;
@@ -204,7 +204,9 @@ public class TileGenerator : MonoBehaviour
         if(goSpawnChance.onlySpawnsOnce) goSpawnChance.canSpawn = false;
         
         //generate the tile
-        instantiatedGO.Add(Instantiate(tiles[tileToUse], tileT.position + direction, Quaternion.identity) as GameObject);
+        GameObject tile = Instantiate(tiles[tileToUse], tileT.position + direction, Quaternion.identity) as GameObject;
+        instantiatedGO.Add(tile);
+        levelsTiles.generatedTilesList.Add(tile);
         
         player.tilesGenerated++;
     }
