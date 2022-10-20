@@ -1,0 +1,11 @@
+{
+    "dialogue":
+        {
+            "dialogueID" : 0,
+            "sentences" : [
+                {"textID":0, "text":"North: \"Tha kool kid towur (no adults alowd)\"", "weakChoice":[{"choiceText":">","nextTextID":1}], "speaker":""},
+                {"textID":1, "text":"North East: \"Semetary\"", "weakChoice":[{"choiceText":">","nextTextID":2}], "speaker":""},
+                {"textID":2, "text":"West: \"I dont know i havnt ben ther\"", "weakChoice":[{"choiceText":">","nextTextID":3}], "speaker":""}
+            ]
+        }
+}

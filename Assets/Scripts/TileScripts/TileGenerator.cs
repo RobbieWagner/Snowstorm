@@ -123,6 +123,12 @@ public class TileGenerator : MonoBehaviour
         bool megaTileSpawned = false;
         for(int i = 0; i < 6; i++)
         {
+            if(rnd == null)
+            {
+                random = GameObject.Find("Random").GetComponent<RND>();
+                rnd = random.rnd;
+            }
+            
             int randomNumber = rnd.Next(1000);
 
             if(levelsTiles.tileLimit > player.tilesGenerated)
