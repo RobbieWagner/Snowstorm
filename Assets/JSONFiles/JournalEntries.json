@@ -39,7 +39,7 @@
         },
         {
             "entryID" : 6,
-            "text" : "After walking for what feels like ages, I've finally come across some semblance of a town. The houses seem abandoned, but the tower looks promising.",
+            "text" : "There's a cemetary out here in the wilderness. I wonder what all of those people were like when they were alive...",
             "entryInJournal" : false,
             "requirement" : "enterTown"
         }

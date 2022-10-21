@@ -34,31 +34,38 @@ public class TileGenerator : MonoBehaviour
     bool started = false;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
-
-        surroundingTilesGenerated = false;
-
-        random = GameObject.Find("Random").GetComponent<RND>();
-        rnd = random.rnd;
-
-        playerLayer = LayerMask.NameToLayer("Player");
-        groundLayer = LayerMask.NameToLayer("Ground");
-
-        instantiatedGO = new List<GameObject>();
-        isTileGenerated = new bool[] {false, false, false, false, false, false};
-        tilesBlockingMegaGeneration = new bool[] {false, false, false, false, false, false};
-        finishedGeneration = false;
-
-        levelsTiles = GameObject.Find("TileList").GetComponent<TileList>();
-        megaTileSpawnChance = levelsTiles.chanceOfMegaTile;
-
-        started = true;
-
-        if(runOnStart)
+        if(!started)
         {
-            RecurseGeneration();
+            player = GameObject.Find("Player").GetComponent<Player>();
+
+            surroundingTilesGenerated = false;
+
+            random = GameObject.Find("Random").GetComponent<RND>();
+            rnd = random.rnd;
+
+            playerLayer = LayerMask.NameToLayer("Player");
+            groundLayer = LayerMask.NameToLayer("Ground");
+
+            instantiatedGO = new List<GameObject>();
+            isTileGenerated = new bool[] {false, false, false, false, false, false};
+            tilesBlockingMegaGeneration = new bool[] {false, false, false, false, false, false};
+            finishedGeneration = false;
+
+            levelsTiles = GameObject.Find("TileList").GetComponent<TileList>();
+            megaTileSpawnChance = levelsTiles.chanceOfMegaTile;
+
+            started = true;
+
+            if(runOnStart)
+            {
+                if(!levelsTiles.started)
+                {
+                    levelsTiles.Start();
+                }
+                RecurseGeneration();
+            }
         }
     }
 
@@ -180,6 +187,7 @@ public class TileGenerator : MonoBehaviour
                     TileGenerator tg = tileType.Find("TriggerGeneration").GetComponent<TileGenerator>();
                     if(tg != null)
                     {
+                        tg.Start();
                         tg.RecurseGeneration();
                     }
                 }

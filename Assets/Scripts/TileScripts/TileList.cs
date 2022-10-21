@@ -29,31 +29,39 @@ public class TileList : MonoBehaviour
     [SerializeField]
     public string tileType;
 
-    void Start()
+    [HideInInspector]
+    public bool started = false;
+
+    public void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Player>();
-
-        for(int i = 0; i < tileOptions.Count; i++)
+        if(!started)
         {
-            SpawnChance spawnChance = tileOptions[i].GetComponent<SpawnChance>();
-            spawnChance.placedIntoArray = false;
-            if(spawnChance.tileRequirementsForSpawn == 0)
+            player = GameObject.Find("Player").GetComponent<Player>();
+
+            for(int i = 0; i < tileOptions.Count; i++)
             {
-                spawnChance.placedIntoArray = true;
-                for(int j = 0; j < spawnChance.spawnChances; j++) tileSpawns.Add(i);
+                SpawnChance spawnChance = tileOptions[i].GetComponent<SpawnChance>();
+                spawnChance.placedIntoArray = false;
+                if(spawnChance.tileRequirementsForSpawn == 0)
+                {
+                    spawnChance.placedIntoArray = true;
+                    for(int j = 0; j < spawnChance.spawnChances; j++) tileSpawns.Add(i);
+                }
+            }
+
+            for(int i = 0; i < size2TileOptions.Count; i++)
+            {
+                SpawnChance spawnChance = size2TileOptions[i].GetComponent<SpawnChance>();
+                spawnChance.placedIntoArray = false;
+                if(spawnChance.tileRequirementsForSpawn == 0)
+                {
+                    spawnChance.placedIntoArray = true;
+                    for(int j = 0; j < spawnChance.spawnChances; j++) size2TileSpawns.Add(i);
+                }
             }
         }
 
-        for(int i = 0; i < size2TileOptions.Count; i++)
-        {
-            SpawnChance spawnChance = size2TileOptions[i].GetComponent<SpawnChance>();
-            spawnChance.placedIntoArray = false;
-            if(spawnChance.tileRequirementsForSpawn == 0)
-            {
-                spawnChance.placedIntoArray = true;
-                for(int j = 0; j < spawnChance.spawnChances; j++) size2TileSpawns.Add(i);
-            }
-        }
+        started = true;
     }
 
     //Find a way to make this less intensive

@@ -13,7 +13,7 @@
             {"textID":7, "text":"god I loved that rock.", "weakChoice":[{"choiceText":">","nextTextID":8}],"speaker":"Wade"},
             {"textID":8, "text":"Anyway...", "weakChoice":[{"choiceText":">","nextTextID":9}],"speaker":"Chris"},
             {"textID":9, "text":"We're getting really sick of these people, and were hoping you'd kick them out for us.", "weakChoice":[{"choiceText":">","nextTextID":10}],"speaker":"Chris"},
-            {"textID":10, "text":"We're getting really sick of these people, and were hoping you'd kick them out for us.", "weakChoice":[{"choiceText":"Sure!","nextTextID":11},{"choiceText":"Absolutely n-","nextTextID":11}],"speaker":"Chris"},
+            {"textID":10, "text":"Is that something you're willing to do?", "weakChoice":[{"choiceText":"Sure!","nextTextID":11},{"choiceText":"Absolutely n-","nextTextID":11}],"speaker":"Chris"},
             {"textID":11, "text":"You hear that, Chris?", "weakChoice":[{"choiceText":">","nextTextID":12}],"speaker":"Wade"},
             {"textID":12, "text":"They said they'd help!", "weakChoice":[{"choiceText":">","nextTextID":13}],"speaker":"Wade"},
             {"textID":13, "text":"I heard, Wade.", "weakChoice":[{"choiceText":">","nextTextID":14}],"speaker":"Chris"},
