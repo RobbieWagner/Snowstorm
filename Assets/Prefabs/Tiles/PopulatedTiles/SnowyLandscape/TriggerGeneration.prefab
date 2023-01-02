@@ -58,3 +58,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileT: {fileID: 4187079215513244930}
+  runOnStart: 0
+  recurseGeneration: 0

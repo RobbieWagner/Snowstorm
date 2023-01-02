@@ -56,6 +56,8 @@ public class TileGenerator : MonoBehaviour
             levelsTiles = GameObject.Find("TileList").GetComponent<TileList>();
             megaTileSpawnChance = levelsTiles.chanceOfMegaTile;
 
+            Debug.Log(gameObject.name);
+
             started = true;
 
             if(runOnStart)
