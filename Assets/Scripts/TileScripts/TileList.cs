@@ -6,7 +6,7 @@ public class TileList : MonoBehaviour
 {
     // Stores the list of possible tiles, and also the chance of a mega tile spawning
     public List<GameObject> tileOptions;
-    [HideInInspector]
+    //[HideInInspector]
     public List<int> tileSpawns;
 
     public List<GameObject> size2TileOptions;
@@ -89,13 +89,13 @@ public class TileList : MonoBehaviour
         }
     }
 
-    public void RemoveFromSize2List(GameObject tile)
+    public void RemoveFromSize2List(int tile)
     {
-        while(size2TileOptions.Contains(tile)) size2TileOptions.Remove(tile);
+        while(size2TileSpawns.Contains(tile)) size2TileSpawns.Remove(tile);
     }
 
-    public void RemoveFromList(GameObject tile)
+    public void RemoveFromList(int tile)
     {
-        while(tileOptions.Contains(tile)) tileOptions.Remove(tile);
+        while(tileSpawns.Contains(tile)) tileSpawns.Remove(tile);
     }
 }

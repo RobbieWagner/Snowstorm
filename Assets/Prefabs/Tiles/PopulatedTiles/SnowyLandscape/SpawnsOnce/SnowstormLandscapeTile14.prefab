@@ -49,7 +49,7 @@ MonoBehaviour:
   onlySpawnsOnce: 1
   canSpawn: 0
   tileRequirementsForSpawn: 450
-  placedIntoArray: 1
+  placedIntoArray: 0
 --- !u!1001 &2157000830731742429
 PrefabInstance:
   m_ObjectHideFlags: 0

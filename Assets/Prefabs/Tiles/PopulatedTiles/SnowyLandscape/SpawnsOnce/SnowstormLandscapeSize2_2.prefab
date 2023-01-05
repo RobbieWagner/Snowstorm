@@ -145,7 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnChances: 100
   onlySpawnsOnce: 1
-  canSpawn: 0
+  canSpawn: 1
   tileRequirementsForSpawn: 850
   placedIntoArray: 0
 --- !u!1001 &2238624239770139581

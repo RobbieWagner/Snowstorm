@@ -56,8 +56,6 @@ public class TileGenerator : MonoBehaviour
             levelsTiles = GameObject.Find("TileList").GetComponent<TileList>();
             megaTileSpawnChance = levelsTiles.chanceOfMegaTile;
 
-            Debug.Log(gameObject.name);
-
             started = true;
 
             if(runOnStart)
@@ -210,15 +208,20 @@ public class TileGenerator : MonoBehaviour
             goSpawnChance = tiles[tileToUse].GetComponent<SpawnChance>();
         }
         
-        //remove from list if it cannot spawn again
-        if(goSpawnChance.onlySpawnsOnce) goSpawnChance.canSpawn = false;
-        
         //generate the tile
         GameObject tile = Instantiate(tiles[tileToUse], tileT.position + direction, Quaternion.identity) as GameObject;
         instantiatedGO.Add(tile);
         levelsTiles.generatedTilesList.Add(tile);
         
         player.tilesGenerated++;
+
+        //remove from list if it cannot spawn again
+        if(goSpawnChance.onlySpawnsOnce) 
+        {
+            //goSpawnChance.canSpawn = false;
+            levelsTiles.RemoveFromList(tileToUse);
+            levelsTiles.RemoveFromSize2List(tileToUse);
+        }
     }
 
     Vector3 TileDirection(int adjacentTile)
